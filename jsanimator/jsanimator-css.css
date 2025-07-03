@@ -34,7 +34,7 @@
   @media (width > 75rem) {
     --text-size: 1.5rem;
   }
-  --text-size-small: calc(0.75 * var(--text-size))
+  --text-size-small: calc(0.75 * var(--text-size));
   
   /* All colors have separate light and dark versions. */
   --bottom-bg-color: #DEE6EA;
