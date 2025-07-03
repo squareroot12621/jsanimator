@@ -5,7 +5,7 @@
   font-display: swap;
   src:
     local('Inter'),
-    url('rsms.me/inter/font-files/InterVariable.woff2?v=4.1') format('woff2');
+    url('https://rsms.me/inter/font-files/InterVariable.woff2?v=4.1') format('woff2');
 }
 @font-face {
   font-family: "Inter";
@@ -14,7 +14,7 @@
   font-display: swap;
   src:
     local('Inter'),
-    url('rsms.me/inter/font-files/InterVariable-Italic.woff2?v=4.1') format('woff2');
+    url('https://rsms.me/inter/font-files/InterVariable-Italic.woff2?v=4.1') format('woff2');
 }
 
 @keyframes error-fade-in {
