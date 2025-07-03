@@ -1,8 +1,20 @@
 @font-face {
   font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
   src:
-    local("Inter"),
-    url(https://fonts.gstatic.com/s/inter/v19/UcCm3FwrK3iLTcvnUwgT9nA2.woff2) format('woff2');
+    local('Inter'),
+    url('rsms.me/inter/font-files/InterVariable.woff2?v=4.1') format('woff2');
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src:
+    local('Inter'),
+    url('rsms.me/inter/font-files/InterVariable-Italic.woff2?v=4.1') format('woff2');
 }
 
 @keyframes error-fade-in {
