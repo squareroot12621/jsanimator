@@ -30,7 +30,7 @@
 #jsanimator {
   --body-font: "Inter", system-ui, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   @media (prefers-color-scheme: light) {
-    --bottom-bg-color: #DFE7F2;
+    --bottom-bg-color: #E3E7EE;
     --bg-color: #FFFFFF55;
     --text-color: #000000;
   }
