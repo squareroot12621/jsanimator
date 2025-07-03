@@ -14,8 +14,9 @@
     opacity: 1;
   }
 }
+
 #jsanimator {
-  --body-font: "Inter", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --body-font: "Inter", system-ui, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   
   box-sizing: border-box;
   display: flex;
