@@ -38,13 +38,14 @@
   margin: 1.5rem;
   padding: 1rem;
   overflow-y: auto;
-  background-color: #00000055;
+  background-color: #FFFFFF55;
   border-radius: 0.5rem;
 
   font-family: var(--body-font);
   font-optical-sizing: auto;
   font-weight: 400;
   line-height: 1.25;
+  color: #000000;
   p {
     color: #FFFFFF;
     text-align: left;
