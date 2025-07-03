@@ -41,11 +41,15 @@
   --bg-color: #FFFFFF55;
   --text-color: #000000;
   --text-color-disabled: #404040;
+  --text-color-link: #108CC5;
+  --text-color-link-visited: #7234C8;
   @media (prefers-color-scheme: dark) {
     --bottom-bg-color: #191D23;
     --bg-color: #00000055;
     --text-color: #FFFFFF;
     --text-color-disabled: #B7B7B7;
+    --text-color-link: #45CAD9;
+    --text-color-link-visited: #D37BE0;
   }
   
   box-sizing: border-box;
@@ -71,10 +75,10 @@
     margin-bottom: 0.25rem;
   }
   a {
-    color: #45CAD9;
+    color: var(--text-color-link);
   }
   a:visited {
-    color: #D37BE0;
+    color: var(--text-color-link-visited);
   }
   /*footer {
     width: 30rem;
