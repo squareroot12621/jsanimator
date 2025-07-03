@@ -35,7 +35,7 @@
     --text-color: #000000;
   }
   @media (prefers-color-scheme: dark) {
-    --bottom-bg-color: #191B1F;
+    --bottom-bg-color: #191D23;
     --bg-color: #00000055;
     --text-color: #FFFFFF;
   }
