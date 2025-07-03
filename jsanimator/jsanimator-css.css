@@ -37,12 +37,10 @@
   --text-size-small: calc(0.75 * var(--text-size))
   
   /* All colors have separate light and dark versions. */
-  @media (prefers-color-scheme: light) {
-    --bottom-bg-color: #DEE6EA;
-    --bg-color: #FFFFFF55;
-    --text-color: #000000;
-    --text-color-disabled: #404040;
-  }
+  --bottom-bg-color: #DEE6EA;
+  --bg-color: #FFFFFF55;
+  --text-color: #000000;
+  --text-color-disabled: #404040;
   @media (prefers-color-scheme: dark) {
     --bottom-bg-color: #191D23;
     --bg-color: #00000055;
