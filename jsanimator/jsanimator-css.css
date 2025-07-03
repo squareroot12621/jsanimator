@@ -29,6 +29,14 @@
 
 #jsanimator {
   --body-font: "Inter", system-ui, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  @media (prefers-color-scheme: light) {
+    --bg-color: #FFFFFF55;
+    --text-color: #000000;
+  }
+  @media (prefers-color-scheme: dark) {
+    --bg-color: #00000055;
+    --text-color: #FFFFFF;
+  }
   
   box-sizing: border-box;
   display: flex;
@@ -38,16 +46,16 @@
   margin: 1.5rem;
   padding: 1rem;
   overflow-y: auto;
-  background-color: #FFFFFF55;
+  background-color: var(--bg-color);
   border-radius: 0.5rem;
 
   font-family: var(--body-font);
   font-optical-sizing: auto;
   font-weight: 400;
   line-height: 1.25;
-  color: #000000;
+  color: var(--text-color);
   p {
-    color: #FFFFFF;
+    color: var(--text-color);
     text-align: left;
     margin-top: 0rem;
     font-size: 1.25rem;
