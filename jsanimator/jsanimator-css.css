@@ -28,16 +28,26 @@
 }
 
 #jsanimator {
+  /* Standard variables for basically everything. */
   --body-font: "Inter", system-ui, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --text-size: 1.25rem;
+  @media (width > 75rem) {
+    --text-size: 1.5rem;
+  }
+  --text-size-small: calc(0.75 * var(--text-size))
+  
+  /* All colors have separate light and dark versions. */
   @media (prefers-color-scheme: light) {
     --bottom-bg-color: #DEE6EA;
     --bg-color: #FFFFFF55;
     --text-color: #000000;
+    --text-color-disabled: #404040;
   }
   @media (prefers-color-scheme: dark) {
     --bottom-bg-color: #191D23;
     --bg-color: #00000055;
     --text-color: #FFFFFF;
+    --text-color-disabled: #B7B7B7;
   }
   
   box-sizing: border-box;
@@ -50,19 +60,16 @@
   margin: 1.5rem;
   padding: 1rem;
   background-color: var(--bottom-bg-color);
-
   font-family: var(--body-font);
   font-optical-sizing: auto;
   font-weight: 400;
+  font-size: var(--text-size);
   line-height: 1.25;
   color: var(--text-color);
+
   p {
     text-align: left;
     margin-top: 0rem;
-    font-size: 1.25rem;
-    @media (width >= 50rem) {
-      font-size: 1.5rem;
-    }
     margin-bottom: 0.25rem;
   }
   a {
@@ -71,7 +78,7 @@
   a:visited {
     color: #D37BE0;
   }
-  footer {
+  /*footer {
     width: 30rem;
     position: absolute;
     left: calc(50vw - 15rem);
@@ -85,7 +92,7 @@
     font-size: 1.25rem;
     margin-block: 0;
     text-align: center;
-  }
+  }*/
   
   #scripterror {
     height: 100%;
