@@ -1,6 +1,7 @@
+import { create_element } from './create_element.js'
+
 function create_loading_screen() {
-  var loading_paragraph = document.createElement('p')
-  loading_paragraph.append('Loading...')
+  var loading_paragraph = create_element('p', 'Loading...')
   
   var loading_container = document.createElement('div')
   loading_container.setAttribute('id', 'scripterror')
