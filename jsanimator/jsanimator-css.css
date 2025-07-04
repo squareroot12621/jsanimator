@@ -153,7 +153,7 @@
     font-size: var(--text-size);
     font-weight: 450;
     background-color: #25D06C;
-    border: 0.1875rem solid #078A3E;
+    border: calc(0.125 * var(--text-size)) solid #078A3E;
     border-radius: 0.5rem;
     cursor: pointer;
     &.menubutton {
