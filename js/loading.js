@@ -11,9 +11,12 @@ function create_loading_screen() {
   var loading_paragraph = create_element('p',
                                          ['Loading', ...loading_dots],
                                          {'id': 'loadingtext'})
+  var loading_info = create_element('output',
+                                    '0%',
+                                    {'id': 'loadinginfo'})
   var loading_container = create_element('div',
                                          loading_paragraph,
-                                         {'id': 'scripterror'})
+                                         {'id': 'loadingcontainer'})
   
   var js_animator = document.getElementById('jsanimator')
   js_animator.replaceChildren(loading_container)
