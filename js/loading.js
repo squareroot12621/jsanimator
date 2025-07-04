@@ -19,6 +19,4 @@ function create_loading_screen() {
   js_animator.replaceChildren(loading_container)
 }
 
-export {
-  create_loading_screen,
-}
+export { create_loading_screen }
