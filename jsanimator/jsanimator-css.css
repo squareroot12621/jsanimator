@@ -47,7 +47,7 @@
   --bg-color: #FFFFFF55;
   --text-color: #000000;
   --text-color-disabled: #404040;
-  --text-color-link: #108CC5;
+  --text-color-link: #0F7FB3;
   --text-color-link-visited: #7234C8;
   --heading-color: #053852;
   @media (prefers-color-scheme: dark) {
@@ -88,14 +88,18 @@
   }
   a {
     color: var(--text-color-link);
-    transition: font-weight 0.2s ease;
-  }
-  a:hover {
-    transition: font-weight 0.4s ease;
-    font-weight: 700;
+    transition: font-weight 0.1s ease;
   }
   a:visited {
     color: var(--text-color-link-visited);
+  }
+  a:hover {
+    transition: font-weight 0.2s ease;
+    font-weight: 700;
+  }
+  a:focus {
+    outline: 2px solid currentcolor;
+    border-radius: 2px;
   }
   .icon {
     font-family: 'Material Symbols Outlined';
