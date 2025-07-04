@@ -226,10 +226,10 @@
     animation-iteration-count: infinite;
   }
   #loadingdot1 {
-    animation-delay: 0.8s;
+    animation-delay: -0.8s;
   }
   #loadingdot2 {
-    animation-delay: 0.4s;
+    animation-delay: -0.4s;
   }
   #loadingdot3 {
     animation-delay: 0s;
