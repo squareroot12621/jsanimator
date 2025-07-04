@@ -27,9 +27,17 @@
   0%, 40% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes loading-dots {
+  0%, 100% {
+    top: 0;
+  }
+  50% {
+    top: -0.8ex;
   }
 }
 
@@ -208,5 +216,21 @@
     p {
       text-align: center;
     }
+  }
+
+  .loadingdot {
+    position: relative;
+    animation-duration: 1.8s;
+    animation-timing-function: ease-in-out;
+    animation-name: loading-dots;
+  }
+  #loadingdot1 {
+    animation-delay: 0.8s;
+  }
+  #loadingdot2 {
+    animation-delay: 0.4s;
+  }
+  #loadingdot3 {
+    animation-delay: 0s;
   }
 }
