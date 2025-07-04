@@ -46,18 +46,32 @@
   --bottom-bg-color: #DEE6EA;
   --bg-color: #FFFFFF55;
   --text-color: #000000;
-  --text-color-disabled: #404040;
+  --text-color-note: #404040;
+  --text-color-disabled: #606060;
   --text-color-link: #0D60A0;
   --text-color-link-visited: #7234C8;
   --heading-color: #053852;
+  --button-primary-bg-color: #A7E3ED;
+  --button-primary-border-color: #146290;
+  --button-neutral-bg-color: #ECF1F4;
+  --button-neutral-border-color: #464E51;
+  --button-warning-bg-color: #EFC6A7;
+  --button-warning-border-color: #B31C14;
   @media (prefers-color-scheme: dark) {
     --bottom-bg-color: #191D23;
     --bg-color: #00000055;
     --text-color: #FFFFFF;
-    --text-color-disabled: #B7B7B7;
+    --text-color-note: #B7B7B7;
+    --text-color-disabled: #999999;
     --text-color-link: #45CAD9;
     --text-color-link-visited: #D37BE0;
     --heading-color: #A7E3ED;
+    --button-primary-bg-color: #146290;
+    --button-primary-border-color: #A7E3ED;
+    --button-neutral-bg-color: #464E51;
+    --button-neutral-border-color: #ECF1F4;
+    --button-warning-bg-color: #B31C14;
+    --button-warning-border-color: #EFC6A7;
   }
   
   box-sizing: border-box;
@@ -161,22 +175,24 @@
     text-align: center;
     font-size: var(--text-size);
     font-weight: 450;
-    background-color: #25D06C;
-    border: calc(0.125 * var(--text-size)) solid #078A3E;
-    border-radius: 0.5rem;
     cursor: pointer;
-    &.menubutton {
-      margin-bottom: 0.25rem;
-    }
-    &.centerbutton {
-      margin-inline: auto;
-    }
-    &.bottombutton {
-      margin-top: auto;
-    }
+
+    --button-current-bg-color: var(--button-neutral-bg-color);
+    --button-current-border-color: var(--button-neutral-border-color);
     &.primarybutton {
-      background-color: #12C9D9;
-      border-color: #077D88;
+      --button-current-bg-color: var(--button-primary-bg-color);
+      --button-current-border-color: var(--button-neutral-border-color);
+    }
+    &.warningbutton {
+      --button-current-bg-color: var(--button-primary-bg-color);
+      --button-current-border-color: var(--button-primary-border-color);
+    }
+    background-color: var(--button-current-bg-color);
+    border: calc(0.125 * var(--text-size)) solid var(--button-current-border-color);
+    border-radius: 0.5rem;
+    color: var(--button-current-border-color);
+    &:disabled {
+      color: var(--text-color-disabled);
     }
   }
 
