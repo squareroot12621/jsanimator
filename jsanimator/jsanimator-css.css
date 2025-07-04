@@ -209,23 +209,4 @@
       text-align: center;
     }
   }
-  
-  .horizontalrule {
-    width: 50%;
-    min-width: 20rem;
-    margin-bottom: 1rem;
-    margin-inline: auto;
-    height: 0.375rem;
-    border-radius: 0.1875rem;
-    background-color: #25D06C;
-    justify-self: center;
-  }
-  
-  .menubuttongroup {
-    box-sizing: border-box;
-    /* -6rem so buttons end up closer to the middle */
-    height: calc(100vh - 17.75rem - 6rem);
-    align-content: center;
-    padding-block: auto;
-  }
 }
