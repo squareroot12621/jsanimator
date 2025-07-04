@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -8,13 +8,19 @@
     url('https://rsms.me/inter/font-files/InterVariable.woff2?v=4.1') format('woff2');
 }
 @font-face {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: italic;
   font-weight: 100 900;
   font-display: swap;
   src:
     local('Inter'),
     url('https://rsms.me/inter/font-files/InterVariable-Italic.woff2?v=4.1') format('woff2');
+}
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('https://fonts.gstatic.com/s/materialsymbolsoutlined/v257/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsLjBuVY.woff2') format('woff2');
 }
 
 @keyframes error-fade-in {
@@ -29,7 +35,7 @@
 
 #jsanimator {
   /* Standard variables for basically everything. */
-  --body-font: "Inter", system-ui, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --body-font: 'Inter', system-ui, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   --text-size: 1.25rem;
   @media (width > 75rem) {
     --text-size: 1.5rem;
@@ -80,21 +86,6 @@
   a:visited {
     color: var(--text-color-link-visited);
   }
-  /*footer {
-    width: 30rem;
-    position: absolute;
-    left: calc(50vw - 15rem);
-    bottom: 0;
-    padding-block: 0.5rem;
-    background-color: #00000055;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-  }
-  footer p {
-    font-size: 1.25rem;
-    margin-block: 0;
-    text-align: center;
-  }*/
   
   #scripterror {
     height: 100%;
