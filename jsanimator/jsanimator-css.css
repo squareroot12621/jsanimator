@@ -192,7 +192,7 @@
     border-radius: 0.5rem;
     color: var(--button-current-border-color);
     &:disabled {
-      filter: saturate(0.2);
+      filter: contrast(0.35);
     }
   }
 
