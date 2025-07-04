@@ -6,6 +6,8 @@ function create_element(tag, content=[], attributes={}) {
   for (var [key, value] of Object.entries(attributes)) {
     element.setAttribute(key, value)
   }
+
+  return element
 }
 
 export { create_element }
