@@ -14,8 +14,9 @@ function create_loading_screen() {
   var loading_progress = create_element('output',
                                         '0%',
                                         {'id': 'loadingprogress'})
+  loading_progress.style.setProperty('font-weight', 200)
   var loading_info = create_element('output',
-                                    'Frobnicating the bizbaz...',
+                                    'Loading third-party modules...',
                                     {'id': 'loadinginfo'})
   var loading_container = create_element('div',
                                          [loading_paragraph, loading_progress, loading_info],
@@ -25,4 +26,13 @@ function create_loading_screen() {
   js_animator.replaceChildren(loading_container)
 }
 
-export { create_loading_screen }
+async function load_module(module_name, module_url) {
+  var loading_info = document.getElementById('loadinginfo')
+  loading_info.replaceChildren(`Loading ${module_name}...`)
+  // do stuff
+  var loading_progress = document.getElementById('loadingprogress')
+  loading_progress.replaceChildren('27%')
+  loading_progress.style.setProperty('font-weight', 200 + 700 * 0.27)
+}
+
+export { create_loading_screen, load_module }
