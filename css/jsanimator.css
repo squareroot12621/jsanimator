@@ -222,10 +222,13 @@
   #loadingcontainer {
     margin-top: auto;
     display: flex;
-    align-content: space-between;
+    justify-content: space-between;
   }
-  #loadingtext, #loadinginfo {
+  #loadingtext, #loadingprogress {
     font-size: calc(1.5 * var(--text-size));
+  }
+  #loadinginfo {
+    width: 100%;
   }
   .loadingdot {
     position: relative;
