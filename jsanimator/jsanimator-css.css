@@ -150,6 +150,7 @@
     padding: 0.125rem 0.5rem;
     margin-block: 0.5rem;
     text-align: center;
+    font-size: var(--text-size);
     font-weight: 450;
     background-color: #25D06C;
     border: 0.1875rem solid #078A3E;
