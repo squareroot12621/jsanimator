@@ -1,6 +1,12 @@
 import { create_loading_screen, load_modules } from './loading.js'
 import { create_element } from './create_element.js'
 
+function initialize_js_animator() {
+  create_loading_screen()
+  load_modules()
+  // TODO: setInterval?
+}
+
 function create_error_screen(js_error_text) {
   error_heading = create_element('h2', 'Uh oh!')
   
@@ -22,15 +28,5 @@ function create_error_screen(js_error_text) {
   js_animator.replaceChildren(error_heading, error_description, error_nerd, error_box)
 }
 
-function initialize_js_animator() {
-  try {
-    create_loading_screen()
-    load_modules()
-    // TODO: setInterval?
-  } catch (error) {
-    create_error_screen(error)
-    throw error
-  }
-}
-
 window.onload = initialize_js_animator()
+window.addEventListener('error', create_error_screen)
