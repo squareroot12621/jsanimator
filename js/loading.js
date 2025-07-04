@@ -26,16 +26,28 @@ function create_loading_screen() {
   js_animator.replaceChildren(loading_container)
 }
 
-async function load_module(module_name, module_url) {
+async function load_module(module_name, module_url, new_progress) {
   var loading_info = document.getElementById('loadinginfo')
   loading_info.replaceChildren(`Loading ${module_name}...`)
   
-  const Mousetrap = await import(module_url) // Currently this is just a waste of time
+  var output = await import(module_url) // Currently this is just a waste of time
   
   var loading_progress = document.getElementById('loadingprogress')
-  var new_progress = 0.67
   loading_progress.replaceChildren(`${Math.round(new_progress * 100)}%`)
   loading_progress.style.setProperty('font-weight', 200 + 700 * new_progress)
+
+  return output
 }
 
-export { create_loading_screen, load_module }
+async function load_modules() {
+  var modules_to_import = [
+    ['Mousetrap', 'https://cdn.jsdelivr.net/gh/ccampbell/mousetrap/mousetrap.min.js'],
+  ]
+  var imported_modules = {}
+  for (var [module_index, [module_name, module_url]] of modules_to_import.entries()) {
+    var progress = (module_index + 1) / modules_to_import.length
+    load_module(module_name, module_url, progress)
+  }
+}
+
+export { create_loading_screen, load_modules }
