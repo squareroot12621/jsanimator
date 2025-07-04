@@ -2,12 +2,11 @@ function create_element(tag, content=[], attributes={}) {
   var element = document.createElement(tag)
 
   console.log(content) //DEBUG
+  // 'object' actually means array here
   if (typeof content === 'object') {
     element.append(...content)
-  } else if (typeof content === 'string') {
-    element.append(content)
   } else {
-    throw new TypeError('content must be an array or a string')
+    element.append(content)
   }
   
   for (var [key, value] of Object.entries(attributes)) {
