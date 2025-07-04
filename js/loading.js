@@ -15,7 +15,7 @@ function create_loading_screen() {
                                     '0%',
                                     {'id': 'loadinginfo'})
   var loading_container = create_element('div',
-                                         loading_paragraph,
+                                         [loading_paragraph, loading_info],
                                          {'id': 'loadingcontainer'})
   
   var js_animator = document.getElementById('jsanimator')
