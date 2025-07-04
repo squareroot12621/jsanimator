@@ -78,6 +78,9 @@
   color: var(--text-color);
 
   /* General styling of elements */
+  * {
+    font-family: var(--body-font);
+  }
   p {
     text-align: left;
     margin-top: 0rem;
@@ -107,9 +110,9 @@
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--body-text);
+    /*font-family: var(--body-text);
     font-optical-sizing: auto;
-    font-style: normal;
+    font-style: normal;*/
     line-height: 1.1;
     color: var(--heading-color);
     text-align: center;
@@ -150,7 +153,7 @@
     padding: 0.125rem 0.5rem;
     margin-block: 0.5rem;
     text-align: center;
-    font-optical-sizing: auto;
+    /*font-optical-sizing: auto;*/
     font-weight: 450;
     font-size: 1.75rem;
     background-color: #25D06C;
