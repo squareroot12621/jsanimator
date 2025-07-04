@@ -49,6 +49,7 @@
   --text-color-disabled: #404040;
   --text-color-link: #108CC5;
   --text-color-link-visited: #7234C8;
+  --heading-color: #053852;
   @media (prefers-color-scheme: dark) {
     --bottom-bg-color: #191D23;
     --bg-color: #00000055;
@@ -56,6 +57,7 @@
     --text-color-disabled: #B7B7B7;
     --text-color-link: #45CAD9;
     --text-color-link-visited: #D37BE0;
+    --heading-color: #78E4F6;
   }
   
   box-sizing: border-box;
@@ -118,7 +120,7 @@
     font-weight: 500;
     font-style: normal;
     line-height: 1.1;
-    color: var(--text-color);
+    color: var(--heading-color);
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 0;
