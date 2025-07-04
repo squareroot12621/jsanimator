@@ -1,7 +1,8 @@
 import create_loading_screen from 'loading'
 
 function initialize_js_animator() {
-  create_loading_screen()
+  document.getElementById('jsanimator').replaceChildren()
+  // TEST: create_loading_screen()
   // TODO: setInterval?
 }
 
