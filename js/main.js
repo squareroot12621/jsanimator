@@ -1,5 +1,7 @@
+import create_loading_screen from 'loading'
+
 function initialize_js_animator() {
-  // TODO: Replace children of #jsanimator with Loading... message
+  create_loading_screen()
   // TODO: setInterval?
 }
 
