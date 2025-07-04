@@ -1,6 +1,7 @@
 function create_element(tag, content=[], attributes={}) {
   var element = document.createElement(tag)
-  
+
+  console.log(content) //DEBUG
   if (typeof content === 'object') {
     element.append(...content)
   } else if (typeof content === 'string') {
