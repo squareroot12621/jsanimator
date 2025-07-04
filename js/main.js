@@ -28,5 +28,5 @@ function create_error_screen(js_error_text) {
   js_animator.replaceChildren(error_heading, error_description, error_nerd, error_box)
 }
 
-window.onload = initialize_js_animator()
 window.addEventListener('error', create_error_screen)
+window.onload = initialize_js_animator()
