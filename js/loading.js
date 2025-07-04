@@ -11,8 +11,11 @@ function create_loading_screen() {
   var loading_paragraph = create_element('p',
                                          ['Loading', ...loading_dots],
                                          {'id': 'loadingtext'})
+  var loading_progress = create_element('output',
+                                        '0%',
+                                        {'id': 'loadingprogress'})
   var loading_info = create_element('output',
-                                    '0%',
+                                    'Frobnicating the bizbaz...',
                                     {'id': 'loadinginfo'})
   var loading_container = create_element('div',
                                          [loading_paragraph, loading_info],
