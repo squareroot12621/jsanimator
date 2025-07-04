@@ -2,8 +2,7 @@ function create_element(tag, content=[], attributes={}) {
   var element = document.createElement(tag)
 
   console.log(content) //DEBUG
-  // 'object' actually means array here
-  if (typeof content === 'object') {
+  if (content instanceof Array) {
     element.append(...content)
   } else {
     element.append(content)
