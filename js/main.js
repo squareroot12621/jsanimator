@@ -1,4 +1,4 @@
-import { create_loading_screen, load_module } from './loading.js'
+import { create_loading_screen, load_modules } from './loading.js'
 
 function initialize_js_animator() {
   create_loading_screen()
