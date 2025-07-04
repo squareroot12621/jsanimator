@@ -29,7 +29,7 @@ function initialize_js_animator() {
     // TODO: setInterval?
   } catch (error) {
     create_error_screen(error)
-    raise error
+    throw error
   }
 }
 
