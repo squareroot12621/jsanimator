@@ -218,6 +218,9 @@
     }
   }
 
+  #loadingtext {
+    font-size: calc(1.5 * var(--text-size));
+  }
   .loadingdot {
     position: relative;
     animation-name: loading-dots;
