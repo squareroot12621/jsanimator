@@ -192,7 +192,10 @@
     border-radius: 0.5rem;
     color: var(--button-current-border-color);
     &:disabled {
-      filter: contrast(0.35);
+      filter: contrast(0.35) brightness(1.4);
+      @media (prefers-color-scheme: dark) {
+        filter: contrast(0.35) brightness(0.6);
+      }
     }
   }
 
