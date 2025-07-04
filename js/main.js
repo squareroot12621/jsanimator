@@ -1,4 +1,4 @@
-import create_loading_screen from './loading.js'
+import { create_loading_screen } from './loading.js'
 
 function initialize_js_animator() {
   document.getElementById('jsanimator').replaceChildren()
