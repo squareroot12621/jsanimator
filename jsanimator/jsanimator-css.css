@@ -181,11 +181,11 @@
     --button-current-border-color: var(--button-neutral-border-color);
     &.primarybutton {
       --button-current-bg-color: var(--button-primary-bg-color);
-      --button-current-border-color: var(--button-neutral-border-color);
+      --button-current-border-color: var(--button-primary-border-color);
     }
     &.warningbutton {
-      --button-current-bg-color: var(--button-primary-bg-color);
-      --button-current-border-color: var(--button-primary-border-color);
+      --button-current-bg-color: var(--button-warning-bg-color);
+      --button-current-border-color: var(--button-warning-border-color);
     }
     background-color: var(--button-current-bg-color);
     border: calc(0.125 * var(--text-size)) solid var(--button-current-border-color);
