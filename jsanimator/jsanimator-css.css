@@ -55,8 +55,8 @@
   --button-primary-border-color: #146290;
   --button-neutral-bg-color: #ECF1F4;
   --button-neutral-border-color: #464E51;
-  --button-warning-bg-color: #EFB6A7;
-  --button-warning-border-color: #B31C14;
+  --button-warning-bg-color: #F5C1B9;
+  --button-warning-border-color: #AA1A13;
   @media (prefers-color-scheme: dark) {
     --bottom-bg-color: #191D23;
     --bg-color: #00000055;
@@ -70,8 +70,8 @@
     --button-primary-border-color: #A7E3ED;
     --button-neutral-bg-color: #464E51;
     --button-neutral-border-color: #ECF1F4;
-    --button-warning-bg-color: #B31C14;
-    --button-warning-border-color: #EFB6A7;
+    --button-warning-bg-color: #AA1A13;
+    --button-warning-border-color: #F5C1B9;
   }
   
   box-sizing: border-box;
@@ -192,7 +192,7 @@
     border-radius: 0.5rem;
     color: var(--button-current-border-color);
     &:disabled {
-      filter: saturate(0.4);
+      filter: saturate(0.2);
     }
   }
 
