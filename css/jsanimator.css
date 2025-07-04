@@ -207,7 +207,7 @@
     }
   }
 
-  /* Specific styling */
+  /* No JavaScript */
   #scripterror {
     height: 100%;
     align-content: center;
@@ -218,7 +218,11 @@
     }
   }
 
-  #loadingtext {
+  /* Loading screen */
+  #loadingcontainer {
+    align-self: end;
+  }
+  #loadingtext, #loadinginfo {
     font-size: calc(1.5 * var(--text-size));
   }
   .loadingdot {
