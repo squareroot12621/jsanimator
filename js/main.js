@@ -17,14 +17,14 @@ function create_error_screen(error=undefined) {
   var error_description_link_reference = 'https://github.com/squareroot12621/jsanimator/issues/new/choose'
   var error_description_link = create_element('a', error_description_link_text,
                                               {'href': error_description_link_reference})
-  var error_description = create_element('p', [error_description_text, error_description_link_text])
+  var error_description = create_element('p', [error_description_text, error_description_link])
 
   var error_nerd_text = "If you're a nerd (like me), this error text will be useful:"
   var error_nerd = create_element('p', error_nerd_text)
 
   var error_nerd_info = create_element('p', error.toString())
 
-  var noscript_container = create_element('noscript',
+  var noscript_container = create_element('div',
                                           [error_heading, error_description,
                                            error_nerd, error_nerd_info],
                                           {'id': 'scripterror'})
