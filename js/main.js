@@ -31,9 +31,6 @@ function create_error_screen(error) {
   
   var js_animator = document.getElementById('jsanimator')
   js_animator.replaceChildren(noscript_container)
-
-  // Exit immediately
-  // throw error
 }
 
 window.addEventListener('error', create_error_screen)
