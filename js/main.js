@@ -7,6 +7,25 @@ function initialize_js_animator() {
   // TODO: setInterval?
 }
 
+function get_error_info(e) {
+  /* If we don't have an Error,
+     try to turn it into something that is an Error */
+  if (!(e instanceof Error)) {
+    if (e?.error) {
+      e = e.error
+    } else if (e?.reason) {
+      e = e.reason
+    }
+  }
+
+  var error_type = error?.type ?? 'No type available'
+  var error_string = error.toString()
+  var error_stack = error?.stack ?? 'No stack available'
+  var error_info_text = [error_type, error_string, error_stack].join('\n')
+
+  return error_info_text
+}
+
 function create_error_screen(error) {
   const STOP_SENTINEL = 'STOP JAVASCRIPT'
 
@@ -18,8 +37,8 @@ function create_error_screen(error) {
   var heading = create_element('h2', 'Uh oh!')
   
   var description_text = 'An error occurred in JS Animator. '
-                               + 'To fix the issue, try refreshing your browser. '
-                               + "If the error persists, don't be afraid to "
+                         + 'To fix the issue, try refreshing your browser. '
+                         + "If the error persists, don't be afraid to "
   var description_link_text = 'create an issue in the GitHub repository.'
   var description_link_reference = 'https://github.com/squareroot12621/jsanimator/issues/new/choose'
   var description_link = create_element('a', description_link_text,
@@ -29,9 +48,8 @@ function create_error_screen(error) {
   var nerd_text = "If you're a nerd (like me), this error text will be useful:"
   var nerd = create_element('p', nerd_text)
 
-  var error_stack = error?.stack ?? 'No stack available'
-  var error_info_text = error.toString() + '\n' + error_stack
-  var error_info = create_element('p', error_info_text)
+  var error_info = create_element('output', get_error_info(error),
+                                  {'id': 'errorinfo'})
 
   var noscript_container = create_element('div',
                                           [heading, description, nerd, error_info],
