@@ -42,6 +42,7 @@ function create_error_screen(error) {
   js_animator.append(noscript_container)
 
   // Exit immediately
+  console.log(error) //DEBUG
   throw new Error(STOP_SENTINEL)
 }
 
