@@ -18,16 +18,16 @@ function create_main_menu() {
   ]
   for (var button in button_parameters) {
     var {button_name, button_extra_classes, button_description} = button
-    button_classes = (
+    var button_classes = (
       `fixedwidthbutton largebutton ${button_extra_classes}`.trim()
     )
-    new_button = create_element(
+    var new_button = create_element(
       'button', button_name, {class: button_classes}
     )
-    new_description = create_element(
+    var new_description = create_element(
       'div', button_description, {class: 'buttondescription'}
     )
-    new_button_wrapper = create_element('div', [new_button, new_description])
+    var new_button_wrapper = create_element('div', [new_button, new_description])
     button_group.append(new_button_wrapper)
   }
   
