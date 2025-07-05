@@ -22,10 +22,15 @@ function create_error_screen(js_error_text) {
   var error_nerd_text = "If you're a nerd (like me), this error text will be useful:"
   var error_nerd = create_element('p', error_nerd_text)
 
-  var error_box = create_element('p', js_error_text)
+  var error_nerd_info = create_element('p', js_error_text)
 
+  var noscript_container = create_element('noscript',
+                                          [error_heading, error_description,
+                                           error_nerd, error_nerd_info],
+                                          {'id': 'scripterror'})
+  
   var js_animator = document.getElementById('jsanimator')
-  js_animator.replaceChildren(error_heading, error_description, error_nerd, error_box)
+  js_animator.replaceChildren(noscript_container)
 }
 
 window.addEventListener('error', create_error_screen)
