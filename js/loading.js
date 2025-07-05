@@ -1,4 +1,4 @@
-import { create_element } from './utilities.js'
+import { create_element, update_root } from './utilities.js'
 
 function create_loading_screen() {
   var loading_dots = []
@@ -22,8 +22,7 @@ function create_loading_screen() {
                                          [loading_paragraph, loading_progress, loading_info],
                                          {'id': 'loadingcontainer'})
   
-  var js_animator = document.getElementById('jsanimator')
-  js_animator.replaceChildren(loading_container)
+  update_root(loading_container)
 }
 
 async function load_module(module_name, module_url, new_progress) {
