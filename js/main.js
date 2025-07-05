@@ -7,7 +7,7 @@ function initialize_js_animator() {
   // TODO: setInterval?
 }
 
-function create_error_screen(error) {
+function create_error_screen(error=undefined) {
   var error_heading = create_element('h2', 'Uh oh!')
   
   var error_description_text = 'An error occurred in JS Animator. '
