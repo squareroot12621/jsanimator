@@ -211,11 +211,11 @@
       /* Make the button a little darker when pressed */
       background-color:
         color-mix(in srgb, var(--button-current-border-color),
-                  #000000 60%);
+                  #000000 50%);
       @media (prefers-color-scheme: dark) {
         background-color:
           color-mix(in srgb, var(--button-current-border-color),
-                    var(--button-current-bg-color) 25%);
+                    var(--button-current-bg-color) 40%);
       }
     }
     border-width: calc(0.125 * var(--text-size) * var(--button-size-modifier));
