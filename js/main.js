@@ -7,7 +7,7 @@ function initialize_js_animator() {
   // TODO: setInterval?
 }
 
-function create_error_screen(js_error_text) {
+function create_error_screen(error) {
   var error_heading = create_element('h2', 'Uh oh!')
   
   var error_description_text = 'An error occurred in JS Animator. '
@@ -22,7 +22,7 @@ function create_error_screen(js_error_text) {
   var error_nerd_text = "If you're a nerd (like me), this error text will be useful:"
   var error_nerd = create_element('p', error_nerd_text)
 
-  var error_nerd_info = create_element('p', js_error_text)
+  var error_nerd_info = create_element('p', error.toString())
 
   var noscript_container = create_element('noscript',
                                           [error_heading, error_description,
@@ -31,6 +31,10 @@ function create_error_screen(js_error_text) {
   
   var js_animator = document.getElementById('jsanimator')
   js_animator.replaceChildren(noscript_container)
+
+  // Exit immediately
+  window.stop()
+  throw error
 }
 
 window.addEventListener('error', create_error_screen)
