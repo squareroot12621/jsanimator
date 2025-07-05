@@ -296,7 +296,7 @@
 #menubuttongroup {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   margin-inline: auto;
   box-sizing: border-box;
   height: 100%;
