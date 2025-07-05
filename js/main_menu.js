@@ -1,10 +1,9 @@
-import { create_element } from './utilities.js'
+import { create_element, update_root } from './utilities.js'
 
 function create_main_menu() {
   var title = create_element('h1', 'JS Animator')
   
-  var js_animator = document.getElementById('jsanimator')
-  js_animator.replaceChildren(title)
+  update_root(title)
 }
 
 export { create_main_menu }
