@@ -30,6 +30,7 @@ function create_error_screen(error=undefined) {
                                           {'id': 'scripterror'})
   
   var js_animator = document.getElementById('jsanimator')
+  js_animator.replaceChildren()
   js_animator.append(noscript_container)
 
   // Exit immediately
