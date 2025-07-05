@@ -17,15 +17,14 @@ function create_main_menu() {
      description: 'Customize your workspace'},
   ]
   for (var button in button_parameters) {
-    var {button_name, button_extra_classes, button_description} = button
-    var button_classes = (
-      `fixedwidthbutton largebutton ${button_extra_classes}`.trim()
+    var all_classes = (
+      `fixedwidthbutton largebutton ${button.class}`.trim()
     )
     var new_button = create_element(
-      'button', button_name, {class: button_classes}
+      'button', button.name, {class: all_classes}
     )
     var new_description = create_element(
-      'div', button_description, {class: 'buttondescription'}
+      'div', button.description, {class: 'buttondescription'}
     )
     var new_button_wrapper = create_element('div', [new_button, new_description])
     button_group.append(new_button_wrapper)
