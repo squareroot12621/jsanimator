@@ -1,5 +1,6 @@
 import { create_loading_screen, load_modules } from './loading.js'
 import { create_element } from './create_element.js'
+import { once } from './utilities.js'
 
 function initialize_js_animator() {
   create_loading_screen()
@@ -65,6 +66,7 @@ function create_error_screen(error) {
   throw new Error(STOP_SENTINEL)
 }
 
-window.addEventListener('error', create_error_screen)
-window.addEventListener('unhandledrejection', create_error_screen)
+var create_error_screen_wrapper = once(create_error_screen)
+window.addEventListener('error', create_error_screen_wrapper)
+window.addEventListener('unhandledrejection', create_error_screen_wrapper)
 window.onload = initialize_js_animator()
