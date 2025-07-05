@@ -1,4 +1,4 @@
-import { create_element, update_root } from './utilities.js'
+import {create_element, update_root} from './utilities.js'
 
 function create_loading_screen() {
   var loading_dots = []
@@ -50,4 +50,4 @@ async function load_modules() {
   }
 }
 
-export { create_loading_screen, load_modules }
+export {create_loading_screen, load_modules}
