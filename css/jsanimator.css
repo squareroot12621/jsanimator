@@ -201,18 +201,16 @@
     }
     background-color: var(--button-current-bg-color);
     color: var(--button-current-border-color);
-    &:is(:focus-visible, :hover):not(:active) {
-      /* Make the button a little darker when focused or hovered */
-      filter: brightness(0.75);
-      @media (prefers-color-scheme: dark) {
-        filter: brightness(1.25);
-      }
-    }
-    &:active {
-      /* Swap the colors when pressed */
+    &:focus-visible, &:hover, &:active {
+      /* Swap the colors when focused or hovered */
       background-color: var(--button-current-border-color);
       color: var(--button-current-bg-color);
       outline: none;
+    }
+    &:active {
+      /* Make the button a little darker (or brighter) when pressed */
+      --button-current-bg-color:
+        color-mix(in srgb, var(--button-current-bg-color), var(--text-color) 25%);
     }
     border-width: calc(0.125 * var(--text-size) * var(--button-size-modifier));
     border-style: solid;
