@@ -6,7 +6,7 @@ import { once } from './utilities.js'
 
 async function initialize_js_animator() {
   create_loading_screen()
-  async load_modules()
+  await load_modules()
   create_main_menu()
   // TODO: setInterval?
 }
