@@ -14,6 +14,10 @@ function create_element(tag, content=[], attributes={}) {
   return element
 }
 
+function update_root(...elements) {
+  document.getElementById('jsanimator').replaceChildren(...elements)
+}
+
 function once(fn, context) { 
   var result;
   return function() { 
@@ -25,4 +29,4 @@ function once(fn, context) {
   };
 }
 
-export { create_element, once }
+export { create_element, update_root, once }
