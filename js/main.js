@@ -30,11 +30,16 @@ function create_error_screen(error=undefined) {
                                           {'id': 'scripterror'})
   
   var js_animator = document.getElementById('jsanimator')
+  console.log('Before replaceChildren')
   js_animator.replaceChildren()
+  console.log('After replaceChildren')
   js_animator.append(noscript_container)
+  console.log('After append')
 
   // Exit immediately
-  // throw new Error()
+  throw new Error()
+
+  console.log('After throw?!')
 }
 
 window.addEventListener('error', create_error_screen)
