@@ -8,5 +8,5 @@ function once(fn, context) {
     return result;
   };
 }
-// dummy comment
+
 export { once }
