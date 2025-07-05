@@ -33,7 +33,6 @@ function create_error_screen(error) {
   js_animator.replaceChildren(noscript_container)
 
   // Exit immediately
-  window.stop()
   throw error
 }
 
