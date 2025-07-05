@@ -208,9 +208,13 @@
       outline: none;
     }
     &:active {
-      /* Make the button a little darker (or brighter) when pressed */
+      /* Make the button a little darker when pressed */
+      --black-tint-amount: 60%;
+      @media (prefers-color-scheme: dark) {
+        --black-tint-amount: 25%
+      }
       background-color:
-        color-mix(in srgb, var(--button-current-border-color), var(--text-color) 25%);
+        color-mix(in srgb, var(--button-current-border-color), #000000 var(--black-tint-amount));
     }
     border-width: calc(0.125 * var(--text-size) * var(--button-size-modifier));
     border-style: solid;
