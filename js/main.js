@@ -1,13 +1,12 @@
-import { create_loading_screen, load_modules } from './loading.js'
-import { create_main_menu } from './main_menu.js'
+import {create_loading_screen, load_modules} from './loading.js'
+import {create_main_menu} from './main_menu.js'
 
-import { create_error_screen } from './error.js'
-import { once } from './utilities.js'
+import {create_error_screen} from './error.js'
+import {once} from './utilities.js'
 
 async function initialize_js_animator() {
   create_loading_screen()
   var x = await load_modules()
-  console.log(x)
   create_main_menu()
   // TODO: setInterval?
 }
