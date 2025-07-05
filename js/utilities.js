@@ -29,4 +29,4 @@ function once(fn, context) {
   };
 }
 
-export { create_element, update_root, once }
+export {create_element, update_root, once}
