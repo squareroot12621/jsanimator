@@ -209,8 +209,8 @@
     }
     &:active {
       /* Make the button a little darker (or brighter) when pressed */
-      --button-current-bg-color:
-        color-mix(in srgb, var(--button-current-bg-color), var(--text-color) 25%);
+      background-color:
+        color-mix(in srgb, var(--button-current-border-color), var(--text-color) 25%);
     }
     border-width: calc(0.125 * var(--text-size) * var(--button-size-modifier));
     border-style: solid;
