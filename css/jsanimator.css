@@ -220,7 +220,8 @@
   #errorinfo {
     font-size: var(--text-size-small);
     font-family: monospace;
-    padding-left: 2ch;
+    line-height: 1.1;
+    margin-left: 2ch;
     text-indent: -2ch;
   }
 
