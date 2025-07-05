@@ -187,7 +187,6 @@
     text-align: center;
     font-size: calc(var(--text-size) * var(--button-size-modifier));
     font-weight: 450;
-    cursor: pointer;
 
     --button-current-bg-color: var(--button-neutral-bg-color);
     --button-current-border-color: var(--button-neutral-border-color);
