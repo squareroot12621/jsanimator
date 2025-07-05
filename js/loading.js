@@ -43,7 +43,7 @@ async function load_module(module_name, module_url, new_progress) {
 async function load_modules() {
   var modules_to_import = [
     ['Mousetrap', 'https://cdn.jsdelivr.net/gh/ccampbell/mousetrap/mousetrap.min.js'],
-    ['Hehe get trolled', 'THIS IS NOT A URL'],
+    /*['Hehe get trolled', 'THIS IS NOT A URL'],*/
   ]
   var imported_modules = {}
   for (var [module_index, [module_name, module_url]] of modules_to_import.entries()) {
