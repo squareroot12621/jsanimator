@@ -37,13 +37,14 @@ function create_error_screen(error) {
   var description_text = 'An error occurred in JS Animator. '
                          + 'To fix the issue, try refreshing your browser. '
                          + "If the error persists, don't be afraid to "
-  var description_link_text = 'create an issue in the GitHub repository.'
+  var description_link_text = 'open an issue in the GitHub repository'
   var description_link_reference = 'https://github.com/squareroot12621/jsanimator/issues/new/choose'
   var description_link = create_element('a', description_link_text,
                                         {'href': description_link_reference})
-  var description = create_element('p', [description_text, description_link])
-  var nerd_text = "If you're a nerd (like me), this error text will be useful:"
-  var nerd = create_element('p', nerd_text)
+  var description = create_element('p', [description_text, description_link, '.'])
+  var info_description_text = 'If you do open a GitHub issue about this, '
+                              + 'this error text will be useful:'
+  var info_description = create_element('p', info_description_text)
   var error_info = create_element('pre', get_error_info(error),
                                   {'id': 'errorinfo'})
   var noscript_container = create_element('div',
@@ -54,7 +55,6 @@ function create_error_screen(error) {
   js_animator.append(noscript_container)
 
   // Exit immediately
-  console.log(error) //DEBUG
   throw new Error(STOP_SENTINEL)
 }
 
