@@ -1,4 +1,4 @@
-import { create_element } from './create_element.js'
+import { create_element } from './utilities.js'
 
 function create_loading_screen() {
   var loading_dots = []
