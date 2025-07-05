@@ -22,7 +22,7 @@ function create_error_screen(js_error_text) {
   var error_nerd_text = "If you're a nerd (like me), this error text will be useful:"
   var error_nerd = create_element('p', error_nerd_text)
 
-  var error_box = error_create_element('p', js_error_text)
+  var error_box = create_element('p', js_error_text)
 
   var js_animator = document.getElementById('jsanimator')
   js_animator.replaceChildren(error_heading, error_description, error_nerd, error_box)
