@@ -10,10 +10,20 @@ function create_main_menu() {
     'button', 'Open', {class: 'largebutton'}
   )
   var settings_button = create_element(
-    'button', 'Settings', {class: 'largebutton'}
+    'button', 'Settings', {class: 'largebutton warningbutton'}
+  )
+  var new_button_d = create_element(
+    'button', 'New', {class: 'largebutton primarybutton', disabled: 'disabled'}
+  )
+  var open_button_d = create_element(
+    'button', 'Open', {class: 'largebutton', disabled: 'disabled'}
+  )
+  var settings_button_d = create_element(
+    'button', 'Settings', {class: 'largebutton warningbutton', disabled: 'disabled'}
   )
   var button_group = create_element(
-    'div', [new_button, open_button, settings_button]
+    'div', [new_button, open_button, settings_button,
+           new_button_d, open_button_d, settings_button_d]
   )
   
   update_root(title, button_group)
