@@ -1,4 +1,4 @@
-import { create_element, update_root } from './utilities.js'
+import {create_element, update_root} from './utilities.js'
 
 function create_main_menu() {
   var title = create_element('h1', 'JS Animator')
@@ -10,23 +10,13 @@ function create_main_menu() {
     'button', 'Open', {class: 'largebutton'}
   )
   var settings_button = create_element(
-    'button', 'Settings', {class: 'largebutton warningbutton'}
-  )
-  var new_button_d = create_element(
-    'button', 'New', {class: 'largebutton primarybutton', disabled: 'disabled'}
-  )
-  var open_button_d = create_element(
-    'button', 'Open', {class: 'largebutton', disabled: 'disabled'}
-  )
-  var settings_button_d = create_element(
-    'button', 'Settings', {class: 'largebutton warningbutton', disabled: 'disabled'}
+    'button', 'Settings', {class: 'largebutton'}
   )
   var button_group = create_element(
-    'div', [new_button, open_button, settings_button,
-           new_button_d, open_button_d, settings_button_d]
+    'div', [new_button, open_button, settings_button]
   )
   
   update_root(title, button_group)
 }
 
-export { create_main_menu }
+export {create_main_menu}
