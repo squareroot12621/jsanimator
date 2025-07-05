@@ -31,7 +31,7 @@ function create_error_screen(error) {
 
   var error_stack = error?.stack ?? 'No stack available'
   var error_info_text = error.toString() + '\n' + error_stack
-  var error_info = create_element('p', error.toString())
+  var error_info = create_element('p', error_info_text)
 
   var noscript_container = create_element('div',
                                           [heading, description, nerd, error_info],
