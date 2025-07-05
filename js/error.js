@@ -1,4 +1,4 @@
-import { create_element } from './create_element.js'
+import { create_element } from './utilities.js'
 
 function get_error_info(error) {
   var error_type = error?.type ?? 'No type available'
