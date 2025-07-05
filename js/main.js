@@ -4,9 +4,9 @@ import { create_main_menu } from './main_menu.js'
 import { create_error_screen } from './error.js'
 import { once } from './utilities.js'
 
-function initialize_js_animator() {
+async function initialize_js_animator() {
   create_loading_screen()
-  load_modules()
+  async load_modules()
   create_main_menu()
   // TODO: setInterval?
 }
