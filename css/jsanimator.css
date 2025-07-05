@@ -296,7 +296,11 @@
 #menubuttongroup {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 100%;
+  /* Make buttons more centered according to the entire screen */
+  padding-bottom: 4rem;
 }
 .menubuttonwrapper {
   display: flex;
