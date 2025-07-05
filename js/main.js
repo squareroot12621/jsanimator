@@ -29,4 +29,5 @@ function create_error_screen(js_error_text) {
 }
 
 window.addEventListener('error', create_error_screen)
+window.addEventListener('unhandledrejection', create_error_screen)
 window.onload = initialize_js_animator()
