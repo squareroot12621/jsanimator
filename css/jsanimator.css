@@ -200,9 +200,15 @@
       --button-current-border-color: var(--button-warning-border-color);
     }
     background-color: var(--button-current-bg-color);
+    border-color: var(--button-current-border-color);
+    &:focus, &:hover {
+      /* Swap the colors when focused or hovered */
+      background-color: var(--button-current-border-color);
+      border-color: var(--button-current-bg-color);
+      outline: none;
+    }
     border-width: calc(0.125 * var(--text-size) * var(--button-size-modifier));
     border-style: solid;
-    border-color: var(--button-current-border-color);
     border-radius: calc(0.5rem * var(--button-size-modifier));
     color: var(--button-current-border-color);
     &:disabled {
