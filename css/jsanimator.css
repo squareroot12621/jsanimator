@@ -188,6 +188,12 @@
     font-size: calc(var(--text-size) * var(--button-size-modifier));
     font-weight: 450;
     cursor: pointer;
+    &.narrowbutton {
+      min-width: calc(7rem * var(--button-size-modifier));
+    }
+    &.widebutton {
+      min-width: calc(9rem * var(--button-size-modifier));
+    }
 
     --button-current-bg-color: var(--button-neutral-bg-color);
     --button-current-border-color: var(--button-neutral-border-color);
@@ -236,7 +242,7 @@
     }
   }
 
-  /* No JavaScript/broken JavaScript */
+  /* Non-functioning JavaScript */
   #scripterror {
     height: 100%;
     align-content: center;
@@ -284,4 +290,20 @@
   #loadingdot3 {
     animation-delay: 0s;
   }
+}
+
+/* Menu screen */
+#menubuttongroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.menubuttonwrapper {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.buttondescription {
+  text-align: left;
+  min-width: 40%;
 }
