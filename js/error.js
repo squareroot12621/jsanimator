@@ -1,4 +1,4 @@
-import { create_element, update_root } from './utilities.js'
+import {create_element, update_root} from './utilities.js'
 
 function get_error_info(error) {
   var error_type = error?.type ?? 'No type available'
@@ -56,4 +56,4 @@ function create_error_screen(error) {
   throw new Error(STOP_SENTINEL)
 }
 
-export { create_error_screen }
+export {create_error_screen}
