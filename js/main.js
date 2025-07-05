@@ -7,39 +7,42 @@ function initialize_js_animator() {
   // TODO: setInterval?
 }
 
-function create_error_screen(error=undefined) {
-  var error_heading = create_element('h2', 'Uh oh!')
+function create_error_screen(error) {
+  STOP_SENTINEL = 'STOP JAVASCRIPT'
+
+  // Don't cause an infinite loop with create_error_screen throwing
+  if (error.message = STOP_SENTINEL) {
+    return undefined;
+  }
   
-  var error_description_text = 'An error occurred in JS Animator. '
+  var heading = create_element('h2', 'Uh oh!')
+  
+  var description_text = 'An error occurred in JS Animator. '
                                + 'To fix the issue, try refreshing your browser. '
                                + "If the error persists, don't be afraid to "
-  var error_description_link_text = 'create an issue in the GitHub repository.'
-  var error_description_link_reference = 'https://github.com/squareroot12621/jsanimator/issues/new/choose'
-  var error_description_link = create_element('a', error_description_link_text,
-                                              {'href': error_description_link_reference})
-  var error_description = create_element('p', [error_description_text, error_description_link])
+  var description_link_text = 'create an issue in the GitHub repository.'
+  var description_link_reference = 'https://github.com/squareroot12621/jsanimator/issues/new/choose'
+  var description_link = create_element('a', description_link_text,
+                                        {'href': description_link_reference})
+  var description = create_element('p', [description_text, description_link])
 
-  var error_nerd_text = "If you're a nerd (like me), this error text will be useful:"
-  var error_nerd = create_element('p', error_nerd_text)
+  var nerd_text = "If you're a nerd (like me), this error text will be useful:"
+  var nerd = create_element('p', nerd_text)
 
-  var error_nerd_info = create_element('p', error.toString())
+  var error_stack = error?.stack ?? 'No stack available'
+  var error_info_text = error.toString() + '\n' + error_stack
+  var error_info = create_element('p', error.toString())
 
   var noscript_container = create_element('div',
-                                          [error_heading, error_description,
-                                           error_nerd, error_nerd_info],
+                                          [heading, description, nerd, error_info],
                                           {'id': 'scripterror'})
   
   var js_animator = document.getElementById('jsanimator')
-  console.log('Before replaceChildren')
   js_animator.replaceChildren()
-  console.log('After replaceChildren')
   js_animator.append(noscript_container)
-  console.log('After append')
 
   // Exit immediately
-  throw new Error()
-
-  console.log('After throw?!')
+  throw new Error(STOP_SENTINEL)
 }
 
 window.addEventListener('error', create_error_screen)
