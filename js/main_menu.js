@@ -12,7 +12,7 @@ function create_main_menu() {
     'div', [new_button, open_button, settings_button]
   )
   
-  update_root(title)
+  update_root(title, button_group)
 }
 
 export { create_main_menu }
