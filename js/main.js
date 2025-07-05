@@ -7,20 +7,10 @@ function initialize_js_animator() {
   // TODO: setInterval?
 }
 
-function get_error_info(e) {
-  /* If we don't have an Error,
-     try to turn it into something that is an Error */
-  if (!(e instanceof Error)) {
-    if (e?.error) {
-      e = e.error
-    } else if (e?.reason) {
-      e = e.reason
-    }
-  }
-
-  var error_type = e?.type ?? 'No type available'
-  var error_string = e.toString()
-  var error_stack = e?.stack ?? 'No stack available'
+function get_error_info(error) {
+  var error_type = error?.type ?? 'No type available'
+  var error_string = error.toString()
+  var error_stack = error?.stack ?? 'No stack available'
   var error_info_text = [error_type, error_string, error_stack].join('\n')
 
   return error_info_text
@@ -29,6 +19,15 @@ function get_error_info(e) {
 function create_error_screen(error) {
   const STOP_SENTINEL = 'STOP JAVASCRIPT'
 
+  /* If we don't have an Error,
+     try to turn it into something that is an Error */
+  if (!(error instanceof Error)) {
+    if (error?.error) {
+      error = error.error
+    } else if (error?.reason) {
+      error = error.reason
+    }
+  }
   // Don't cause an infinite loop with create_error_screen throwing
   if (error.message === STOP_SENTINEL) {
     return undefined;
