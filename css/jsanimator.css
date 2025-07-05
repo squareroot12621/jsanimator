@@ -309,7 +309,6 @@
 }
 .buttondescription {
   text-align: left;
-  min-width: 40%;
   margin-left: 1rem;
   align-content: center;
   color: var(--text-color-note);
