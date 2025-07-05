@@ -221,8 +221,6 @@
     font-size: var(--text-size-small);
     font-family: monospace;
     line-height: 1.1;
-    margin-left: 2ch;
-    text-indent: -2ch;
   }
 
   /* Loading screen */
