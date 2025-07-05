@@ -18,9 +18,9 @@ function get_error_info(e) {
     }
   }
 
-  var error_type = error?.type ?? 'No type available'
-  var error_string = error.toString()
-  var error_stack = error?.stack ?? 'No stack available'
+  var error_type = e?.type ?? 'No type available'
+  var error_string = e.toString()
+  var error_stack = e?.stack ?? 'No stack available'
   var error_info_text = [error_type, error_string, error_stack].join('\n')
 
   return error_info_text
