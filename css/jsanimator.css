@@ -176,12 +176,16 @@
     font-weight: 700;
   }
   button {
+    --button-size-modifier: 1;
+    &.largebutton {
+      --button-size-modifier: calc(4 / 3);
+    }
+    
     display: block;
-    min-width: 12rem;
-    padding: 0.125rem 0.5rem;
+    padding: 0.25rem 0.5rem;
     margin-block: 0.5rem;
     text-align: center;
-    font-size: var(--text-size);
+    font-size: calc(var(--text-size) * var(--button-size-modifier));
     font-weight: 450;
     cursor: pointer;
 
@@ -196,8 +200,10 @@
       --button-current-border-color: var(--button-warning-border-color);
     }
     background-color: var(--button-current-bg-color);
-    border: calc(0.125 * var(--text-size)) solid var(--button-current-border-color);
-    border-radius: 0.5rem;
+    border-width: calc(0.125 * var(--text-size) * var(--button-size-modifier));
+    border-style: solid;
+    border-color: var(--button-current-border-color);
+    border-radius: calc(0.5rem * var(--button-size-modifier));
     color: var(--button-current-border-color);
     &:disabled {
       filter: contrast(0.35) brightness(1.4);
