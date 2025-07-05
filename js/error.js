@@ -1,4 +1,4 @@
-import { create_element } from './utilities.js'
+import { create_element, update_root } from './utilities.js'
 
 function get_error_info(error) {
   var error_type = error?.type ?? 'No type available'
@@ -50,9 +50,7 @@ function create_error_screen(error) {
     'div', [heading, description, info_description, error_info],
     {'id': 'scripterror'}
   )
-  var js_animator = document.getElementById('jsanimator')
-  js_animator.replaceChildren()
-  js_animator.append(noscript_container)
+  update_root(noscript_container)
 
   // Exit immediately
   throw new Error(STOP_SENTINEL)
