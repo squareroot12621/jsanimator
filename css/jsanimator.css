@@ -207,7 +207,7 @@
     }
   }
 
-  /* No JavaScript */
+  /* No JavaScript/broken JavaScript */
   #scripterror {
     height: 100%;
     align-content: center;
@@ -216,6 +216,12 @@
     p {
       text-align: center;
     }
+  }
+  #errorinfo {
+    font-size: var(--text-size-small);
+    font-family: monospace;
+    padding-left: 2ch;
+    text-indent: -2ch;
   }
 
   /* Loading screen */
