@@ -16,7 +16,7 @@ function create_main_menu() {
      class: '',
      description: 'Customize your workspace'},
   ]
-  for (var button in button_parameters) {
+  for (var button of button_parameters) {
     var all_classes = (
       `fixedwidthbutton largebutton ${button.class}`.trim()
     )
