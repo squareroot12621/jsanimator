@@ -11,7 +11,7 @@ function create_error_screen(error) {
   const STOP_SENTINEL = 'STOP JAVASCRIPT'
 
   // Don't cause an infinite loop with create_error_screen throwing
-  if (error.message = STOP_SENTINEL) {
+  if (error.message === STOP_SENTINEL) {
     return undefined;
   }
   
