@@ -31,7 +31,6 @@ async function load_module(module_name, module_url, new_progress) {
   loading_info.replaceChildren(`Loading ${module_name}...`)
   
   var output = await import(module_url)
-               .catch(() => {throw new Error(`Module at ${module_url} failed to load`)})
   
   var loading_progress = document.getElementById('loadingprogress')
   loading_progress.replaceChildren(`${Math.round(new_progress * 100)}%`)
