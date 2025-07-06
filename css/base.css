@@ -107,6 +107,7 @@
   }
   .accessiblyhidden {
     position: absolute;
+    scale: 0.1;
     /*top: calc(-infinity);
     opacity: 0;*/
   }
@@ -214,6 +215,7 @@
     }
     background-color: var(--button-current-bg-color);
     color: var(--button-current-border-color);
+    /* Labels aren't enabled, but they aren't disabled either */
     &:not(:disabled) {
       &:focus-visible, &:focus-within, &:hover, &:active {
         /* Swap the colors when focused or hovered */
