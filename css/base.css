@@ -107,8 +107,8 @@
   }
   .accessiblyhidden {
     position: absolute;
-    /*top: calc(-infinity);*/
-    opacity: 0;
+    /*top: calc(-infinity);
+    opacity: 0;*/
   }
   p {
     text-align: left;
