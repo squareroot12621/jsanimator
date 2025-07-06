@@ -42,6 +42,7 @@ async function load_modules() {
   var modules_to_import = [
     ['Mousetrap', 'https://cdn.jsdelivr.net/gh/ccampbell/mousetrap/mousetrap.min.js'],
     ['FFmpeg', 'https://cdn.jsdelivr.net/npm/ffmpeg.js/ffmpeg-worker-mp4.js'],
+    ['JSZip', 'https://cdn.jsdelivr.net/gh/Stuk/jszip/jszip.min.js'],
   ]
   var imported_modules = {}
   for (var [module_index, [module_name, module_url]] of modules_to_import.entries()) {
