@@ -14,19 +14,23 @@ function create_main_menu() {
   )
 
   var open_button = create_element(
-    'input',
-    'Open',
+    'button', 'Open', {class: 'narrowbutton largebutton'}
+  )
+  var open_input = create_element(
+    'input', 'Open',
     {type: 'file',
      id: 'openbutton',
      name: 'open-file',
-     class: 'button narrowbutton largebutton',
+     accept: '.anj',
+     class: 'accessiblyhidden',
     }
   )
   var open_description = create_element(
     'div', 'Continue a previous project', {class: 'buttondescription'}
   )
   var open_wrapper = create_element(
-    'div', [open_button, open_description], {class: 'menubuttonwrapper'}
+    'div', [open_button, open_input, open_description],
+    {class: 'menubuttonwrapper'}
   )
 
   var settings_button = create_element(
