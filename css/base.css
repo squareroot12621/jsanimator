@@ -205,9 +205,11 @@
     cursor: pointer;
     &.narrowbutton {
       min-width: calc(7rem * var(--button-size-modifier));
+      box-sizing: border-box;
     }
     &.widebutton {
       min-width: calc(9rem * var(--button-size-modifier));
+      box-sizing: border-box;
     }
 
     --button-current-bg-color: var(--button-neutral-bg-color);
