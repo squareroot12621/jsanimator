@@ -214,7 +214,7 @@
     }
     background-color: var(--button-current-bg-color);
     color: var(--button-current-border-color);
-    &:enabled {
+    &:not(:disabled) {
       &:focus-visible, &:focus-within, &:hover, &:active {
         /* Swap the colors when focused or hovered */
         background-color: var(--button-current-border-color);
