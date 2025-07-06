@@ -105,6 +105,11 @@
   * {
     font-family: var(--body-font);
   }
+  .accessiblyhidden {
+    position: absolute;
+    top: calc(-infinity);
+    opacity: 0;
+  }
   p {
     text-align: left;
     margin-top: 0rem;
