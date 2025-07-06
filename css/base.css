@@ -1,3 +1,5 @@
+@import './other_screens.css'
+
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -241,75 +243,4 @@
       cursor: not-allowed;
     }
   }
-
-  /* Non-functioning JavaScript */
-  #scripterror {
-    height: 100%;
-    align-content: center;
-    animation-name: error-fade-in;
-    animation-duration: 0.6s;
-    p {
-      text-align: center;
-    }
-  }
-  #errorinfo {
-    font-size: var(--text-size-small);
-    font-family: monospace;
-    line-height: 1.1;
-    overflow-wrap: break-word;
-    text-wrap: wrap;
-    text-align: left;
-  }
-
-  /* Loading screen */
-  #loadingcontainer {
-    margin-top: auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  #loadingtext, #loadingprogress {
-    font-size: calc(1.5 * var(--text-size));
-  }
-  #loadinginfo {
-    width: 100%;
-  }
-  .loadingdot {
-    position: relative;
-    animation-name: loading-dots;
-    animation-duration: 1.8s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-  }
-  #loadingdot1 {
-    animation-delay: -0.8s;
-  }
-  #loadingdot2 {
-    animation-delay: -0.4s;
-  }
-  #loadingdot3 {
-    animation-delay: 0s;
-  }
-}
-
-/* Menu screen */
-#menubuttongroup {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-inline: auto;
-  box-sizing: border-box;
-  height: 100%;
-  /* Make buttons more centered according to the entire screen */
-  padding-bottom: 4rem;
-}
-.menubuttonwrapper {
-  display: flex;
-  justify-content: start;
-}
-.buttondescription {
-  text-align: left;
-  margin-left: 1rem;
-  align-content: center;
-  color: var(--text-color-note);
 }
