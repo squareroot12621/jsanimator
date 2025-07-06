@@ -14,7 +14,10 @@ function create_main_menu() {
   )
 
   var open_button = create_element(
-    'button', 'Open', {class: 'narrowbutton largebutton'}
+    'label', 'Open',
+    {for: 'openbutton', 
+     class: 'button narrowbutton largebutton',
+    }
   )
   var open_input = create_element(
     'input', 'Open',
