@@ -13,12 +13,6 @@ function create_main_menu() {
     'div', [new_button, new_description], {class: 'menubuttonwrapper'}
   )
 
-  var open_button = create_element(
-    'label', 'Open',
-    {for: 'openbutton', 
-     class: 'button narrowbutton largebutton',
-    }
-  )
   var open_input = create_element(
     'input', 'Open',
     {type: 'file',
@@ -28,11 +22,18 @@ function create_main_menu() {
      class: 'accessiblyhidden',
     }
   )
+  var open_button = create_element(
+    'label',
+    ['Open', open_input],
+    {for: 'openbutton', 
+     class: 'button narrowbutton largebutton',
+    }
+  )
   var open_description = create_element(
     'div', 'Continue a previous project', {class: 'buttondescription'}
   )
   var open_wrapper = create_element(
-    'div', [open_button, open_input, open_description],
+    'div', [open_button, open_description],
     {class: 'menubuttonwrapper'}
   )
 
