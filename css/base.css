@@ -107,7 +107,7 @@
   }
   .accessiblyhidden {
     position: absolute;
-    top: calc(-infinity);
+    /*top: calc(-infinity);*/
     opacity: 0;
   }
   p {
