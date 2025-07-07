@@ -1,5 +1,5 @@
 import {globals} from './globals.js'
-import {create_element, update_root, unzip} from './utilities.js'
+import {create_element, update_root} from './utilities.js'
 
 function create_main_menu() {
   var title = create_element('h1', 'JS Animator')
