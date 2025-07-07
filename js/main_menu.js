@@ -1,3 +1,5 @@
+import {create_editing_screen} from './editing.js'
+
 import {globals} from './globals.js'
 import {create_element, update_root} from './utilities.js'
 
@@ -60,7 +62,8 @@ function create_main_menu() {
 
   open_input.onchange = function () {
     open_input.onchange = function () {}
-    unzip(open_input.files[0])
+    await unzip(open_input.files[0])
+    create_editing_screen()
   }
 }
 
@@ -75,7 +78,6 @@ function unzip(file) {
     })
   })
   globals.currentFile = directory
-  console.log(globals.currentFile)
 }
 
 export {create_main_menu}
