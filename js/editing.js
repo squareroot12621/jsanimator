@@ -7,6 +7,20 @@ function create_editing_screen() {
   var title = create_element('h1', globals.current_file['Test1 - Copy/svgs/rectangle.svg'].slice(0, 50))
 
   update_root(title)
+
+  /* Export zip file with name
+  
+  zip.generateAsync({
+    type: "base64"
+  }).then(function(content) {
+    var link = document.createElement('a');
+    link.href = "data:application/zip;base64," + content;
+    link.download = "your-file-name.zip";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+  */
 }
 
 export {create_editing_screen}
