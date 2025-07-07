@@ -40,15 +40,23 @@ async function load_module(module_name, module_url, new_progress) {
 
 async function load_modules() {
   var modules_to_import = [
-    ['Mousetrap', 'https://cdn.jsdelivr.net/gh/ccampbell/mousetrap/mousetrap.js'],
-    ['FFmpeg', 'https://cdn.jsdelivr.net/npm/ffmpeg.js/ffmpeg-worker-mp4.js'],
-    ['JSZip', 'https://cdn.jsdelivr.net/gh/Stuk/jszip/dist/jszip.js'],
+    {name: 'Mousetrap',
+     add_to_globals: false,
+     url: 'https://cdn.jsdelivr.net/gh/ccampbell/mousetrap/mousetrap.js'},
+    {name: 'FFmpeg',
+     add_to_globals: true,
+     url: 'https://cdn.jsdelivr.net/npm/ffmpeg.js/ffmpeg-worker-mp4.js'},
+    {name: 'JSZip',
+     add_to_globals: false,
+     url: 'https://cdn.jsdelivr.net/gh/Stuk/jszip/dist/jszip.js'}
   ]
   var imported_modules = {}
-  for (var [module_index, [module_name, module_url]] of modules_to_import.entries()) {
+  for (var [module_index, module] of modules_to_import.entries()) {
     var progress = (module_index + 1) / modules_to_import.length
-    var module = await load_module(module_name, module_url, progress)
-    imported_modules[module_name] = module
+    var imported_module = await load_module(module.name, module.url, progress)
+    if (module.add_to_globals) {
+      imported_modules[module_name] = imported_module
+    }
   }
   return imported_modules
 }
