@@ -62,7 +62,7 @@ function create_main_menu() {
   // TODO: Separate into other function?
   open_input.onchange = function () {
     open_input.onchange = function () {}
-    input.files[0].arrayBuffer().then(function (arrayBuffer) {
+    open_input.files[0].arrayBuffer().then(function (arrayBuffer) {
       console.log(new TextDecoder().decode(arrayBuffer))
     })
   }
