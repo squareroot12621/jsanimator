@@ -24,5 +24,3 @@ To use JS Animator in your own website, place this code in your HTML:
 ```
 It's recommended to put the `<script>` at the end of the `<body>` of your website
 so that the rest of the website can load first.
-
-Credit is recommended, but not required.
