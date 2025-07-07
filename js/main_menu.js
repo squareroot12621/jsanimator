@@ -78,6 +78,7 @@ function unzip(file) {
       })
     })
     globals.currentFile = directory
+    console.log(globals.currentFile)
   })
 }
 
