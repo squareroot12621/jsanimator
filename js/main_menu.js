@@ -63,6 +63,8 @@ function create_main_menu() {
   open_input.onchange = async function () {
     open_input.onchange = function () {}
     await unzip(open_input.files[0])
+    console.log('current_file #2:')
+    console.log(globals.current_file)
     create_editing_screen()
   }
 }
