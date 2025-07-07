@@ -78,8 +78,10 @@ function unzip(file) {
     })
   }).then(function () {
     globals.current_file = directory
-    console.log(`directory: ${directory}`)
-    console.log(`current_file: ${globals.current_file}`)
+    console.log('directory:')
+    console.log(directory)
+    console.log('current_file:')
+    console.log(globals.current_file)
   })
 }
 
