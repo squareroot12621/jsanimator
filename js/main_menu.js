@@ -56,6 +56,8 @@ function create_main_menu() {
   )
   
   update_root(title, button_group)
+
+  console.log(modules)
 }
 
 export {create_main_menu}
