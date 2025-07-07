@@ -62,8 +62,7 @@ function create_main_menu() {
 
   open_input.onchange = function () {
     open_input.onchange = function () {}
-    await unzip(open_input.files[0])
-    create_editing_screen()
+    unzip(open_input.files[0]).then(create_editing_screen)
   }
 }
 
