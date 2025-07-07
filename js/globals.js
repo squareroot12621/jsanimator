@@ -1,4 +1,6 @@
-var modules = {}
-var currentFile = null
+var globals = {
+  modules: {},
+  currentFile: null,
+}
 
-export {modules, currentFile}
+export {globals}
