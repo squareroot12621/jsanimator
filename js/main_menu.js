@@ -64,16 +64,18 @@ function create_main_menu() {
   }
 }
 
-export {create_main_menu}
-
-
 function unzip(file) {
+  var directory = {}
   JSZip.loadAsync(file).then(function (zip) {
-    console.log(zip.files)
-    Object.keys(zip.files).forEach(function (filename) {
-      zip.files[filename].async('string').then(function (fileData) {
-        console.log(fileData)
+    var files = zip.files
+    Object.keys(files).forEach(function (filename) {
+      files[filename].async('string').then(function (fileData) {
+        directory[filename] = fileData
       })
     })
   })
+  globals.currentFile = directory
+  console.log(globals.currentFile)
 }
+
+export {create_main_menu}
