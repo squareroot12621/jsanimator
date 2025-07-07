@@ -3,7 +3,7 @@ import {create_editing_screen} from './editing.js'
 import {globals} from './globals.js'
 import {create_element, update_root} from './utilities.js'
 
-async function create_main_menu() {
+function create_main_menu() {
   var title = create_element('h1', 'JS Animator')
 
   var new_button = create_element(
@@ -60,7 +60,7 @@ async function create_main_menu() {
   
   update_root(title, button_group)
 
-  open_input.onchange = function () {
+  open_input.onchange = async function () {
     open_input.onchange = function () {}
     await unzip(open_input.files[0])
     create_editing_screen()
