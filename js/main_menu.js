@@ -1,4 +1,4 @@
-import {modules} from './globals.js'
+import {globals} from './globals.js'
 import {create_element, update_root} from './utilities.js'
 
 function create_main_menu() {
@@ -58,7 +58,7 @@ function create_main_menu() {
   
   update_root(title, button_group)
 
-  console.log(modules)
+  console.log(globals.modules)
 }
 
 export {create_main_menu}
