@@ -74,7 +74,7 @@ async function unzip(file) {
     console.log(`directory #-1: ${JSON.stringify(directory)}`)
     var files = zip.files
     await Object.keys(files).forEach(async function (filename) {
-      files[filename].async('string').then(function (fileData) {
+      await files[filename].async('string').then(function (fileData) {
         directory[filename] = fileData
       })
     })
