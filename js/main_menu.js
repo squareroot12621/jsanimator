@@ -1,5 +1,5 @@
 import {globals} from './globals.js'
-import {create_element, update_root} from './utilities.js'
+import {create_element, update_root, unzip} from './utilities.js'
 
 function create_main_menu() {
   var title = create_element('h1', 'JS Animator')
@@ -58,15 +58,21 @@ function create_main_menu() {
   
   update_root(title, button_group)
 
-  // Also add JSZip (https://github.com/Stuk/jszip/blob/main/README.markdown) into here
-  // Use https://stackoverflow.com/a/39964957 to help with unzipping
-  // TODO: Separate into other function?
   open_input.onchange = function () {
     open_input.onchange = function () {}
-    open_input.files[0].arrayBuffer().then(function (arrayBuffer) {
-      console.log(new TextDecoder().decode(arrayBuffer))
-    })
+    unzip(open_input.files[0])
   }
 }
 
 export {create_main_menu}
+
+
+function unzip(file) {
+  globals.JSZip.loadAsync(file).then(function (zip) {
+    Object.keys(zip.files).forEach(function (filename) {
+      zip.files[filename].async('string').then(function (fileData) {
+        console.log(fileData)
+      })
+    })
+  })
+}
