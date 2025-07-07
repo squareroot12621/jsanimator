@@ -58,7 +58,14 @@ function create_main_menu() {
   
   update_root(title, button_group)
 
-  console.log(globals.modules)
+  // Also add JSZip (https://github.com/Stuk/jszip/blob/main/README.markdown) into here
+  // TODO: Separate into other function?
+  open_input.onchange = function () {
+    open_input.onchange = function () {}
+    input.files[0].arrayBuffer().then(function (arrayBuffer) {
+      console.log(new TextDecoder().decode(arrayBuffer))
+    })
+  }
 }
 
 export {create_main_menu}
