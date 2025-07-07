@@ -70,10 +70,10 @@ function create_main_menu() {
 
 async function unzip(file) {
   var directory = {}
-  JSZip.loadAsync(file).then(function (zip) {
+  JSZip.loadAsync(file).then(async function (zip) {
     console.log(`directory #-1: ${JSON.stringify(directory)}`)
     var files = zip.files
-    Object.keys(files).forEach(function (filename) {
+    Object.keys(files).forEach(async function (filename) {
       files[filename].async('string').then(function (fileData) {
         directory[filename] = fileData
       })
