@@ -59,6 +59,7 @@ function create_main_menu() {
   update_root(title, button_group)
 
   // Also add JSZip (https://github.com/Stuk/jszip/blob/main/README.markdown) into here
+  // Use https://stackoverflow.com/a/39964957 to help with unzipping
   // TODO: Separate into other function?
   open_input.onchange = function () {
     open_input.onchange = function () {}
