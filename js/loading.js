@@ -47,8 +47,10 @@ async function load_modules() {
   var imported_modules = {}
   for (var [module_index, [module_name, module_url]] of modules_to_import.entries()) {
     var progress = (module_index + 1) / modules_to_import.length
-    await load_module(module_name, module_url, progress)
+    var module = await load_module(module_name, module_url, progress)
+    imported_modules[module_name] = module
   }
+  return imported_modules
 }
 
 export {create_loading_screen, load_modules}
