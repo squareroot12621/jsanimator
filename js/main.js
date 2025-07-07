@@ -1,12 +1,13 @@
 import {create_loading_screen, load_modules} from './loading.js'
 import {create_main_menu} from './main_menu.js'
 
-import {create_error_screen} from './error.js'
+import {modules} from './globals.js'
 import {once} from './utilities.js'
+import {create_error_screen} from './error.js'
 
 async function initialize_js_animator() {
   create_loading_screen()
-  var modules = await load_modules()
+  modules = await load_modules()
   create_main_menu()
 }
 
