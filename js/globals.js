@@ -1,6 +1,6 @@
 var globals = {
   modules: {},
-  currentFile: null,
+  current_file: {},
 }
 
 export {globals}
