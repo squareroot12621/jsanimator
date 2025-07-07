@@ -63,8 +63,7 @@ function create_main_menu() {
   open_input.onchange = async function () {
     open_input.onchange = function () {}
     await unzip(open_input.files[0])
-    console.log('current_file #2:')
-    console.log(globals.current_file)
+    console.log(`current_file #2: ${JSON.stringify(globals.current_file)}`)
     create_editing_screen()
   }
 }
@@ -80,10 +79,8 @@ async function unzip(file) {
     })
   }).then(function () {
     globals.current_file = directory
-    console.log('directory:')
-    console.log(directory)
-    console.log('current_file:')
-    console.log(globals.current_file)
+    console.log(`directory #1: ${JSON.stringify(directory)}`)
+    console.log(`current_file #1: ${JSON.stringify(globals.current_file)}`)
   })
 }
 
