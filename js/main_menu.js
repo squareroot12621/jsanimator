@@ -68,7 +68,7 @@ function create_main_menu() {
   }
 }
 
-async function unzip(file) {
+function unzip(file) {
   var directory = {}
   JSZip.loadAsync(file).then(function (zip) {
     var files = zip.files
@@ -79,6 +79,8 @@ async function unzip(file) {
     })
   })
   globals.currentFile = directory
+
+  return Promise.resolve(undefined)
 }
 
 export {create_main_menu}
