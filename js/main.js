@@ -6,9 +6,8 @@ import {once} from './utilities.js'
 
 async function initialize_js_animator() {
   create_loading_screen()
-  var x = await load_modules()
+  var modules = await load_modules()
   create_main_menu()
-  // TODO: setInterval?
 }
 
 var create_error_screen_wrapper = once(create_error_screen)
