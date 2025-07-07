@@ -55,7 +55,7 @@ async function load_modules() {
     var progress = (module_index + 1) / modules_to_import.length
     var imported_module = await load_module(module.name, module.url, progress)
     if (module.add_to_globals) {
-      imported_modules[module_name] = imported_module
+      imported_modules[module.name] = imported_module
     }
   }
   return imported_modules
