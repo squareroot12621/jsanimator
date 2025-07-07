@@ -69,7 +69,7 @@ function create_main_menu() {
   }
 }
 
-function unzip(file) {
+async function unzip(file) {
   var directory = {}
   JSZip.loadAsync(file).then(function (zip) {
     var files = zip.files
