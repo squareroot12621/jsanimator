@@ -69,18 +69,20 @@ function create_main_menu() {
 }
 
 function unzip(file) {
-  var directory = {}
-  JSZip.loadAsync(file).then(function (zip) {
-    var files = zip.files
-    Object.keys(files).forEach(function (filename) {
-      files[filename].async('string').then(function (fileData) {
-        directory[filename] = fileData
+  return new Promise(
+    JSZip.loadAsync(file)
+      .then(function (zip) {
+        var files = zip.files
+        var directory = {}
+        Object.keys(files).forEach(function (filename) {
+          files[filename].async('string').then(function (fileData) {
+            directory[filename] = fileData
+          })
+        })
+        globals.currentFile = directory
       })
-    })
-  })
-  globals.currentFile = directory
-
-  return Promise.resolve(undefined)
+      .then(resolve(0))
+  )
 }
 
 export {create_main_menu}
