@@ -68,7 +68,7 @@ export {create_main_menu}
 
 
 function unzip(file) {
-  globals.JSZip.loadAsync(file).then(function (zip) {
+  JSZip.loadAsync(file).then(function (zip) {
     Object.keys(zip.files).forEach(function (filename) {
       zip.files[filename].async('string').then(function (fileData) {
         console.log(fileData)
