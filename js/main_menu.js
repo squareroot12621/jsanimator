@@ -61,6 +61,10 @@ function create_main_menu() {
   update_root(title, button_group)
 
   open_input.onchange = async function () {
+    // If the user cancelled, don't do anything
+    if (!open_input.files) {
+      return undefined;
+    }
     var file = open_input.files[0]
     if (file.name.endsWith('.anj')) {
       var zip_error = await unzip(file)
