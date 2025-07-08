@@ -1,12 +1,13 @@
 #jsanimator {
   #editingcontainer {
     margin: -1rem;
+    height: 100%;
   }
   
   #navbar {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 0.25rem;
+    margin: 0rem 0.25rem 0.25rem;
     background-color: var(--bg-color);
   }
   .navbarbutton {
