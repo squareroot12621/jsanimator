@@ -61,9 +61,13 @@ function create_main_menu() {
   update_root(title, button_group)
 
   open_input.onchange = async function () {
-    open_input.onchange = function () {}
-    await unzip(open_input.files[0])
-    create_editing_screen()
+    var file = open_input.files[0]
+    if (file) {
+      console.log(file)
+      open_input.onchange = function () {}
+      await unzip(file)
+      create_editing_screen()
+    }
   }
 }
 
