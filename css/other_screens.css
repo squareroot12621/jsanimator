@@ -89,8 +89,9 @@
   .menubuttonwrapper {
     display: flex;
     justify-content: start;
+    margin-left: 1rem;
     &:last-child {
-      margin-inline: 1rem;
+      margin-right: 1rem;
     }
   }
   .buttondescription {
