@@ -68,19 +68,22 @@ function create_main_menu() {
   }
 }
 
-async function unzip(file) {
-  JSZip.loadAsync(file).then(async function (zip) {
-    console.log(`zip.files: ${JSON.stringify(zip.files, null, 2)}`)
-    // Set globals.current_file
-    globals.current_file = await Object.fromEntries(
-      Object.entries(zip.files).map(async function ([key, val]) {
-        var unzipped = await val.async('string')
-        console.log(unzipped)
-        return [key, unzipped]
-      })
-    )
-  }).then(function () {
-    console.log(`current_file #1: ${JSON.stringify(globals.current_file)}`)
+function unzip(file) {
+  return new Promise((resolve, reject) => {
+    JSZip.loadAsync(file).then(async function (zip) {
+      console.log(`zip.files: ${JSON.stringify(zip.files, null, 2)}`)
+      // Set globals.current_file
+      globals.current_file = await Object.fromEntries(
+        Object.entries(zip.files).map(async function ([key, val]) {
+          var unzipped = await val.async('string')
+          console.log(unzipped)
+          return [key, unzipped]
+        })
+      )
+    }).then(function () {
+      console.log(`current_file #1: ${JSON.stringify(globals.current_file)}`)
+      resolve(null)
+    })
   })
 }
 
