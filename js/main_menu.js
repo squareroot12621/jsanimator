@@ -83,6 +83,7 @@ function unzip(file) {
         })
       ))
     })
+    console.log(`-- ORDERING TEST 2.9\ndirectory: ${JSON.stringify(directory).slice(0, 100)}`)
     return directory
   }).then((directory) => {
     globals.current_file = directory
