@@ -74,8 +74,9 @@ async function unzip(file) {
     // Set globals.current_file
     var directory = Object.fromEntries(
       Object.entries(zip.files).map(function ([key, val]) {
-        console.log(val.async('string'))
-        return [key, val.async('string')]
+        var unzipped = await val.async('string')
+        console.log(unzipped)
+        return [key, unzipped]
       })
     )
     console.log(`directory: ${JSON.stringify(directory)}`)
