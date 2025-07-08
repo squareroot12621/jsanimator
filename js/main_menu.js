@@ -63,9 +63,9 @@ function create_main_menu() {
   open_input.onchange = async function () {
     var file = open_input.files[0]
     if (file.name.endsWith('.anj')) {
-      open_input.onchange = () => {}
       var zip_error = await unzip(file)
       if (!zip_error) {
+        open_input.onchange = () => {}
         create_editing_screen()
       } else {
         show_load_error(zip_error)
