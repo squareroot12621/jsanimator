@@ -84,7 +84,6 @@ function unzip(file) {
     resolve(null)
   }).then(() => {
     console.log(`-- ORDERING TEST 3\ncurrent_file: ${JSON.stringify(globals.current_file).slice(0, 100)}`)
-    resolve(null)
   })
 }
 
