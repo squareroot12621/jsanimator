@@ -71,20 +71,20 @@ function create_main_menu() {
 function unzip(file) {
   return new Promise(async (resolve, reject) => {
     console.log('-- ORDERING TEST 1')
-    var zip = await JSZip.loadAsync(file)
+    resolve(JSZip.loadAsync(file))
+  }).then((zip) => {
     console.log(`-- ORDERING TEST 2\nzip.files: ${JSON.stringify(zip.files).slice(0, 100)}`)
-    // Set globals.current_file
-    globals.current_file = new Promise((resolve, reject) => {
-      Object.fromEntries(
-        Object.entries(zip.files).map(async function ([key, val]) {
-          var unzipped = await val.async('string')
-          console.log(`-- ORDERING TEST 2.5\nunzipped: ${unzipped.slice(0, 100)}`)
-          return [key, unzipped]
-        })
-      )
-    })
-  }).then(() => {
+    return Object.fromEntries(
+      Object.entries(zip.files).map(async function ([key, val]) {
+        var unzipped = await val.async('string')
+        console.log(`-- ORDERING TEST 2.5\nunzipped: ${unzipped.slice(0, 100)}`)
+        return [key, unzipped]
+      })
+    )
+  }).then((directory) => {
+    globals.current_file = directory
     console.log(`-- ORDERING TEST 3\ncurrent_file: ${JSON.stringify(globals.current_file).slice(0, 100)}`)
+    return null
   })
 }
 
