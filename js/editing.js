@@ -8,7 +8,9 @@ function create_editing_screen() {
   )
   var nav_bar = create_element('nav', nav_bar_elements, {id: 'navbar'})
 
-  update_root(nav_bar)
+  var editing_container = create_element('div', nav_bar, {id: 'editingcontainer'})
+
+  update_root(editing_container)
 
   /* Export zip file with name
   
