@@ -76,13 +76,15 @@ async function unzip(file) {
   })
   return new Promise(async (resolve, reject) => {
     console.log(`-- ORDERING TEST 2\nzip.files: ${JSON.stringify(zip.files).slice(0, 100)}`)
-    var directory = await Object.fromEntries(
-      Object.entries(zip.files).map(async function ([key, val]) {
-        var unzipped = await val.async('string')
-        console.log(`-- ORDERING TEST 2.5\nunzipped: ${unzipped.slice(0, 100)}`)
-        return [key, unzipped]
-      })
-    )
+    var directory = new Promise((resolve, reject) => {
+      resolve(Object.fromEntries(
+        Object.entries(zip.files).map(async function ([key, val]) {
+          var unzipped = await val.async('string')
+          console.log(`-- ORDERING TEST 2.5\nunzipped: ${unzipped.slice(0, 100)}`)
+          return [key, unzipped]
+        })
+      ))
+    }).then((dir) => dir)
     console.log(`-- ORDERING TEST 2.9\ndirectory: ${JSON.stringify(directory).slice(0, 100)}`)
     resolve(directory)
   }).then((directory) => {
