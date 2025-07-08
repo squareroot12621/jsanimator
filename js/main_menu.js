@@ -72,7 +72,7 @@ async function unzip(file) {
   JSZip.loadAsync(file).then(async function (zip) {
     console.log(`zip.files: ${JSON.stringify(zip.files, null, 2)}`)
     // Set globals.current_file
-    var directory = await Object.fromEntries(
+    globals.current_file = await Object.fromEntries(
       Object.entries(zip.files).map(async function ([key, val]) {
         var unzipped = await val.async('string')
         console.log(unzipped)
