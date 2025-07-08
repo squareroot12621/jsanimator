@@ -76,7 +76,7 @@ async function unzip(file) {
         files[filename].async('string').then(function (file_data) {
           console.log(`filename #0.5: ${JSON.stringify(filename)}`)
           console.log(`file_data #0.5: ${JSON.stringify(file_data)}`)
-          console.log(`current_file #0.5: ${JSON.stringify(globals.current_file)}`)
+          console.log(`obj #0.5: ${JSON.stringify(obj)}`)
           return Object.assign(obj, {filename: file_data})
         })
       },
