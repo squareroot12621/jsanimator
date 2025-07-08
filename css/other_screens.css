@@ -89,6 +89,11 @@
   .menubuttonwrapper {
     display: flex;
     justify-content: start;
+    /* HACK: Fixes a bug where causing an error in the file
+       would shift the buttons over by a few pixels.
+       Assumes that the description for the Open button
+       is never more than 1rem larger
+       than the second-largest description. */
     margin-left: 1rem;
     &:last-child {
       margin-right: 1rem;
