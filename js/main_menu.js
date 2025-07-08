@@ -76,9 +76,9 @@ async function unzip(file) {
   })
   function promises() {
     return Object.entries(zip.files).map(
-      ([key, val]) => new Promise((resolve, reject) => {
+      ([key, val]) => new Promise(async (resolve, reject) => {
         console.log(`-- ORDERING TEST 2.5\nkey: ${key}`)
-        resolve([key, val.async('string')])
+        resolve([key, await val.async('string')])
       })
     )
   }
