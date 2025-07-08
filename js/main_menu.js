@@ -77,7 +77,7 @@ function unzip(file) {
     globals.current_file = await Object.fromEntries(
       Object.entries(zip.files).map(async function ([key, val]) {
         var unzipped = await val.async('string')
-        console.log(`-- ORDERING TEST 1.5\nunzipped: ${unzipped.slice(0, 100)}`)
+        console.log(`-- ORDERING TEST 2.5\nunzipped: ${unzipped.slice(0, 100)}`)
         return [key, unzipped]
       })
     )
