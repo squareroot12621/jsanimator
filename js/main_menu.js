@@ -107,14 +107,14 @@ function show_load_error(error) {
   var open_wrapper = document.getElementsByClassName('menubuttonwrapper')[1]
   var [open_button, open_description] = open_wrapper.children
   
-  var open_button_class = open_button.className
+  var open_description_class = open_description.className
   var open_description_text = open_description.textContent
-  open_button.className += ' warningbutton'
+  open_description.className += ' texterror'
   open_description.textContent = error
   
   open_button.onclick = () => {
     open_button.onclick = () => {}
-    open_button.className = open_button_class
+    open_description.className = open_description_class
     open_description.textContent = open_description_text
   }
 }
