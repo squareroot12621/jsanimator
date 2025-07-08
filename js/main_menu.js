@@ -71,7 +71,7 @@ function create_main_menu() {
 async function unzip(file) {
   await JSZip.loadAsync(file).then(async function (zip) {
     var files = zip.files
-    globals.current_file = await Object.keys(files).reduce(
+    var globals.current_file = await Object.keys(files).reduce(
       async function (obj, filename) {
         files[filename].async('string').then(function (file_data) {
           console.log(`obj #0.5: ${JSON.stringify(obj)}`)
