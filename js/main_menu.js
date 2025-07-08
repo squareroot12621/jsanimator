@@ -90,7 +90,7 @@ async function unzip(file) {
     .then((directory) => {
       console.log(`-- ORDERING TEST 2.9\ndirectory: ${JSON.stringify(directory).slice(0, 100)}`)
       globals.current_file = Object.fromEntries(directory)
-      console.log(`-- ORDERING TEST 3\ncurrent_file: ${JSON.stringify(globals.current_file).slice(0, 100)}`)
+      console.log(`-- ORDERING TEST 3\ncurrent_file: ${JSON.stringify(globals.current_file).slice(0, 300)}`)
       return null
     })
 }
