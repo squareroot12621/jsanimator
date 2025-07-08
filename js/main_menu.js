@@ -83,8 +83,9 @@ async function unzip(file) {
     )
   }
   console.log(`-- ORDERING TEST 2\nzip.files: ${JSON.stringify(zip.files).slice(0, 100)}`)
-  var p = promises()
+  var p = [...promises()]
   console.log(p)
+  console.log(p.length)
   return Promise.all(p)
     .then((directory) => {
       console.log(`-- ORDERING TEST 2.9\ndirectory: ${JSON.stringify(directory).slice(0, 100)}`)
