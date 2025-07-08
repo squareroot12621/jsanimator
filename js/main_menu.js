@@ -79,7 +79,7 @@ async function unzip(file) {
         return [key, unzipped]
       })
     )
-    console.log(`directory: ${JSON.stringify(directory)}`)
+  }).then(function () {
     console.log(`current_file #1: ${JSON.stringify(globals.current_file)}`)
   })
 }
