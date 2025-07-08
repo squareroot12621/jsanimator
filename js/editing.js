@@ -2,11 +2,13 @@ import {globals} from './globals.js'
 import {create_element, update_root} from './utilities.js'
 
 function create_editing_screen() {
-  console.log(`current_file #3: ${JSON.stringify(globals.current_file)}`)
-  console.log(`current_file keys #3: ${JSON.stringify(Object.keys(globals.current_file))}`)
-  var title = create_element('h1', globals.current_file['Test1 - Copy/svgs/rectangle.svg'].slice(0, 50))
+  var nav_bar_element_titles = ["File", "Edit", "Preview"]
+  var nav_bar_elements = nav_bar_element_titles.map(
+    (name) => create_element('div', name, {class: 'navbarbutton'})
+  )
+  var nav_bar = create_element('nav', nav_bar_elements, {id: 'navbar'})
 
-  update_root(title)
+  update_root(nav_bar)
 
   /* Export zip file with name
   
