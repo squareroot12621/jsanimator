@@ -82,11 +82,11 @@ function unzip(file) {
           console.log(unzipped)
           return [key, unzipped]
         })
-      )*/
+      )
     }).then(function () {
       console.log(`current_file #1: ${JSON.stringify(globals.current_file)}`)
       resolve(null)
-    })
+    })*/
   })
 }
 
