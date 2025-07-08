@@ -89,6 +89,9 @@
   .menubuttonwrapper {
     display: flex;
     justify-content: start;
+    &:last-child {
+      margin-inline: 1rem;
+    }
   }
   .buttondescription {
     text-align: left;
