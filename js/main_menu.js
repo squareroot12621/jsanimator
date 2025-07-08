@@ -62,19 +62,32 @@ function create_main_menu() {
 
   open_input.onchange = async function () {
     var file = open_input.files[0]
-    if (file) {
-      console.log(file)
-      open_input.onchange = function () {}
-      await unzip(file)
-      create_editing_screen()
+    if (file.name.endsWith('.anj')) {
+      open_input.onchange = () => {}
+      var zip_error = await unzip(file)
+      if (!zip_error) {
+        create_editing_screen()
+      } else {
+        show_load_error(zip_error)
+      }
+    } else {
+      show_load_error('Wrong filetype')
     }
   }
 }
 
 async function unzip(file) {
+  var error_code = false
+  
   var zip = await new Promise((resolve, reject) => {
     resolve(JSZip.loadAsync(file))
+  }).catch(() => {
+    error_code = 'Malformed .anj file'
   })
+  if (error_code) {
+    return error_code
+  }
+  
   function promises() {
     return Object.entries(zip.files).map(
       ([key, val]) => new Promise(async (resolve, reject) => {
@@ -82,9 +95,26 @@ async function unzip(file) {
       })
     )
   }
-  return Promise.all(promises()).then((directory) => {
+  Promise.all(promises()).then((directory) => {
     globals.current_file = Object.fromEntries(directory)
     return null
+  })
+  
+  return false
+}
+
+function show_load_error(error) {
+  var open_wrapper = document.getElementsByClassName('menubuttonwrapper')[1]
+  var [open_button, open_description] = open_wrapper.children
+  
+  var open_button_class = open_button.className
+  var open_description_text = open_description.textContent
+  open_button.className += ' warningbutton'
+  open_description.textContent = error
+  
+  open_button.onclick(() => {
+    open_button.className = open_button_class
+    open_description.textContent = open_description_text
   })
 }
 
