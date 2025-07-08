@@ -112,10 +112,11 @@ function show_load_error(error) {
   open_button.className += ' warningbutton'
   open_description.textContent = error
   
-  open_button.onclick(() => {
+  open_button.onclick = () => {
+    open_button.onclick = () => {}
     open_button.className = open_button_class
     open_description.textContent = open_description_text
-  })
+  }
 }
 
 export {create_main_menu}
