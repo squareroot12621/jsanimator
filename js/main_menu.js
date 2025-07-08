@@ -74,9 +74,9 @@ async function unzip(file) {
     resolve(JSZip.loadAsync(file))
     console.log('-- ORDERING TEST 1.5')
   })
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     console.log(`-- ORDERING TEST 2\nzip.files: ${JSON.stringify(zip.files).slice(0, 100)}`)
-    var directory = Object.fromEntries(
+    var directory = await Object.fromEntries(
       Object.entries(zip.files).map(async function ([key, val]) {
         var unzipped = await val.async('string')
         console.log(`-- ORDERING TEST 2.5\nunzipped: ${unzipped.slice(0, 100)}`)
