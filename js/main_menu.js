@@ -71,18 +71,17 @@ function create_main_menu() {
 async function unzip(file) {
   var directory = {}
   JSZip.loadAsync(file).then(async function (zip) {
-    console.log(`directory #-1: ${JSON.stringify(directory)}`)
-    var files = zip.files
-    await Object.keys(files).forEach(async function (filename) {
-      await files[filename].async('string').then(function (fileData) {
-        directory[filename] = fileData
-        console.log(`directory #-0.5: ${JSON.stringify(directory)}`)
-      })
-    })
     console.log(`directory #0: ${JSON.stringify(directory)}`)
-  }).then(function () {
-    globals.current_file = directory
-    console.log(`directory #1: ${JSON.stringify(directory)}`)
+    var files = zip.files
+    globals.current_file = await Object.keys(files).reduce(
+      function (obj, filename) {
+        files[filename].async('string').then(function (fileData) {
+          console.log(`current_file #0.5: ${JSON.stringify(globals.current_file)}`)
+          return Object.assign(obj, {filename: fileData})
+        })
+      },
+      {}
+    )
     console.log(`current_file #1: ${JSON.stringify(globals.current_file)}`)
   })
 }
