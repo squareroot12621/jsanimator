@@ -74,13 +74,16 @@ function unzip(file) {
     var zip = JSZip.loadAsync(file)
     console.log(`-- ORDERING TEST 2\nzip.files: ${JSON.stringify(zip.files).slice(0, 100)}`)
     // Set globals.current_file
-    globals.current_file = await Object.fromEntries(
-      Object.entries(zip.files).map(async function ([key, val]) {
-        var unzipped = await val.async('string')
-        console.log(`-- ORDERING TEST 2.5\nunzipped: ${unzipped.slice(0, 100)}`)
-        return [key, unzipped]
-      })
-    )
+    globals.current_file = new Promise((resolve, reject) => {
+      Object.fromEntries(
+        Object.entries(zip.files).map(async function ([key, val]) {
+          var unzipped = await val.async('string')
+          console.log(`-- ORDERING TEST 2.5\nunzipped: ${unzipped.slice(0, 100)}`)
+          return [key, unzipped]
+        })
+      )
+      resolve(null)
+    })
     console.log(`-- ORDERING TEST 2.9\ncurrent_file: ${JSON.stringify(globals.current_file).slice(0, 100)}`)
     resolve(null)
   }).then(() => {
