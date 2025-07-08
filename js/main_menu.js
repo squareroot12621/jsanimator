@@ -70,7 +70,10 @@ function create_main_menu() {
 
 function unzip(file) {
   return new Promise((resolve, reject) => {
-    JSZip.loadAsync(file).then(async function (zip) {
+    var loaded_file = JSZip.loadAsync(file)
+    console.log(loaded_file)
+    console.log('END OF TEST')
+      /*.then(async function (zip) {
       console.log(`zip.files: ${JSON.stringify(zip.files, null, 2)}`)
       // Set globals.current_file
       globals.current_file = await Object.fromEntries(
@@ -79,7 +82,7 @@ function unzip(file) {
           console.log(unzipped)
           return [key, unzipped]
         })
-      )
+      )*/
     }).then(function () {
       console.log(`current_file #1: ${JSON.stringify(globals.current_file)}`)
       resolve(null)
