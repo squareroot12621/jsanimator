@@ -69,7 +69,7 @@ function create_main_menu() {
 }
 
 function unzip(file) {
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     console.log('-- ORDERING TEST 1')
     var zip = await JSZip.loadAsync(file)
     console.log(`-- ORDERING TEST 2\nzip.files: ${JSON.stringify(zip.files).slice(0, 100)}`)
