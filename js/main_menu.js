@@ -75,9 +75,11 @@ async function unzip(file) {
     var files = zip.files
     globals.current_file = await Object.keys(files).reduce(
       function (obj, filename) {
-        files[filename].async('string').then(function (fileData) {
+        files[filename].async('string').then(function (file_data) {
+          console.log(`filename #0.5: ${JSON.stringify(filename)}`)
+          console.log(`file_data #0.5: ${JSON.stringify(file_data)}`)
           console.log(`current_file #0.5: ${JSON.stringify(globals.current_file)}`)
-          return Object.assign(obj, {filename: fileData})
+          return Object.assign(obj, {filename: file_data})
         })
       },
       {}
