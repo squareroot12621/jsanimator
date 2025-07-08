@@ -70,23 +70,8 @@ function create_main_menu() {
 
 async function unzip(file) {
   await JSZip.loadAsync(file).then(async function (zip) {
-    Object.assign(
-      globals,
-      {
-        current_file:
-        await Object.keys(zip.files).reduce(
-          async function (obj, filename) {
-            zip.files[filename].async('string').then(function (file_data) {
-              console.log(`obj #0.5: ${JSON.stringify(obj)}`)
-              console.log(`filename #0.5: ${JSON.stringify(filename)}`)
-              console.log(`file_data #0.5: ${JSON.stringify(file_data)}`)
-              return Object.assign(obj, {filename: file_data})
-            })
-          },
-          {}
-        )
-      }
-    )
+    console.log(zip)
+    // set globals.current_file
     console.log(`current_file #1: ${JSON.stringify(globals.current_file)}`)
   })
 }
