@@ -76,10 +76,10 @@ async function unzip(file) {
   })
   function promises() {
     return Object.entries(zip.files).map(
-      ([key, val]) => {new Promise((resolve, reject) => {
+      ([key, val]) => new Promise((resolve, reject) => {
         console.log(`-- ORDERING TEST 2.5\nkey: ${key}`)
         resolve([key, val.async('string')])
-      })}
+      })
     )
   }
   console.log(`-- ORDERING TEST 2\nzip.files: ${JSON.stringify(zip.files).slice(0, 100)}`)
