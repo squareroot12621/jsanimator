@@ -63,30 +63,26 @@ function create_main_menu() {
   open_input.onchange = async function () {
     open_input.onchange = function () {}
     await unzip(open_input.files[0])
-    console.log(`current_file #2: ${JSON.stringify(globals.current_file)}`)
+    console.log(`-- ORDERING TEST 4\ncurrent_file #2: ${JSON.stringify(globals.current_file)}`)
     create_editing_screen()
   }
 }
 
 function unzip(file) {
   return new Promise((resolve, reject) => {
-    var loaded_file = JSZip.loadAsync(file)
-    console.log(loaded_file)
-    console.log('END OF TEST')
-      /*.then(async function (zip) {
-      console.log(`zip.files: ${JSON.stringify(zip.files, null, 2)}`)
-      // Set globals.current_file
-      globals.current_file = await Object.fromEntries(
-        Object.entries(zip.files).map(async function ([key, val]) {
-          var unzipped = await val.async('string')
-          console.log(unzipped)
-          return [key, unzipped]
-        })
-      )
-    }).then(function () {
-      console.log(`current_file #1: ${JSON.stringify(globals.current_file)}`)
-      resolve(null)
-    })*/
+    console.log('-- ORDERING TEST 1')
+    var zip = await JSZip.loadAsync(file)
+    console.log(`-- ORDERING TEST 2\nzip.files: ${JSON.stringify(zip.files).slice(0, 100)}`)
+    // Set globals.current_file
+    globals.current_file = await Object.fromEntries(
+      Object.entries(zip.files).map(async function ([key, val]) {
+        var unzipped = await val.async('string')
+        console.log(unzipped)
+        return [key, unzipped]
+      })
+    )
+    console.log(`-- ORDERING TEST 3\ncurrent_file: ${JSON.stringify(globals.current_file).slice(0, 100)}`)
+    resolve(null)
   })
 }
 
