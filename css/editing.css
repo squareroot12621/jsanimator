@@ -43,6 +43,8 @@
       color-mix(in srgb, var(--text-color-note), #00000000 50%) calc(100% - 0.25rem),
       #00000000 100%
     );
+    position: relative;
+    z-index: 50;
   }
 
   #middlesection {
@@ -80,5 +82,7 @@
       color-mix(in srgb, var(--text-color-note), #00000000 50%) calc(100% - 0.25rem),
       #00000000 100%
     );
+    position: relative;
+    z-index: 50;
   }
 }
