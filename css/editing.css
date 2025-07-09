@@ -8,13 +8,15 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0rem 0.25rem 0.25rem;
-    margin: -0.25rem;
+    margin-bottom: -0.25rem;
     background: linear-gradient(
       var(--bg-color) 0%,
       var(--bg-color) calc(100% - 0.25rem),
       color-mix(in srgb, var(--text-color-note), #00000000 50%) calc(100% - 0.25rem),
       #00000000 100%
     );
+    position: relative;
+    z-index: 100;
   }
   .navbarbutton {
     margin: 0.25rem 0.125rem;
@@ -31,7 +33,14 @@
   #toolbar {
     width: 3rem;
     height: 100%;
-    background-color: var(--bg-color);
+    padding-right: 0.25rem;
+    background: linear-gradient(
+      to right,
+      var(--bg-color) 0%,
+      var(--bg-color) calc(100% - 0.25rem),
+      color-mix(in srgb, var(--text-color-note), #00000000 50%) calc(100% - 0.25rem),
+      #00000000 100%
+    );
   }
 
   #middlesection {
@@ -39,12 +48,18 @@
     flex-direction: column;
     flex: 1;
     height: 100%;
-    margin-inline: 0.25rem;
   }
 
   #properties {
     width: calc(15% + 8rem);
     height: 100%;
-    background-color: var(--bg-color);
+    padding-left: 0.25rem;
+    background: linear-gradient(
+      to left,
+      var(--bg-color) 0%,
+      var(--bg-color) calc(100% - 0.25rem),
+      color-mix(in srgb, var(--text-color-note), #00000000 50%) calc(100% - 0.25rem),
+      #00000000 100%
+    );
   }
 }
