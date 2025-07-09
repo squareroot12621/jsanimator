@@ -26,13 +26,12 @@
   #bottomsection {
     display: flex;
     height: 100%;
-    outline: 2px solid red; /* DEBUG */
   }
 
   #toolbar {
     width: 3rem;
     height: 100%;
-    background: #00000080; /* DEBUG */
+    background-color: var(--bg-color);
   }
 
   #middlesection {
@@ -40,12 +39,12 @@
     flex-direction: column;
     flex: 1;
     height: 100%;
-    background: #0000FF80; /* DEBUG */
+    margin-inline: 0.25rem;
   }
 
   #properties {
-    width: 20%;
+    width: calc(15% + 8rem);
     height: 100%;
-    background: #FF000080; /* DEBUG */
+    background-color: var(--bg-color);
   }
 }
