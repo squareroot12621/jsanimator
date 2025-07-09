@@ -9,9 +9,13 @@ function create_editing_screen() {
   var nav_bar = create_element('nav', nav_bar_elements, {id: 'navbar'})
 
   var toolbar = create_element('div', 'Toolbar', {id: 'toolbar'})
+
+  var canvas = create_element('canvas', 'Canvas', {id: 'canvas'})
+  var timeline = create_element('div', 'Timeline', {id: 'timeline'})
   var middle_section = create_element(
-    'div', 'Canvas+Timeline', {id: 'middlesection'}
+    'div', [canvas, timeline], {id: 'middlesection'}
   )
+  
   var properties = create_element('div', 'Properties', {id: 'properties'})
   
   var bottom_section = create_element(
