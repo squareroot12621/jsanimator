@@ -62,7 +62,7 @@ function create_main_menu() {
 
   open_input.onchange = async function () {
     // If the user cancelled, don't do anything
-    if (!open_input.files) {
+    if (open_input.files.length === 0) {
       return undefined;
     }
     var file = open_input.files[0]
