@@ -8,7 +8,19 @@ function create_editing_screen() {
   )
   var nav_bar = create_element('nav', nav_bar_elements, {id: 'navbar'})
 
-  var editing_container = create_element('div', nav_bar, {id: 'editingcontainer'})
+  var toolbar = create_element('div', 'Toolbar', {id: 'toolbar'})
+  var middle_section = create_element(
+    'div', 'Canvas+Timeline', {id: 'middle_section'}
+  )
+  var properties = create_element('div', 'Properties', {id: 'properties'})
+  
+  var bottom_section = create_element(
+    'div', [toolbar, middle_section, properties], {id: 'bottomsection'}
+  )
+
+  var editing_container = create_element(
+    'div', [nav_bar, bottom_section], {id: 'editingcontainer'}
+  )
 
   update_root(editing_container)
 
