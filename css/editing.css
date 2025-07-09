@@ -1,7 +1,7 @@
 #jsanimator {
   #editingcontainer {
     margin: -1rem;
-    height: 100%;
+    height: calc(100% + 2rem);
   }
   
   #navbar {
@@ -27,7 +27,7 @@
 
   #bottomsection {
     display: flex;
-    height: 100%;
+    flex: 1;
   }
 
   #toolbar {
