@@ -7,8 +7,14 @@
   #navbar {
     display: flex;
     flex-wrap: wrap;
-    margin: 0rem 0.25rem 0.25rem;
+    margin: 0rem 0.25rem;
     background-color: var(--bg-color);
+    &::after {
+      display: block;
+      width: 100%;
+      height: 0.25rem;
+      background-color: linear-gradient(var(--text-color-note), #00000000);
+    }
   }
   .navbarbutton {
     margin: 0.25rem 0.125rem;
