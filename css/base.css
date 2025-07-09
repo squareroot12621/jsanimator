@@ -79,16 +79,15 @@
   margin: 1.5rem;
   padding: 1rem;
   background-color: var(--bottom-bg-color);
-  font-family: var(--body-font);
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-size: var(--text-size);
-  line-height: 1.25;
-  color: var(--text-color);
 
   /* General styling of elements */
-  * {
+  &, * {
     font-family: var(--body-font);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: var(--text-size);
+    line-height: 1.25;
+    color: var(--text-color);
   }
   .accessiblyhidden {
     border: 0 !important;
