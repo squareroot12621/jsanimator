@@ -11,7 +11,7 @@
     background-color: linear-gradient(
       var(--bg-color) 0%,
       var(--bg-color) calc(100% - 0.25rem),
-      color-mix(var(--text-color-note), #00000000 50%) calc(100% - 0.25rem),
+      color-mix(in srgb, var(--text-color-note), #00000000 50%) calc(100% - 0.25rem),
       #00000000 100%
     );
   }
