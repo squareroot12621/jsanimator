@@ -52,6 +52,23 @@
     height: 100%;
   }
 
+  #canvas {
+    flex: 1;
+  }
+
+  #timeline {
+    height: 30%;
+    margin-inline: -0.25rem;
+    padding-top: 0.25rem;
+    background: linear-gradient(
+      to top,
+      var(--bg-color) 0%,
+      var(--bg-color) calc(100% - 0.25rem),
+      color-mix(in srgb, var(--text-color-note), #00000000 50%) calc(100% - 0.25rem),
+      #00000000 100%
+    );
+  }
+
   #properties {
     width: calc(15% + 8rem);
     height: 100%;
