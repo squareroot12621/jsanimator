@@ -188,11 +188,11 @@
     font-weight: 450;
     cursor: pointer;
     &.narrowbutton {
-      min-width: calc(5.6rem * var(--text-size) * var(--button-size-modifier));
+      min-width: calc(5.6 * var(--text-size) * var(--button-size-modifier));
       box-sizing: border-box;
     }
     &.widebutton {
-      min-width: calc(7.2rem * var(--text-size) * var(--button-size-modifier));
+      min-width: calc(7.2 * var(--text-size) * var(--button-size-modifier));
       box-sizing: border-box;
     }
 
