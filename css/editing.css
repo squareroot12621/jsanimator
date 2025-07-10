@@ -55,11 +55,11 @@
   }
 
   #canvas {
-    flex: 7;
+    height: 70%;
   }
 
   #timeline {
-    flex: 3;
+    flex: 1;
     margin-inline: -0.25rem;
     padding-top: 0.25rem;
     background: linear-gradient(
