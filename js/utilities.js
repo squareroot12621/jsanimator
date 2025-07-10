@@ -18,6 +18,27 @@ function update_root(...elements) {
   document.getElementById('jsanimator').replaceChildren(...elements)
 }
 
+function resize_root() {
+  var js_animator = document.getElementById('jsanimator')
+  var timeout = js_animator.getAttribute('data-resize-timeout')
+  window.addEventListener('resize', function() {
+    clearTimeout(timeout)
+    js_animator.setAttribute(
+      'data-resize-timeout', setTimeout(resize_root_inner, 250)
+    )
+  })
+}
+
+function resize_root_inner() {
+  var js_animator = document.getElementById('jsanimator')
+  var bounding_rect = js_animator.getBoundingClientRect()
+  var width = bounding_rect.width
+  var height = bounding_rect.height
+  js_animator.setAttribute(
+    'data-orientation', width > height ? 'landscape' : 'portrait'
+  )
+}
+
 function once(fn, context) { 
   var result;
   return function() { 
@@ -29,4 +50,4 @@ function once(fn, context) {
   };
 }
 
-export {create_element, update_root, once}
+export {create_element, update_root, resize_root, once}
