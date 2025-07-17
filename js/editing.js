@@ -9,7 +9,7 @@ function create_editing_screen() {
     ['Publish', ['Render Animation']]
   ]
   var nav_bar_elements = []
-  for ([name, options] of nav_bar_element_options) {
+  for (var [name, options] of nav_bar_element_options) {
     nav_bar_button_text = create_element(
       'div', name, {class: 'navbarbuttontext'}
     )
