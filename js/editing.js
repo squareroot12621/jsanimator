@@ -13,14 +13,18 @@ function create_editing_screen() {
     var nav_bar_button_text = create_element(
       'div', name, {class: 'navbarbuttontext'}
     )
-    var nav_bar_button_option_list = options.map(
-      (option) => create_element('div', option, {class: 'navbarbuttonoption'})
+    var button_option_list = options.map(
+      (option) => create_element('div', option, {class: 'buttonoption'})
     )
-    var nav_bar_button_options = create_element(
-      'div', nav_bar_button_option_list, {class: 'navbarbuttonoptions'}
+    var button_options = create_element(
+      'div', button_option_list, {class: 'buttonoptions'}
+    )
+    var button_option_wrapper = create_element(
+      'div', button_options, {class: 'buttonoptionwrapper'}
     )
     nav_bar_elements.push(create_element(
-      'div', [nav_bar_button_text, nav_bar_button_options], {class: 'navbarbutton'}
+      'div', [nav_bar_button_text, button_option_wrapper],
+      {class: 'navbarbutton'}
     ))
   }
   var nav_bar = create_element('nav', nav_bar_elements, {id: 'navbar'})
