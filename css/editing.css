@@ -42,10 +42,12 @@
   .buttonoptions {
     position: absolute;
     background-color: color-mix(in srgb, var(--bottom-bg-color), #FFFFFF calc(100% / 3));
-    padding: 0.5rem 0.3125rem;
+    padding: 0.3125rem 0.5rem;
     border-radius: 0.5rem;
     min-width: calc(14 * var(--text-size));
     box-shadow: 0 0 0.25rem 0.125rem var(--shadow-color);
+  }
+  .buttonoption {
     font-size: var(--text-size-small);
   }
 
