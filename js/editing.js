@@ -2,10 +2,27 @@ import {globals} from './globals.js'
 import {create_element, update_root} from './utilities.js'
 
 function create_editing_screen() {
-  var nav_bar_element_titles = ["File", "Edit", "Preview"]
-  var nav_bar_elements = nav_bar_element_titles.map(
-    (name) => create_element('div', name, {class: 'navbarbutton'})
-  )
+  var nav_bar_element_options = [
+    ['File', ['New', 'Open', 'Save', 'Save As', 'Save Copy']],
+    ['Edit', ['Option 1', 'Option 2', 'Option 3']],
+    ['Preview', ['Option 4']],
+    ['Publish', ['Render Animation']]
+  ]
+  var nav_bar_elements = []
+  for ([name, options] of nav_bar_element_options) {
+    nav_bar_button_text = create_element(
+      'div', name, {class: 'navbarbuttontext'}
+    )
+    nav_bar_button_option_list = options.map(
+      (option) => create_element('div', option, {class: 'navbarbuttonoption'})
+    )
+    nav_bar_button_options = create_element(
+      'div', nav_bar_button_option_list, {class: 'navbarbuttonoptions'}
+    )
+    nav_bar_elements.push(create_element(
+      'div', [nav_bar_button_text, nav_bar_button_options], {class: 'navbarbutton'}
+    ))
+  }
   var nav_bar = create_element('nav', nav_bar_elements, {id: 'navbar'})
 
   var toolbar = create_element('div', 'Toolbar', {id: 'toolbar'})
