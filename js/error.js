@@ -2,24 +2,29 @@ import {create_element, update_root} from './utilities.js'
 
 function get_error_info(error) {
   var error_type = error?.type ?? 'No type available'
-  var error_string = error.toString()
-  var error_stack = error?.stack ?? 'No stack available'
+  /* If we don't have an Error,
+     try to turn it into something that is an Error */
+  var error_new = error
+  if (!(error instanceof Error)) {
+    if (error?.error) {
+      error_new = error.error
+    } else if (error?.reason) {
+      error_new = error.reason
+    }
+  }
+  var error_string = error_new.toString()
+  var error_stack = error_new?.stack ?? 'No stack available'
   var error_info_text = [error_type, error_string, error_stack].join('\n')
-  return error_info_text
+  return {info: error_info_text, error: error_new}
 }
 
 function create_error_screen(error) {
   const STOP_SENTINEL = 'STOP JAVASCRIPT'
 
-  /* If we don't have an Error,
-     try to turn it into something that is an Error */
-  if (!(error instanceof Error)) {
-    if (error?.error) {
-      error = error.error
-    } else if (error?.reason) {
-      error = error.reason
-    }
-  }
+  var error_info_object = get_error_info(error)
+  var error_info_text = error_info_object.info
+  error = error_info_object.error
+  
   // Don't cause an infinite loop with create_error_screen throwing
   if (error.message === STOP_SENTINEL) {
     return undefined
@@ -44,7 +49,7 @@ function create_error_screen(error) {
                               + 'this error text will be useful:'
   var info_description = create_element('p', info_description_text)
   var error_info = create_element(
-    'pre', get_error_info(error), {'id': 'errorinfo'}
+    'pre', error_info_text, {'id': 'errorinfo'}
   )
   var noscript_container = create_element(
     'div', [heading, description, info_description, error_info],
