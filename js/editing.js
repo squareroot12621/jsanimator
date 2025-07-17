@@ -19,8 +19,12 @@ function create_editing_screen() {
     var button_options = create_element(
       'div', button_option_list, {class: 'buttonoptions'}
     )
+    var button_option_arrow = create_element(
+      'div', [], {class: 'buttonoptionarrow'}
+    )
     var button_option_wrapper = create_element(
-      'div', button_options, {class: 'buttonoptionwrapper'}
+      'div', [button_option_arrow, button_options],
+      {class: 'buttonoptionwrapper'}
     )
     nav_bar_elements.push(create_element(
       'div', [nav_bar_button_text, button_option_wrapper],
