@@ -26,6 +26,12 @@
     font-size: var(--text-size-small);
     color: var(--text-color);
     text-wrap: nowrap;
+    &:not(:hover, :focus) .buttonoptions {
+      display: none;
+    }
+    &:is(:hover, :focus) .buttonoptions {
+      display: block;
+    }
   }
   .buttonoptionwrapper {
     position: relative;
