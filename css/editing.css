@@ -47,6 +47,7 @@
     min-width: calc(14 * var(--text-size));
     box-shadow: 0 0 0.25rem 0.125rem var(--shadow-color);
     &::before {
+      content: "";
       display: block;
       width: 1.5rem;
       height: 0.75rem;
