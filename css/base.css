@@ -51,6 +51,7 @@
   --button-neutral-border-color: #464E51;
   --button-warning-bg-color: #F5C1B9;
   --button-warning-border-color: #AA1A13;
+  --shadow-color: #40404080;
   @media (prefers-color-scheme: dark) {
     --bottom-bg-color: #191D23;
     --bg-color: #00000055;
@@ -67,6 +68,7 @@
     --button-neutral-border-color: #ECF1F4;
     --button-warning-bg-color: #AA1A13;
     --button-warning-border-color: #F5C1B9;
+    --shadow-color: #B7B7B780;
   }
   
   box-sizing: border-box;
