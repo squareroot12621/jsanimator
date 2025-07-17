@@ -46,6 +46,12 @@
     border-radius: 0.5rem;
     min-width: calc(14 * var(--text-size));
     box-shadow: 0 0 0.25rem 0.125rem var(--shadow-color);
+    &::before {
+      display: block;
+      width: 1.5rem;
+      height: 0.75rem;
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    }
   }
   .buttonoption {
     font-size: calc(0.92 * var(--text-size));
