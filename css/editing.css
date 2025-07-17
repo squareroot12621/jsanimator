@@ -35,7 +35,10 @@
   }
   .buttonoptions {
     position: absolute;
-    background-color: var(--bg-color);
+    background-color: color-mix(in srgb, var(--bottom-bg-color), #FFFFFF calc(100% / 3));
+    padding: 0.375rem;
+    border-radius: 0.5rem;
+    min-width: calc(14 * var(--text-size));
   }
 
   #bottomsection {
