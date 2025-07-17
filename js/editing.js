@@ -10,13 +10,13 @@ function create_editing_screen() {
   ]
   var nav_bar_elements = []
   for (var [name, options] of nav_bar_element_options) {
-    nav_bar_button_text = create_element(
+    var nav_bar_button_text = create_element(
       'div', name, {class: 'navbarbuttontext'}
     )
-    nav_bar_button_option_list = options.map(
+    var nav_bar_button_option_list = options.map(
       (option) => create_element('div', option, {class: 'navbarbuttonoption'})
     )
-    nav_bar_button_options = create_element(
+    var nav_bar_button_options = create_element(
       'div', nav_bar_button_option_list, {class: 'navbarbuttonoptions'}
     )
     nav_bar_elements.push(create_element(
