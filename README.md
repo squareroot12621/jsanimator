@@ -11,7 +11,7 @@ If you'd like to help, please feel free to do so!
 
 To use JS Animator in your own website, place this code in your HTML:
 ```HTML
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/squareroot12621/jsanimator/css/jsanimator.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/squareroot12621/jsanimator/css/base.css" />
 ```
 ```HTML
 <article id="jsanimator">
