@@ -21,16 +21,16 @@
     z-index: 100;
   }
   .navbarbutton {
-    margin: 0.25rem 0.125rem;
-    padding: 0.25rem 0.375rem 0.125rem;
+    margin: 0.25rem 0;
+    padding: 0.25rem 0.5rem 0.125rem;
     font-size: var(--text-size-small);
     color: var(--text-color);
     text-wrap: nowrap;
-    &:is(:hover, :focus) {
+    &:is(:hover, :focus), &:has(:hover, :focus) {
       background-color: var(--bottom-bg-color);
-    }
-    &:not(:hover, :focus) .buttonoptionwrapper {
-      display: none;
+      .buttonoptionwrapper {
+        display: block;
+      }
     }
   }
   .buttonoptionwrapper {
@@ -38,6 +38,7 @@
     width: 1px;
     height: 1px;
     margin: -1px;
+    display: none; /* Gets overwritten by [&:is(), &:has()] .buttonoptionwrapper */
   }
   .buttonoptions {
     position: absolute;
@@ -52,6 +53,7 @@
   }
   .buttonoption {
     font-size: calc(0.92 * var(--text-size));
+    display: block;
   }
 
   #bottomsection {
