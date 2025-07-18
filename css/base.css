@@ -178,7 +178,7 @@
     margin-block: 0.3125rem;
     font-weight: 700;
   }
-  button, .button {
+  button:not(.notbutton), .button {
     --button-size-modifier: 1;
     &.largebutton {
       --button-size-modifier: calc(4 / 3);
@@ -246,5 +246,8 @@
       }
       cursor: not-allowed;
     }
+  }
+  button.notbutton {
+    /* ... */
   }
 }
