@@ -248,6 +248,9 @@
     }
   }
   button.notbutton {
-    /* ... */
+    appearance: none;
+    border: none;
+    padding: 0;
+    background-color: #00000000;
   }
 }
