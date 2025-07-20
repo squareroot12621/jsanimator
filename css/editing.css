@@ -32,7 +32,7 @@
         display: block;
       }
     }
-    &:hover {
+    .navbarbuttontext:hover {
       cursor: pointer;
     }
   }
