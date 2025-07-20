@@ -247,7 +247,7 @@
       cursor: not-allowed;
     }
   }
-  button.notbutton {
+  :where(button.notbutton) {
     appearance: none;
     border: none;
     padding: 0;
