@@ -83,6 +83,7 @@
   margin: 1.5rem;
   padding: 1rem;
   background-color: var(--bottom-bg-color);
+  overflow: hidden;
 
   /* General styling of elements */
   &, * {
