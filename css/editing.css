@@ -26,11 +26,14 @@
     font-size: var(--text-size-small);
     color: var(--text-color);
     text-wrap: nowrap;
-    &:is(:hover, :focus), &:has(:hover, :focus) {
+    &:hover, &:has(:hover) {
       background-color: var(--bottom-bg-color);
       .buttonoptionwrapper {
         display: block;
       }
+    }
+    &:hover {
+      cursor: pointer;
     }
   }
   .buttonoptionwrapper {
@@ -59,6 +62,10 @@
   .buttonoption {
     font-size: calc(0.92 * var(--text-size));
     display: block;
+    &:hover {
+      background-color: var(--bottom-bg-color);
+      cursor: pointer;
+    }
   }
 
   #bottomsection {
