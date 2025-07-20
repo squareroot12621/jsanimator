@@ -22,7 +22,6 @@
   }
   .navbarbutton {
     margin: 0.25rem 0;
-    padding: 0.25rem 0.5rem 0.125rem;
     font-size: var(--text-size-small);
     color: var(--text-color);
     text-wrap: nowrap;
@@ -32,7 +31,10 @@
         display: block;
       }
     }
-    &:hover:not(> .buttonoptionwrapper:hover) {
+  }
+  .navbarbuttontext {
+    padding: 0.25rem 0.5rem 0.125rem;
+    &:hover {
       cursor: pointer;
     }
   }
