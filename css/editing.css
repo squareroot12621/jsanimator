@@ -32,7 +32,7 @@
         display: block;
       }
     }
-    .navbarbuttontext:hover {
+    &:hover:not(> .buttonoptionwrapper:hover) {
       cursor: pointer;
     }
   }
