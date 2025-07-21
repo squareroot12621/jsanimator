@@ -62,8 +62,10 @@
   .buttonoption {
     font-size: calc(0.92 * var(--text-size));
     display: block;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     &:hover {
-      background-color: var(--bottom-bg-color);
       cursor: pointer;
     }
   }
