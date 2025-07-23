@@ -1,12 +1,6 @@
 function create_element(tag, content=[], attributes={}) {
   var element = document.createElement(tag)
-
-  if (content instanceof Array) {
-    element.append(...content)
-  } else {
-    element.append(content)
-  }
-  
+  element.append(content instanceof Array ? ...content : content)
   for (var [key, value] of Object.entries(attributes)) {
     element.setAttribute(key, value)
   }
@@ -50,4 +44,30 @@ function once(fn, context) {
   };
 }
 
-export {create_element, update_root, resize_root, once}
+function local_storage_available() {
+  var storage
+  try {
+    storage = window.localStorage
+    const x = "__storage_test__"
+    storage.setItem(x, x)
+    storage.removeItem(x)
+    return true
+  } catch (e) {
+    return (
+      e instanceof DOMException
+      && e.name === "QuotaExceededError"
+      /* acknowledge QuotaExceededError only if
+         there's something already stored */
+      && storage
+      && storage.length !== 0
+    )
+  }
+}
+
+export {
+  create_element,
+  update_root,
+  resize_root, 
+  once,
+  local_storage_available
+}
