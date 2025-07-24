@@ -13,9 +13,17 @@ function create_editing_screen() {
       'button', name, {class: 'navbarbuttontext notbutton'}
     )
     var button_option_list = options.map(
-      (option) => create_element(
-        'button', option, {class: 'buttonoption notbutton'}
-      )
+      (option) => {
+        var element = create_element(
+          'button', option, {class: 'buttonoption notbutton'}
+        )
+        element.addEventListener('click', (event) => {
+          event.target
+               .closest('.navbarbutton')
+               .setAttribute('data-hovered', 'false')
+        })
+        return element
+      }
     )
     var button_options = create_element(
       'div', button_option_list, {class: 'buttonoptions'}
@@ -26,10 +34,29 @@ function create_editing_screen() {
     var button_option_wrapper = create_element(
       'div', button_option_hitbox, {class: 'buttonoptionwrapper'}
     )
-    nav_bar_elements.push(create_element(
+    var nav_bar_button = create_element(
       'div', [nav_bar_button_text, button_option_wrapper],
       {class: 'navbarbutton'}
-    ))
+    )
+    nav_bar_button.setAttribute('data-hovered', 'false')
+    nav_bar_button.addEventListener('mouseenter', (event) => {
+      event.target.setAttribute('data-hovered', 'true')
+    })
+    nav_bar_button.addEventListener('mouseleave', (event) => {
+      event.target.setAttribute('data-hovered', 'false')
+    })
+    nav_bar_button.addEventListener('focus', (event) => {
+      event.target.setAttribute('data-hovered', 'true')
+    })
+    nav_bar_button.addEventListener('blur', (event) => {
+      event.target.setAttribute('data-hovered', 'false')
+    })
+    nav_bar_button.addEventListener('click', (event) => {
+      document.querySelector('[data-hovered=true]')
+              .setAttribute('data-hovered', 'false')
+      event.target.setAttribute('data-hovered', 'true')
+    })
+    nav_bar_elements.push(nav_bar_button)
   }
   var nav_bar = create_element('nav', nav_bar_elements, {id: 'navbar'})
 
