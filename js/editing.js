@@ -50,12 +50,12 @@ function create_editing_screen() {
            .closest('.navbarbutton')
            .setAttribute('data-hovered', 'false')
     })
-    nav_bar_button.addEventListener('focus', (event) => {
+    nav_bar_button_text.addEventListener('focus', (event) => {
       event.target
            .closest('.navbarbutton')
            .setAttribute('data-hovered', 'true')
     })
-    nav_bar_button.addEventListener('blur', (event) => {
+    nav_bar_button_text.addEventListener('blur', (event) => {
       event.target
            .closest('.navbarbutton')
            .setAttribute('data-hovered', 'false')
