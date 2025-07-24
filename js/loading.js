@@ -52,7 +52,9 @@ async function load_modules() {
      url: 'https://cdn.jsdelivr.net/gh/Stuk/jszip/dist/jszip.js'},
     {name: 'FileSaver.js',
      add_to_globals: false,
-     url: 'https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/dist/FileSaver.js'}
+     /* Use /src/ instead of /dist/
+        https://github.com/eligrey/FileSaver.js/issues/805 */
+     url: 'https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/src/FileSaver.js'}
   ]
   var imported_modules = {}
   for (var [module_index, module] of modules_to_import.entries()) {
