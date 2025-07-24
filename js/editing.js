@@ -18,6 +18,7 @@ function create_editing_screen() {
           'button', option, {class: 'buttonoption notbutton'}
         )
         element.addEventListener('click', (event) => {
+          event.stopPropagation()
           event.target
                .closest('.navbarbutton')
                .setAttribute('data-hovered', 'false')
