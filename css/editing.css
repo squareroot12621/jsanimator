@@ -25,7 +25,7 @@
     font-size: var(--text-size-small);
     color: var(--text-color);
     text-wrap: nowrap;
-    &[data-hover=true] {
+    &[data-hovered=true] {
       background-color: var(--bottom-bg-color);
       .buttonoptionwrapper {
         display: block;
@@ -43,7 +43,7 @@
     width: 1px;
     height: 1px;
     margin: -1px;
-    display: none; /* Gets overwritten by &[data-hover=true] .buttonoptionwrapper  */
+    display: none; /* Gets overwritten by &[data-hovered=true] .buttonoptionwrapper  */
   }
   .buttonoptionhitbox {
     position: absolute;
