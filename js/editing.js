@@ -40,21 +40,31 @@ function create_editing_screen() {
     )
     nav_bar_button.setAttribute('data-hovered', 'false')
     nav_bar_button.addEventListener('mouseenter', (event) => {
-      event.target.setAttribute('data-hovered', 'true')
+      event.target
+           .closest('.navbarbutton')
+           .setAttribute('data-hovered', 'true')
     })
     nav_bar_button.addEventListener('mouseleave', (event) => {
-      event.target.setAttribute('data-hovered', 'false')
+      event.target
+           .closest('.navbarbutton')
+           .setAttribute('data-hovered', 'false')
     })
     nav_bar_button.addEventListener('focus', (event) => {
-      event.target.setAttribute('data-hovered', 'true')
+      event.target
+           .closest('.navbarbutton')
+           .setAttribute('data-hovered', 'true')
     })
     nav_bar_button.addEventListener('blur', (event) => {
-      event.target.setAttribute('data-hovered', 'false')
+      event.target
+           .closest('.navbarbutton')
+           .setAttribute('data-hovered', 'false')
     })
     nav_bar_button.addEventListener('click', (event) => {
       document.querySelector('[data-hovered=true]')
               .setAttribute('data-hovered', 'false')
-      event.target.setAttribute('data-hovered', 'true')
+      event.target
+           .closest('.navbarbutton')
+           .setAttribute('data-hovered', 'true')
     })
     nav_bar_elements.push(nav_bar_button)
   }
