@@ -19,9 +19,9 @@ function create_editing_screen() {
         )
         element.addEventListener('click', (event) => {
           event.stopPropagation()
-          event.target
-               .closest('.navbarbutton')
-               .setAttribute('data-hovered', 'false')
+          var target = event.target .closest('.navbarbutton')
+          target.setAttribute('data-hovered', 'false')
+          target.setAttribute('data-clicked', 'false')
         })
         return element
       }
@@ -42,6 +42,8 @@ function create_editing_screen() {
     nav_bar_button.setAttribute('data-hovered', 'false')
     nav_bar_button.setAttribute('data-clicked', 'false')
     nav_bar_button.addEventListener('mouseenter', (event) => {
+      document.querySelector('[data-clicked=true]')
+             ?.setAttribute('data-clicked', 'false')
       event.target
            .closest('.navbarbutton')
            .setAttribute('data-hovered', 'true')
