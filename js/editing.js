@@ -42,11 +42,12 @@ function create_editing_screen() {
     nav_bar_button.setAttribute('data-hovered', 'false')
     nav_bar_button.setAttribute('data-clicked', 'false')
     nav_bar_button.addEventListener('mouseenter', (event) => {
-      document.querySelector('[data-clicked=true]')
-             ?.setAttribute('data-clicked', 'false')
-      event.target
-           .closest('.navbarbutton')
-           .setAttribute('data-hovered', 'true')
+      var target = event.target.closest('.navbarbutton')
+      var clicked_button = document.querySelector('[data-clicked=true]')
+      if (clicked_button && clicked_button !== target) {
+        clicked_button.setAttribute('data-clicked', 'false')
+      }
+      target.setAttribute('data-hovered', 'true')
     })
     nav_bar_button.addEventListener('mouseleave', (event) => {
       var target = event.target.closest('.navbarbutton')
