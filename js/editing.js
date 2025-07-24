@@ -45,6 +45,7 @@ function create_editing_screen() {
       var target = event.target.closest('.navbarbutton')
       var clicked_button = document.querySelector('[data-clicked=true]')
       if (clicked_button && clicked_button !== target) {
+        clicked_button.setAttribute('data-hovered', 'false')
         clicked_button.setAttribute('data-clicked', 'false')
       }
       target.setAttribute('data-hovered', 'true')
