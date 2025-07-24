@@ -49,7 +49,10 @@ async function load_modules() {
      url: 'https://cdn.jsdelivr.net/npm/ffmpeg.js/ffmpeg-worker-mp4.js'},
     {name: 'JSZip',
      add_to_globals: false,
-     url: 'https://cdn.jsdelivr.net/gh/Stuk/jszip/dist/jszip.js'}
+     url: 'https://cdn.jsdelivr.net/gh/Stuk/jszip/dist/jszip.js'},
+    {name: 'FileSaver.js',
+     add_to_globals: false,
+     url: 'https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/dist/FileSaver.js'}
   ]
   var imported_modules = {}
   for (var [module_index, module] of modules_to_import.entries()) {
