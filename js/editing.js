@@ -10,10 +10,10 @@ function create_editing_screen() {
     }
     var [submenu, name] = command.menu_path
     if (submenus.includes(submenu)) {
+      nav_bar_element_options[submenus.indexOf(submenu)][1].push(name)
+    } else {
       nav_bar_element_options.push([submenu, [name]])
       submenus.push(submenu)
-    } else {
-      nav_bar_element_options[submenus.indexOf(submenu)][1].push(name)
     }
   }
   
