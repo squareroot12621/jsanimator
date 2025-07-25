@@ -30,7 +30,7 @@ function create_editing_screen() {
       (option) => {
         var element_name = create_element('div', option.name)
         var element_shortcuts = create_element(
-          'div', element_shortcut_array, {class: 'kbd buttonoptionshortcuts'}
+          'div', [], {class: 'kbd buttonoptionshortcuts'}
         )
         for ([index, shortcut] of option.keyboard_shortcuts.entries()) {
           element_shortcuts.append(create_element('kbd', shortcut))
