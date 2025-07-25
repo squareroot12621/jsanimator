@@ -40,7 +40,11 @@ function create_editing_screen() {
         }
         var element = create_element(
           'button',
-          [element_name].concat(element_shortcuts),
+          /* Don't create a keyboard shortcuts div if it does nothing--
+             it'll take up space if the option name is very long */
+          option.keyboard_shortcuts.length
+          ? [element_name, element_shortcuts]
+          : [element_name],
           {class: 'buttonoption notbutton'}
         )
         /* If the element gets clicked,
