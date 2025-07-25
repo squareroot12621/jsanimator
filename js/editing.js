@@ -28,7 +28,9 @@ function create_editing_screen() {
     )
     var button_option_list = options.map(
       (option) => {
-        var element_name = create_element('div', option.name)
+        var element_name = create_element(
+          'div', option.name, {class: 'buttonoptionname'}
+        )
         var element_shortcuts = create_element(
           'div', [], {class: 'kbd buttonoptionshortcuts'}
         )
