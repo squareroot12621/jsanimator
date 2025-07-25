@@ -32,7 +32,7 @@ function create_editing_screen() {
         var element_shortcuts = create_element(
           'div', [], {class: 'kbd buttonoptionshortcuts'}
         )
-        for ([index, shortcut] of option.keyboard_shortcuts.entries()) {
+        for (var [index, shortcut] of option.keyboard_shortcuts.entries()) {
           element_shortcuts.append(create_element('kbd', shortcut))
           if (index < option.keyboard_shortcuts.length - 1) {
             element_shortcuts.append(create_element('span', ', '))
