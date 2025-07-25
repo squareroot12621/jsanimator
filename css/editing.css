@@ -71,14 +71,11 @@
       background-color: var(--bottom-bg-color);
       cursor: pointer;
     }
-    kbd {
+    .buttonoptionshortcut {
       font-size: calc(0.8 * var(--text-size));
-      &:first-child {
-        padding-left: 1rem;
-      }
-      &:not(:last-child)::after {
-        content: ", " / " or ";
-      }
+      margin-left: 1rem;
+      position: relative;
+      top: -0.125rem;
     }
   }
 
