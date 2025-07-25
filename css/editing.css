@@ -77,7 +77,7 @@
         padding-left: 1rem;
       }
       &:not(:last-child)::after {
-        content: ", ";
+        content: ", " / " or ";
       }
     }
   }
