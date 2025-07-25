@@ -5,7 +5,8 @@ function create_editing_screen() {
   var nav_bar_element_options = [
     ['File', ['New', 'Open', 'Save', 'Save As', 'Save Copy']],
     ['Edit', ['Option 1', 'Option 2', 'Option 3', 'Keyboard Shortcuts']],
-    ['Publish', ['Preview Animation', 'Render Animation']]
+    ['Component', ['New', 'Swap']],
+    ['Publish', ['Preview Animation', 'Render Animation']],
   ]
   var nav_bar_elements = []
   for (var [name, options] of nav_bar_element_options) {
