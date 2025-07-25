@@ -61,7 +61,6 @@
     overflow: hidden;
   }
   .buttonoption {
-    font-size: calc(0.92 * var(--text-size));
     display: block;
     width: 100%;
     display: flex;
@@ -70,6 +69,9 @@
     &:hover {
       background-color: var(--bottom-bg-color);
       cursor: pointer;
+    }
+    .buttonoptionname {
+      font-size: calc(0.92 * var(--text-size));
     }
     .buttonoptionshortcuts {
       margin-left: 1rem;
