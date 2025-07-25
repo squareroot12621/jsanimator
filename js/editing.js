@@ -79,13 +79,16 @@ function create_editing_screen() {
     /* Close the current submenu
        if the user clicks outside of a menu.
        Adapted from https://css-tricks.com/dangers-stopping-event-propagation/. */
-    document.addEventListener('click', (event) => {
-      if (!event.target.closest('.navbarbutton')) {
-        var target = document.querySelector('[data-hovered=true]')
-        target.setAttribute('data-hovered', 'false')
-        target.setAttribute('data-clicked', 'false')
-      }
-    })
+    document.getElementById('jsanimator')
+      .addEventListener('click', (event) => {
+        if (!event.target.closest('.navbarbutton')) {
+          var target = document.querySelector('[data-hovered=true]')
+          /* TODO: Why does this fail?
+          target.setAttribute('data-hovered', 'false')
+          target.setAttribute('data-clicked', 'false')
+          */
+        }
+      })
   }
   var nav_bar = create_element('nav', nav_bar_elements, {id: 'navbar'})
 
