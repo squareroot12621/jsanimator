@@ -3,17 +3,21 @@ import {create_element, update_root} from './utilities.js'
 
 function create_editing_screen() {
   var nav_bar_element_options = []
-  var submenus = []
+  var names = []
   for (var command of Object.values(globals.commands)) {
     if (command.hidden) {
       continue
     }
-    var [submenu, name] = command.menu_path
-    if (submenus.includes(submenu)) {
-      nav_bar_element_options[submenus.indexOf(submenu)][1].push(name)
+    var [name, option] = command.menu_path
+    var full_option = {
+      name: option, 
+      keyboard_shortcuts: command.keyboard_shortcuts
+    }
+    if (names.includes(name)) {
+      nav_bar_element_options[names.indexOf(name)][1].push(full_option)
     } else {
-      nav_bar_element_options.push([submenu, [name]])
-      submenus.push(submenu)
+      nav_bar_element_options.push([name, [full_option]])
+      names.push(name)
     }
   }
   
@@ -24,8 +28,14 @@ function create_editing_screen() {
     )
     var button_option_list = options.map(
       (option) => {
+        var element_name = create_element('div', option.name)
+        var element_shortcuts = option.keyboard_shortcuts.map(
+          (shortcut) => create_element('kbd', shortcut)
+        )
         var element = create_element(
-          'button', option, {class: 'buttonoption notbutton'}
+          'button',
+          [element_name].concat(element_shortcuts),
+          {class: 'buttonoption notbutton'}
         )
         /* If the element gets clicked,
            hide the menu it's part of. */
