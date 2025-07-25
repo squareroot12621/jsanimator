@@ -9,7 +9,7 @@ function create_editing_screen() {
       continue
     }
     var [submenu, name] = command.menu_path
-    if (submenus.contains(submenu)) {
+    if (submenus.includes(submenu)) {
       nav_bar_element_options.push([submenu, [name]])
       submenus.push(submenu)
     } else {
