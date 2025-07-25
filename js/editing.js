@@ -44,10 +44,10 @@ function create_editing_screen() {
     nav_bar_button.addEventListener('mouseenter', (event) => {
       var target = event.target.closest('.navbarbutton')
       var clicked_button = document.querySelector('[data-clicked=true]')
-      target.setAttribute(
-        'data-clicked', clicked_button.getAttribute('data-clicked')
-      )
       if (clicked_button && clicked_button !== target) {
+        target.setAttribute(
+          'data-clicked', clicked_button.getAttribute('data-clicked')
+        )
         clicked_button.setAttribute('data-hovered', 'false')
         clicked_button.setAttribute('data-clicked', 'false')
       }
