@@ -29,12 +29,15 @@ function create_editing_screen() {
     var button_option_list = options.map(
       (option) => {
         var element_name = create_element('div', option.name)
-        var element_shortcut_array = option.keyboard_shortcuts.map(
-          (shortcut) => create_element('kbd', shortcut)
-        )
         var element_shortcuts = create_element(
-          'div', element_shortcut_array
+          'div', element_shortcut_array, {class: 'kbd buttonoptionshortcuts'}
         )
+        for ([index, shortcut] of option.keyboard_shortcuts.entries()) {
+          element_shortcuts.append(create_element('kbd', shortcut))
+          if (index < option.keyboard_shortcuts.length - 1) {
+            element_shortcuts.append(create_element('span', ', '))
+          }
+        }
         var element = create_element(
           'button',
           [element_name].concat(element_shortcuts),
