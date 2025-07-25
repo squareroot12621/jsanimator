@@ -72,10 +72,13 @@
       cursor: pointer;
     }
     .buttonoptionshortcuts {
-      font-size: calc(0.8 * var(--text-size));
       margin-left: 1rem;
       position: relative;
       top: -0.125rem;
+      * {
+        color: var(--text-color-note);
+        font-size: calc(0.8 * var(--text-size));
+      }
     }
   }
 
