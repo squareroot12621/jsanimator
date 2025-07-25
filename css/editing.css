@@ -71,7 +71,7 @@
       background-color: var(--bottom-bg-color);
       cursor: pointer;
     }
-    .buttonoptionshortcut {
+    .buttonoptionshortcuts {
       font-size: calc(0.8 * var(--text-size));
       margin-left: 1rem;
       position: relative;
