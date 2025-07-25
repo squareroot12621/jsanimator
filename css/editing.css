@@ -71,6 +71,13 @@
       background-color: var(--bottom-bg-color);
       cursor: pointer;
     }
+    kbd {
+      font-size: calc(0.8 * var(--text-size));
+      margin-left: 0.5rem
+      &:first-child {
+        margin-left: 0.75rem
+      }
+    }
   }
 
   #bottomsection {
