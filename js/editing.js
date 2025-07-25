@@ -17,9 +17,11 @@ function create_editing_screen() {
         var element = create_element(
           'button', option, {class: 'buttonoption notbutton'}
         )
+        /* If the element gets clicked,
+           hide the menu it's part of. */
         element.addEventListener('click', (event) => {
           event.stopPropagation()
-          var target = event.target .closest('.navbarbutton')
+          var target = event.target.closest('.navbarbutton')
           target.setAttribute('data-hovered', 'false')
           target.setAttribute('data-clicked', 'false')
         })
@@ -41,6 +43,9 @@ function create_editing_screen() {
     )
     nav_bar_button.setAttribute('data-hovered', 'false')
     nav_bar_button.setAttribute('data-clicked', 'false')
+
+    /* Add event listeners to show and hide the submenus
+       instead of CSS, due to its intricacies. */
     nav_bar_button.addEventListener('mouseenter', (event) => {
       var target = event.target.closest('.navbarbutton')
       var clicked_button = document.querySelector('[data-clicked=true]')
@@ -68,7 +73,19 @@ function create_editing_screen() {
       target.setAttribute('data-hovered', 'true')
       target.setAttribute('data-clicked', 'true')
     })
+    
     nav_bar_elements.push(nav_bar_button)
+
+    /* Close the current submenu
+       if the user clicks outside of a menu.
+       Adapted from https://css-tricks.com/dangers-stopping-event-propagation/. */
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.navbarbutton')) {
+        var target = document.querySelector('[data-hovered=true]')
+        target.setAttribute('data-hovered', 'false')
+        target.setAttribute('data-clicked', 'false')
+      }
+    })
   }
   var nav_bar = create_element('nav', nav_bar_elements, {id: 'navbar'})
 
