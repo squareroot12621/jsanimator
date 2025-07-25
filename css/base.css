@@ -261,7 +261,7 @@
     background-color: #00000000;
   }
 
-  kbd {
+  kbd, .kbd {
     color: var(--text-color-note);
   }
 }
