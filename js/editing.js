@@ -4,7 +4,7 @@ import {create_element, update_root} from './utilities.js'
 function create_editing_screen() {
   var nav_bar_element_options = []
   var submenus = []
-  for (command of globals.commands) {
+  for (command of Object.values(globals.commands)) {
     if (command.hidden) {
       continue
     }
