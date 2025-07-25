@@ -73,9 +73,11 @@
     }
     kbd {
       font-size: calc(0.8 * var(--text-size));
-      padding-left: 0.5rem;
       &:first-child {
-        padding-left: 0.75rem;
+        padding-left: 1rem;
+      }
+      &:not(:last-child)::after {
+        content: ", ";
       }
     }
   }
