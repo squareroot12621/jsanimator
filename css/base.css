@@ -94,6 +94,7 @@
     line-height: 1.25;
     color: var(--text-color);
   }
+  
   .accessiblyhidden {
     border: 0 !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
@@ -107,11 +108,13 @@
     width: 1px !important;
     white-space: nowrap !important;
   }
+  
   p {
     text-align: left;
     margin-top: 0rem;
     margin-bottom: 0.25rem;
   }
+  
   a {
     color: var(--text-color-link);
     transition: font-weight 0.1s ease;
@@ -127,6 +130,7 @@
     outline: 2px solid currentcolor;
     border-radius: 2px;
   }
+  
   .icon {
     font-family: 'Material Symbols Outlined';
     font-weight: 350;
@@ -144,6 +148,7 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
+  
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     color: var(--heading-color);
@@ -179,6 +184,7 @@
     margin-block: 0.3125rem;
     font-weight: 700;
   }
+  
   button:not(.notbutton), .button {
     --button-size-modifier: 1;
     &.largebutton {
@@ -253,5 +259,9 @@
     border: none;
     padding: 0;
     background-color: #00000000;
+  }
+
+  kbd {
+    color: var(--text-color-note);
   }
 }
