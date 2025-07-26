@@ -38,6 +38,7 @@
   /* All colors have separate light and dark versions. */
   --bottom-bg-color: #DEE6EA;
   --bg-color: #FFFFFF55;
+  --bg-color-solid: #FFFFFF;
   --text-color: #000000;
   --text-color-note: #404040;
   --text-color-disabled: #606060;
@@ -51,11 +52,13 @@
   --button-neutral-border-color: #464E51;
   --button-warning-bg-color: #F5C1B9;
   --button-warning-border-color: #AA1A13;
+  --shadow-color-solid: #404040;
   --shadow-color: #40404080;
   --shadow-color-far: #40404040;
   @media (prefers-color-scheme: dark) {
     --bottom-bg-color: #191D23;
     --bg-color: #00000055;
+    --bg-color-solid: #000000;
     --text-color: #FFFFFF;
     --text-color-note: #B7B7B7;
     --text-color-disabled: #999999;
@@ -69,6 +72,7 @@
     --button-neutral-border-color: #ECF1F4;
     --button-warning-bg-color: #AA1A13;
     --button-warning-border-color: #F5C1B9;
+    --shadow-color-solid: #B7B7B7;
     --shadow-color: #B7B7B780;
     --shadow-color-far: #B7B7B740;
   }
