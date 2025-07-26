@@ -11,14 +11,11 @@
     
     display: flex;
     flex-wrap: wrap;
-    padding: 0rem 0.25rem 0.25rem;
-    margin-bottom: -0.25rem;
-    background: linear-gradient(
-      var(--bg-color) 0%,
-      var(--bg-color) calc(100% - 0.25rem),
-      var(--shadow-color) calc(100% - 0.25rem),
-      #00000000 100%
-    );
+    padding: 0 0.25rem;
+    background-color: var(--bg-color);
+    box-shadow:
+      0 0 0.125rem 0.0625rem var(--shadow-color-far),
+      0 0 0.25rem 0.125rem var(--shadow-color);
     position: relative;
     z-index: 100;
   }
@@ -35,7 +32,10 @@
     }
   }
   .navbarbuttontext {
-    padding: 0.25rem 0.5rem 0.125rem;
+    padding:
+      calc(0.15 * var(--text-size-menu))
+      calc(0.4 * var(--text-size-menu))
+      calc(0.05 * var(--text-size-menu));
     font-size: var(--text-size-menu);
     &:hover {
       cursor: pointer;
