@@ -104,17 +104,17 @@
   }
 
   #toolbar {
-    width: 3rem;
+    width: calc(2 * var(--text-size));
     height: 100%;
     background-color: var(--bg-color);
     border-right: 0.125rem solid var(--shadow-color);
-    padding: 0.5rem;
+    padding: 0.25rem;
     box-sizing: border-box;
   }
   &[data-orientation=portrait] #toolbar {
     width: 100%;
-    height: 3rem;
-    min-height: 3rem;
+    height: calc(2 * var(--text-size));
+    min-height: calc(2 * var(--text-size));
     border-right: none;
     border-bottom: 0.125rem solid var(--shadow-color);
   }
