@@ -2,8 +2,6 @@ import {globals} from './globals.js'
 import {create_element, update_root} from './utilities.js'
 
 function create_editing_screen() {
-  console.log(globals.menu_bar)
-
   /* Generate nav_bar_element_options
      from globals.menu_bar and globals.commands */
   var nav_bar_element_options = []
@@ -25,8 +23,6 @@ function create_editing_screen() {
     }
     nav_bar_element_options.push(current_submenu)
   }
-
-  console.log(nav_bar_element_options)
   
   var nav_bar_elements = []
   for (var [name, options] of nav_bar_element_options) {
@@ -125,7 +121,6 @@ function create_editing_screen() {
       .addEventListener('click', (event) => {
         if (!event.target.closest('.navbarbutton')) {
           var target = document.querySelector('[data-hovered=true]')
-          // TODO: Why does this fail?
           target?.setAttribute('data-hovered', 'false')
           target?.setAttribute('data-clicked', 'false')
         }
