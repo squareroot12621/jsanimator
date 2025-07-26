@@ -33,7 +33,7 @@ function create_editing_screen() {
     var nav_bar_button_text = create_element(
       'button', name, {class: 'navbarbuttontext notbutton'}
     )
-    var button_option_list = options.map(
+    var button_option_list = options.flatMap(
       (option) => {
         var element_name = create_element(
           'div', option.name, {class: 'buttonoptionname'}
@@ -64,7 +64,10 @@ function create_editing_screen() {
           target.setAttribute('data-hovered', 'false')
           target.setAttribute('data-clicked', 'false')
         })
-        return element
+        // Add a horizontal bar at the end of a section.
+        return option.end_of_section
+               ? [element, create_element('hr')]
+               : [element]
       }
     )
     var button_options = create_element(
