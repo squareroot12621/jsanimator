@@ -116,7 +116,7 @@ var globals = {
     },
     onion_skin: {
       menu_path: ['Timeline', 'Toggle Onion Skin'],
-      keyboard_shortcuts: ['Shift+.'],
+      keyboard_shortcuts: [],
     },
     new_component: {
       menu_path: ['Component', 'New'],
