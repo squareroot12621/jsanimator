@@ -264,4 +264,12 @@
   kbd, .kbd {
     color: var(--text-color-note);
   }
+
+  hr {
+    border: none;
+    padding: 0;
+    margin: 0.25rem;
+    height: 0.0625rem;
+    background-color: var(--shadow-color);
+  }
 }
