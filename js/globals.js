@@ -1,6 +1,56 @@
 var globals = {
   modules: {},
   current_file: {},
+  menu_bar: new Map([
+    ['File', [
+      'new_file',
+      'open_file',
+      'save_file',
+      'save_as',
+      'save_copy',
+    ], [
+      'keyboard_shortcuts',
+    ]],
+    ['Edit', [
+      'undo',
+      'redo',
+      'copy',
+      'cut',
+      'paste_center',
+      'paste_in_place',
+      'delete',
+      'select_all',
+    ]],
+    ['Timeline', [
+      'extend_keyframe',
+      'shorten_keyframe',
+      'new_keyframe',
+      'merge_keyframes',
+      'new_blank_keyframe',
+      'simple_tween',
+      'motion_tween',
+      'shape_tween',
+    ], [
+      'play',
+      'previous_frame',
+      'next_frame',
+      'previous_keyframe',
+      'next_keyframe',
+      'first_frame',
+      'last_frame',
+      'onion_skin',
+    ]],
+    ['Component', [
+      'new_component',
+      'convert_to_component',
+      'swap_component',
+      'match_component',
+    ]],
+    ['Publish', [
+      'preview_animation',
+      'publish_animation',
+    ]],
+  ]),
   commands: {
     new_file: {
       menu_path: ['File', 'New'],
@@ -21,6 +71,10 @@ var globals = {
     save_copy: {
       menu_path: ['File', 'Save Copy'],
       keyboard_shortcuts: ['Ctrl+Alt+S'],
+    },
+    keyboard_shortcuts: {
+      menu_path: ['File', 'Keyboard Shortcuts'],
+      keyboard_shortcuts: ['Ctrl+/'],
     },
     undo: {
       menu_path: ['Edit', 'Undo'],
@@ -172,8 +226,8 @@ var globals = {
       keyboard_shortcuts: ['Alt+L'],
       hidden: true,
     },
-    go_to_browser: {
-      menu_path: ['Navigation', 'Go to Browser'],
+    toggle_browser_controls: {
+      menu_path: ['Navigation', 'Toggle Browser Controls'],
       keyboard_shortcuts: ['Alt+Esc'],
       hidden: true,
     },
