@@ -54,7 +54,7 @@
   }
   .buttonoptions {
     position: relative;
-    top: 0.25rem;
+    top: round(calc(0.19 * var(--text-size-menu)), 1px);
     background-color: color-mix(in srgb, var(--bottom-bg-color), #FFFFFF calc(100% / 3));
     padding: 0.375rem 0 0.3125rem;
     border-radius: 0 0 0.5rem 0.5rem;
