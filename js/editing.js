@@ -7,34 +7,15 @@ function create_editing_screen() {
   /* Generate nav_bar_element_options
      from globals.menu_bar and globals.commands */
   var nav_bar_element_options = []
-  /*
-  var names = []
-  for (var command of Object.values(globals.commands)) {
-    if (command.hidden) {
-      continue
-    }
-    var [name, option] = command.menu_path
-    var full_option = {
-      name: option, 
-      keyboard_shortcuts: command.keyboard_shortcuts
-    }
-    if (names.includes(name)) {
-      nav_bar_element_options[names.indexOf(name)][1].push(full_option)
-    } else {
-      nav_bar_element_options.push([name, [full_option]])
-      names.push(name)
-    }
-  }
-  */
-
-  var current_submenu = null
+  var current_submenu
   for (var [name, options] of globals.menu_bar.entries()) {
     current_submenu = [name, []]
     for (var [index, option] of options.entries()) {
       if (option !== null) {
+        var command = globals.commands[option]
         current_submenu[1].push({
-          name: option,
-          keyboard_shortcuts: globals.commands[option].keyboard_shortcuts,
+          name: command.menu_path.at(-1),
+          keyboard_shortcuts: command.keyboard_shortcuts,
           end_of_section: false,
         })
       } else if (index > 0 && index < options.length - 1) {
