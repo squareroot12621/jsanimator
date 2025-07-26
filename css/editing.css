@@ -7,11 +7,12 @@
   }
   
   #navbar {
-    --text-size-menu: calc(0.9 * var(--text-size));
+    /* Don't make the menu text size too big */
+    --text-size-menu: calc(0.5625rem + 0.45 * var(--text-size));
     
     display: flex;
     flex-wrap: wrap;
-    padding: 0 0.25rem;
+    padding: round(calc(0.19 * var(--text-size-menu)), 1px);
     background-color: var(--bg-color);
     box-shadow:
       0 0 0.125rem 0.0625rem var(--shadow-color-far),
@@ -20,7 +21,6 @@
     z-index: 100;
   }
   .navbarbutton {
-    margin: 0.25rem 0;
     font-size: var(--text-size-menu);
     color: var(--text-color);
     text-wrap: nowrap;
