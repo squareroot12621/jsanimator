@@ -60,10 +60,10 @@
     outline: 0.125rem solid var(--border-color-menu);
     clip-path: polygon(
       -100% 0.125rem,
-      0% 0.125rem,
-      0% 0.0625rem,
-      100% 0.0625rem,
-      100% 0.125rem,
+      -0.01rem 0.125rem,
+      -0.01rem 0.04rem,
+      calc(100% + 0.01rem) 0.04rem,
+      calc(100% + 0.01rem) 0.125rem,
       200% 0.125rem,
       200% 200%,
       -100% 200%
