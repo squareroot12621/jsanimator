@@ -28,7 +28,7 @@ function create_editing_screen() {
   */
 
   var current_submenu = null
-  for (var [name, options] of Object.entries(globals.menu_bar)) {
+  for (var [name, options] of globals.menu_bar.entries()) {
     current_submenu = [name, []]
     for (var [index, option] of options.entries()) {
       if (option !== null) {
