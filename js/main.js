@@ -15,5 +15,7 @@ async function initialize_js_animator() {
 var create_error_screen_wrapper = once(create_error_screen)
 window.addEventListener('error', create_error_screen_wrapper)
 window.addEventListener('unhandledrejection', create_error_screen_wrapper)
-window.addEventListener('resize', resize_root)
+// window.addEventListener('resize', resize_root)
+const resize_observer = new ResizeObserver(resize_root)
+resize_observer.observe(document.getElementById('jsanimator'))
 window.addEventListener('load', initialize_js_animator)
