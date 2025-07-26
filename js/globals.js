@@ -8,7 +8,7 @@ var globals = {
       'save_file',
       'save_as',
       'save_copy',
-    ], [
+      null,
       'keyboard_shortcuts',
     ]],
     ['Edit', [
@@ -30,7 +30,7 @@ var globals = {
       'simple_tween',
       'motion_tween',
       'shape_tween',
-    ], [
+      null,
       'play',
       'previous_frame',
       'next_frame',
