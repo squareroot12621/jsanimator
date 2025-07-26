@@ -92,20 +92,22 @@
     display: flex;
     flex: 1;
   }
+  &[data-orientation=portrait] #bottomsection {
+    flex-direction: column;
+  }
 
   #toolbar {
     width: 3rem;
     height: 100%;
     padding-right: 0.25rem;
-    background: linear-gradient(
-      to right,
-      var(--bg-color) 0%,
-      var(--bg-color) calc(100% - 0.25rem),
-      var(--shadow-color) calc(100% - 0.25rem),
-      #00000000 100%
-    );
+    background-color: var(--bg-color);
     position: relative;
     z-index: 50;
+  }
+  &[data-orientation=portrait] #toolbar {
+    width: 100%;
+    height: 3rem;
+    min-height: 3rem;
   }
 
   #middlesection {
@@ -124,27 +126,19 @@
     flex: 1;
     margin-inline: -0.25rem;
     padding-top: 0.25rem;
-    background: linear-gradient(
-      to top,
-      var(--bg-color) 0%,
-      var(--bg-color) calc(100% - 0.25rem),
-      var(--shadow-color) calc(100% - 0.25rem),
-      #00000000 100%
-    );
+    background-color: var(--bg-color);
   }
 
   #properties {
     width: calc(15% + 8rem);
     height: 100%;
     padding-left: 0.25rem;
-    background: linear-gradient(
-      to left,
-      var(--bg-color) 0%,
-      var(--bg-color) calc(100% - 0.25rem),
-      var(--shadow-color) calc(100% - 0.25rem),
-      #00000000 100%
-    );
+    background-color: var(--bg-color);
     position: relative;
     z-index: 50;
+  }
+  &[data-orientation=portrait] #properties {
+    width: 100%;
+    height: calc(12% + 6rem);
   }
 }
