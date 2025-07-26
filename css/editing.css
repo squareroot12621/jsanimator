@@ -9,12 +9,8 @@
   #navbar {
     /* Don't make the menu text size too big */
     --text-size-menu: calc(0.5625rem + 0.45 * var(--text-size));
-    --bg-color-menu: color-mix(in srgb, var(--bottom-bg-color), #FFFFFF 50%);
-    --border-color-menu: color-mix(
-      in srgb,
-      var(--bg-color-menu),
-      color(from var(--shadow-color) srgb r g b / 1) 50%
-    );
+    --bg-color-menu: color-mix(in srgb, var(--bottom-bg-color), var(--bg-color-solid) 50%);
+    --border-color-menu: color-mix(in srgb, var(--bg-color-menu), var(--shadow-color-solid) 50%);
     
     display: flex;
     flex-wrap: wrap;
