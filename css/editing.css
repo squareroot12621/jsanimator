@@ -76,7 +76,8 @@
     .buttonoptionshortcuts {
       margin-left: 1rem;
       position: relative;
-      top: -0.0625rem;
+      top: 0.0625rem;
+      font-size: calc(0.8 * var(--text-size)); /* Stop the div from being larger than it's supposed to */
       * {
         color: var(--text-color-note);
         font-size: calc(0.8 * var(--text-size));
