@@ -44,6 +44,8 @@ function create_editing_screen() {
     }
     nav_bar_element_options.push(current_submenu)
   }
+
+  console.log(nav_bar_element_options)
   
   var nav_bar_elements = []
   for (var [name, options] of nav_bar_element_options) {
