@@ -22,12 +22,12 @@ function resize_root() {
   window.addEventListener('resize', function() {
     clearTimeout(timeout)
     js_animator.setAttribute(
-      'data-resize-timeout', setTimeout(resize_root_inner, 250)
+      'data-resize-timeout', setTimeout(resize_root_instant, 250)
     )
   })
 }
 
-function resize_root_inner() {
+function resize_root_instant() {
   var js_animator = document.getElementById('jsanimator')
   var bounding_rect = js_animator.getBoundingClientRect()
   var width = bounding_rect.width
@@ -71,7 +71,8 @@ function local_storage_available() {
 export {
   create_element,
   update_root,
-  resize_root, 
+  resize_root,
+  resize_root_instant,
   once,
   local_storage_available
 }
