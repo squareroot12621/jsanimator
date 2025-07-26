@@ -58,7 +58,16 @@
     border-radius: 0 0 0.5rem 0.5rem;
     min-width: calc(14 * var(--text-size-menu));
     outline: 0.125rem solid var(--border-color-menu);
-    clip-path: inset(0.06rem -100rem -100rem -100rem); /* Hack to remove top outline */
+    clip-path: polygon(
+      -100% 0.125rem,
+      0% 0.125rem,
+      0% 0rem,
+      100% 0rem,
+      100% 0.125rem,
+      200% 0.125rem,
+      200% 200%,
+      -100% 200%
+    ); /* Hack to remove top outline */
     overflow: hidden;
   }
   .buttonoption {
