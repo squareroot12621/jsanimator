@@ -65,7 +65,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0.0625rem 0.5rem;
+    padding: 0.09375rem 0.5rem;
     &:hover {
       background-color: var(--bottom-bg-color);
       cursor: pointer;
