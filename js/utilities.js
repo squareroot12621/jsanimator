@@ -22,7 +22,7 @@ function resize_root() {
   window.addEventListener('resize', function() {
     clearTimeout(timeout)
     js_animator.setAttribute(
-      'data-resize-timeout', setTimeout(resize_root_instant, 250)
+      'data-resize-timeout', setTimeout(resize_root_instant, 100)
     )
   })
 }
