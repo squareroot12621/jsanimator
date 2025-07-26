@@ -3,8 +3,11 @@ import {create_element, update_root} from './utilities.js'
 
 function create_editing_screen() {
   console.log(globals.menu_bar)
-  
+
+  /* Generate nav_bar_element_options
+     from globals.menu_bar and globals.commands */
   var nav_bar_element_options = []
+  /*
   var names = []
   for (var command of Object.values(globals.commands)) {
     if (command.hidden) {
@@ -21,6 +24,25 @@ function create_editing_screen() {
       nav_bar_element_options.push([name, [full_option]])
       names.push(name)
     }
+  }
+  */
+
+  var current_submenu = null
+  for (var [name, options] of Object.entries(globals.menu_bar)) {
+    current_submenu = [name, []]
+    for (var [index, option] of options.entries()) {
+      if (option !== null) {
+        current_submenu[1].push({
+          name: option,
+          keyboard_shortcuts: globals.commands[option].keyboard_shortcuts,
+          end_of_section: false,
+        })
+      } else if (index > 0 && index < options.length - 1) {
+        // Don't add a <hr> if it's the start or end of the submenu
+        current_submenu[1][current_submenu[1].length - 1].end_of_section = true
+      }
+    }
+    nav_bar_element_options.push(current_submenu)
   }
   
   var nav_bar_elements = []
