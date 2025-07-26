@@ -106,9 +106,10 @@
   #toolbar {
     width: 3rem;
     height: 100%;
-    padding-right: 0.25rem;
     background-color: var(--bg-color);
     border-right: 0.125rem solid var(--shadow-color);
+    padding: 0.5rem;
+    box-sizing: border-box;
   }
   &[data-orientation=portrait] #toolbar {
     width: 100%;
@@ -132,17 +133,19 @@
 
   #timeline {
     flex: 1;
-    padding-top: 0.25rem;
     background-color: var(--bg-color);
     border-top: 0.125rem solid var(--shadow-color);
+    padding: 0.5rem;
+    box-sizing: border-box;
   }
 
   #properties {
     width: calc(15% + 8rem);
     height: 100%;
-    padding-left: 0.25rem;
     background-color: var(--bg-color);
     border-left: 0.125rem solid var(--shadow-color);
+    padding: 0.5rem;
+    box-sizing: border-box;
   }
   &[data-orientation=portrait] #properties {
     width: 100%;
