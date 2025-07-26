@@ -2,6 +2,8 @@ import {globals} from './globals.js'
 import {create_element, update_root} from './utilities.js'
 
 function create_editing_screen() {
+  console.log(globals.menu_bar)
+  
   var nav_bar_element_options = []
   var names = []
   for (var command of Object.values(globals.commands)) {
