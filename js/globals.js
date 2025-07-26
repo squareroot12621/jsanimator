@@ -8,8 +8,6 @@ var globals = {
       'save_file',
       'save_as',
       'save_copy',
-      null,
-      'keyboard_shortcuts',
     ]],
     ['Edit', [
       'undo',
@@ -50,6 +48,11 @@ var globals = {
       'preview_animation',
       'publish_animation',
     ]],
+    ['Settings', [
+      'help',
+      'settings',
+      'keyboard_shortcuts',
+    ]],
   ]),
   commands: {
     new_file: {
@@ -72,10 +75,7 @@ var globals = {
       menu_path: ['File', 'Save Copy'],
       keyboard_shortcuts: ['Ctrl+Alt+S'],
     },
-    keyboard_shortcuts: {
-      menu_path: ['File', 'Keyboard Shortcuts'],
-      keyboard_shortcuts: ['Ctrl+/'],
-    },
+    
     undo: {
       menu_path: ['Edit', 'Undo'],
       keyboard_shortcuts: ['Ctrl+Z'],
@@ -108,6 +108,7 @@ var globals = {
       menu_path: ['Edit', 'Select All'],
       keyboard_shortcuts: ['Ctrl+A'],
     },
+    
     extend_keyframe: {
       menu_path: ['Timeline', 'Extend Keyframe'],
       keyboard_shortcuts: [],
@@ -172,6 +173,7 @@ var globals = {
       menu_path: ['Timeline', 'Toggle Onion Skin'],
       keyboard_shortcuts: [],
     },
+    
     new_component: {
       menu_path: ['Component', 'New'],
       keyboard_shortcuts: [],
@@ -188,6 +190,7 @@ var globals = {
       menu_path: ['Component', 'Match'],
       keyboard_shortcuts: [],
     },
+    
     preview_animation: {
       menu_path: ['Publish', 'Preview Animation'],
       keyboard_shortcuts: ['Ctrl+Enter'],
@@ -196,6 +199,20 @@ var globals = {
       menu_path: ['Publish', 'Publish Animation'],
       keyboard_shortcuts: ['Ctrl+Shift+Enter'],
     },
+    
+    help: {
+      menu_path: ['Settings', 'Help'],
+      keyboard_shortcuts: ['Shift+/'],
+    },
+    settings: {
+      menu_path: ['Settings', 'Settings'],
+      keyboard_shortcuts: ['Ctrl+Shift+/'],
+    },
+    keyboard_shortcuts: {
+      menu_path: ['Settings', 'Keyboard Shortcuts'],
+      keyboard_shortcuts: ['Ctrl+/'],
+    },
+    
     go_to_menu_bar: {
       menu_path: ['Navigation', 'Go to Menu Bar'],
       keyboard_shortcuts: ['Alt+M'],
