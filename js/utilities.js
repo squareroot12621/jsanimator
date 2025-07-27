@@ -71,15 +71,15 @@ function local_storage_available() {
 function cross_platformify_shortcut(shortcut) {
   var apple_platform = /Mac|iPod|iPhone|iPad/.test(navigator.platform)
   if (apple_platform) {
-    var shortcut_sections = shortcut.toLowerCase().split('+')
+    var shortcut_sections = shortcut.split('+')
     var output = []
-    if (shortcut_sections.includes('alt')) {
+    if (shortcut_sections.includes('Alt')) {
       output.push('\u2325') // Option
     }
-    if (shortcut_sections.includes('shift')) {
+    if (shortcut_sections.includes('Shift')) {
       output.push('\u21E7') // Shift
     }
-    if (shortcut_sections.includes('ctrl')) {
+    if (shortcut_sections.includes('Ctrl')) {
       output.push('\u2318') // Command
     }
     output.push(shortcut_sections.at(-1))
