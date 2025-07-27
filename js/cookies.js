@@ -1,4 +1,8 @@
-import {create_element, update_root, local_storage_available} from './utilities.js'
+import {
+  create_element,
+  update_root,
+  local_storage_available
+} from './utilities.js'
 import {globals} from './globals.js'
 
 async function create_cookie_screen() {
@@ -61,15 +65,19 @@ async function create_cookie_screen() {
   )
   update_root(cookie_container)
 
-  var result = await new Promise((resolve, reject) => {
+  var cookie_decision = await new Promise((resolve, reject) => {
     for (let button of buttons) {
       button.addEventListener('click', () => {
         resolve(button.innerText)
       })
     }
   })
-  console.log(result)
-  return result
+  var cookies_allowed = cookie_decision === 'Allow'
+  if (!cookies_allowed) {
+    localStorage.clear()
+  }
+  localStorage.setItem('_cookies_allowed', cookies_allowed ? '1' : '0')
+  console.log(localStorage.get('_cookies_allowed'))
 }
 
 export {create_cookie_screen}
