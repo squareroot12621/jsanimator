@@ -68,11 +68,33 @@ function local_storage_available() {
   }
 }
 
+function cross_platformify_shortcut(shortcut) {
+  var apple_platform = /Mac|iPod|iPhone|iPad/.test(navigator.platform)
+  if (apple_platform) {
+    shortcut_sections = shortcut.toLowerCase().split('+')
+    output = []
+    if (shortcut_sections.includes('alt')) {
+      output.push('\u2325') // Option
+    }
+    if (shortcut_sections.includes('shift')) {
+      output.push('\u21E7') // Shift
+    }
+    if (shortcut_sections.includes('ctrl')) {
+      output.push('\u2318') // Command
+    }
+    output.push(shortcut_sections.at(-1))
+    return output.join('')
+  }
+  // If it's not Apple, don't do anything
+  return shortcut
+}
+
 export {
   create_element,
   update_root,
   resize_root,
   resize_root_instant,
   once,
-  local_storage_available
+  local_storage_available,
+  cross_platformify_shortcut
 }
