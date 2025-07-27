@@ -1,4 +1,5 @@
 import {create_element, update_root} from './utilities.js'
+import {globals} from './globals.js'
 
 function create_loading_screen() {
   var loading_dots = []
@@ -39,23 +40,24 @@ async function load_generic(fn, message, new_progress) {
   return output
 }
 
-/*
-async function load_module(module_name, module_url, new_progress) {
-  var loading_info = document.getElementById('loadinginfo')
-  loading_info.replaceChildren(`Loading ${module_name}...`)
-  
-  var output = await import(module_url)
-  
-  var loading_progress = document.getElementById('loadingprogress')
-  loading_progress.replaceChildren(`${Math.round(new_progress * 100)}%`)
-  loading_progress.style.setProperty('font-weight', 200 + 700 * new_progress)
-
-  return output
-}
-*/
-
 async function finish_loading() {
-  console.log(Mousetrap) // Test
+  for (var [command_name, command_obj] in Object.entries(global.commands)) {
+    var raw_keyboard_shortcuts = command_obj.keyboard_shortcuts
+    for (raw_keyboard_shortcut of raw_keyboard_shortcuts) {
+      var keyboard_shortcut = (
+        raw_keyboard_shortcut
+          .toLowerCase()
+          .replace(/(?<=^|\+)\+$/, 'plus')
+          .split('+')
+          .replace('ctrl', 'mod')
+      )
+      Mousetrap.bind(keyboard_shortcut, () => {
+        /* TODO: Make a handle_menu(command_name) function
+           in a new file, commands.js */
+        console.log(command_name)
+      })
+    }
+  }
 }
 
 async function load_modules() {
