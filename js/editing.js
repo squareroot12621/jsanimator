@@ -1,5 +1,9 @@
 import {globals} from './globals.js'
-import {create_element, update_root} from './utilities.js'
+import {
+  create_element,
+  update_root,
+  cross_platformify_shortcut
+} from './utilities.js'
 
 function create_editing_screen() {
   /* Generate nav_bar_element_options
@@ -38,7 +42,9 @@ function create_editing_screen() {
           'div', [], {class: 'kbd buttonoptionshortcuts'}
         )
         for (var [index, shortcut] of option.keyboard_shortcuts.entries()) {
-          element_shortcuts.append(create_element('kbd', shortcut))
+          element_shortcuts.append(
+            create_element('kbd', cross_platformify_shortcut(shortcut))
+          )
           if (index < option.keyboard_shortcuts.length - 1) {
             element_shortcuts.append(create_element('span', ', '))
           }
