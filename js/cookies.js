@@ -77,7 +77,7 @@ async function create_cookie_screen() {
     localStorage.clear()
   }
   localStorage.setItem('_cookies_allowed', cookies_allowed ? '1' : '0')
-  console.log(localStorage.get('_cookies_allowed'))
+  console.log(localStorage.getItem('_cookies_allowed'))
 }
 
 export {create_cookie_screen}
