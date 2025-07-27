@@ -4,6 +4,8 @@ import {globals} from './globals.js'
 import {create_element, update_root} from './utilities.js'
 
 function create_main_menu() {
+  globals.screen = 'main'
+  
   var title = create_element('h1', 'JS Animator')
 
   var new_button = create_element(
