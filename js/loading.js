@@ -43,6 +43,7 @@ async function load_generic(fn, message, new_progress) {
 }
 
 async function finish_loading() {
+  // Bind all the keyboard shortcuts to handle_action
   // Use let because of scoping issues
   for (let [command_name, command_obj] of Object.entries(globals.commands)) {
     var raw_keyboard_shortcuts = command_obj.keyboard_shortcuts
@@ -50,7 +51,6 @@ async function finish_loading() {
       var keyboard_shortcut = (
         raw_keyboard_shortcut
           .toLowerCase()
-          .replace(/(?<=^|\+)\+$/, 'plus')
           .split('+')
           .map((section) => section === 'ctrl' ? 'mod' : section)
           .join('+')
