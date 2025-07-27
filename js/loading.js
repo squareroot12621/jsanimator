@@ -26,6 +26,20 @@ function create_loading_screen() {
   update_root(loading_container)
 }
 
+async function load_generic(fn, message, new_progress) {
+  var loading_info = document.getElementById('loadinginfo')
+  loading_info.replaceChildren(message)
+  
+  var output = fn()
+  
+  var loading_progress = document.getElementById('loadingprogress')
+  loading_progress.replaceChildren(`${Math.round(new_progress * 100)}%`)
+  loading_progress.style.setProperty('font-weight', 200 + 700 * new_progress)
+
+  return output
+}
+
+/*
 async function load_module(module_name, module_url, new_progress) {
   var loading_info = document.getElementById('loadinginfo')
   loading_info.replaceChildren(`Loading ${module_name}...`)
@@ -37,6 +51,11 @@ async function load_module(module_name, module_url, new_progress) {
   loading_progress.style.setProperty('font-weight', 200 + 700 * new_progress)
 
   return output
+}
+*/
+
+async function finish_loading() {
+  console.log(Mousetrap) // Test
 }
 
 async function load_modules() {
@@ -54,16 +73,30 @@ async function load_modules() {
      add_to_globals: false,
      /* Use /src/ instead of /dist/
         https://github.com/eligrey/FileSaver.js/issues/805 */
-     url: 'https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/src/FileSaver.js'}
+     url: 'https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/src/FileSaver.js'},
   ]
+
+  // Load the modules
   var imported_modules = {}
   for (var [module_index, module] of modules_to_import.entries()) {
-    var progress = (module_index + 1) / modules_to_import.length
-    var imported_module = await load_module(module.name, module.url, progress)
+    var progress = (module_index + 1) / (modules_to_import.length + 1)
+    var imported_module = await load_generic(
+      async () => {await import(module.url)},
+      `Loading ${module.name}...`,
+      progress
+    )
     if (module.add_to_globals) {
       imported_modules[module.name] = imported_module
     }
   }
+  
+  // Apply finishing touches
+  await load_generic(
+    async () => {finish_loading()},
+    'Setting up modules...', 
+    1
+  )
+  
   return imported_modules
 }
 
