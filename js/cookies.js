@@ -4,7 +4,7 @@ import {globals} from './globals.js'
 async function create_cookie_screen() {
   globals.screen = 'cookies'
 
-  var title = create_element('h2', 'This site uses cookies')
+  var heading = create_element('h2', 'This site uses cookies')
 
   var body_text = 'JS Animator uses cookies to store '
                   + 'preferences locally on your device, '
@@ -26,7 +26,13 @@ async function create_cookie_screen() {
     'button', 'Allow', {class: 'narrowbutton largebutton primarybutton'}
   )
 
-  update_root(title, body_text, block_button, allow_button)
+  var cookie_container = create_element(
+    'div', [heading, body, block_button, allow_button],
+    /* Technically this isn't a script error,
+       but it needs to be styled like one */
+    {'id': 'scripterror'}
+  )
+  update_root(cookie_container)
   
   var result = await new Promise((resolve, reject) => {
     setTimeout(resolve, 10000)
