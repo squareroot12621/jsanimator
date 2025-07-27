@@ -1,4 +1,5 @@
 import {create_loading_screen, load_modules} from './loading.js'
+import {create_cookie_screen} from './cookies.js'
 import {create_main_menu} from './main_menu.js'
 
 import {globals} from './globals.js'
@@ -9,13 +10,14 @@ async function initialize_js_animator() {
   resize_root_instant()
   create_loading_screen()
   globals.modules = await load_modules()
+  await create_cookie_screen()
   create_main_menu()
 }
 
 var create_error_screen_wrapper = once(create_error_screen)
 window.addEventListener('error', create_error_screen_wrapper)
 window.addEventListener('unhandledrejection', create_error_screen_wrapper)
-// window.addEventListener('resize', resize_root)
+// window.addEventListener('resize') is too unreliable
 const resize_observer = new ResizeObserver(resize_root)
 resize_observer.observe(document.getElementById('jsanimator'))
 window.addEventListener('load', initialize_js_animator)
