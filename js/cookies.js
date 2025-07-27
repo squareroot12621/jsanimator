@@ -28,7 +28,9 @@ async function create_cookie_screen() {
 
   update_root(title, body_text, block_button, allow_button)
   
-  var result = await setTimeout(() => 'Finished', 1000)
+  var result = await new Promise((resolve, reject) => {
+    setTimeout(resolve, 10000)
+  })
   console.log(result)
   return result
 }
