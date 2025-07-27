@@ -51,7 +51,7 @@ async function finish_loading() {
           .toLowerCase()
           .replace(/(?<=^|\+)\+$/, 'plus')
           .split('+')
-          .replace('ctrl', 'mod')
+          .map((section) => section === 'ctrl' ? 'mod' : section)
       )
       Mousetrap.bind(keyboard_shortcut, () => {
         /* TODO: Make a handle_menu(command_name) function
