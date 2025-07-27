@@ -1,6 +1,8 @@
 var globals = {
   modules: {},
   current_file: {},
+  screen: 'loading',
+  
   menu_bar: new Map([
     ['File', [
       'new_file',
@@ -54,6 +56,7 @@ var globals = {
       'keyboard_shortcuts',
     ]],
   ]),
+  
   commands: {
     new_file: {
       menu_path: ['File', 'New'],
