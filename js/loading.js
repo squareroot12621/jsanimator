@@ -45,7 +45,7 @@ async function finish_loading() {
     console.log(command_name)
     console.log(command_obj)
     var raw_keyboard_shortcuts = command_obj.keyboard_shortcuts
-    for (raw_keyboard_shortcut of raw_keyboard_shortcuts) {
+    for (var raw_keyboard_shortcut of raw_keyboard_shortcuts) {
       var keyboard_shortcut = (
         raw_keyboard_shortcut
           .toLowerCase()
