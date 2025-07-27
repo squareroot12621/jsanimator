@@ -82,7 +82,15 @@ function cross_platformify_shortcut(shortcut) {
     if (shortcut_sections.includes('Ctrl')) {
       output.push('\u2318') // Command
     }
-    output.push(shortcut_sections.at(-1))
+    var main_key = shortcut_sections.at(-1)
+    output.push(main_key === 'Tab' ? '\u21E5'
+                : main_key === 'Enter' ? '\u23CE'
+                : main_key === 'Backspace' ? '\u232B'
+                : main_key === 'Up' ? '\u2191'
+                : main_key === 'Down' ? '\u2193'
+                : main_key === 'Left' ? '\u2190'
+                : main_key === 'Right' ? '\u2192'
+                : main_key)
     return output.join('')
   }
   // If it's not Apple, don't do anything
