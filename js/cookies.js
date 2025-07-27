@@ -33,9 +33,14 @@ async function create_cookie_screen() {
     {'id': 'scripterror'}
   )
   update_root(cookie_container)
-  
+
   var result = await new Promise((resolve, reject) => {
-    setTimeout(resolve, 10000)
+    block_button.addEventListener('click', () => {
+      resolve('block')
+    })
+    allow_button.addEventListener('click', () => {
+      resolve('allow')
+    })
   })
   console.log(result)
   return result
