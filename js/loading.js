@@ -41,7 +41,7 @@ async function load_generic(fn, message, new_progress) {
 }
 
 async function finish_loading() {
-  for (var [command_name, command_obj] in Object.entries(global.commands)) {
+  for (var [command_name, command_obj] in Object.entries(globals.commands)) {
     var raw_keyboard_shortcuts = command_obj.keyboard_shortcuts
     for (raw_keyboard_shortcut of raw_keyboard_shortcuts) {
       var keyboard_shortcut = (
