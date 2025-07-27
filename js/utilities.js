@@ -71,8 +71,8 @@ function local_storage_available() {
 function cross_platformify_shortcut(shortcut) {
   var apple_platform = /Mac|iPod|iPhone|iPad/.test(navigator.platform)
   if (apple_platform) {
-    shortcut_sections = shortcut.toLowerCase().split('+')
-    output = []
+    var shortcut_sections = shortcut.toLowerCase().split('+')
+    var output = []
     if (shortcut_sections.includes('alt')) {
       output.push('\u2325') // Option
     }
