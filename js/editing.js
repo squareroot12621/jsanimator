@@ -6,6 +6,8 @@ import {
 } from './utilities.js'
 
 function create_editing_screen() {
+  globals.screen = 'editing'
+  
   /* Generate nav_bar_element_options
      from globals.menu_bar and globals.commands */
   var nav_bar_element_options = []
