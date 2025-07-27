@@ -1,4 +1,4 @@
-import {create_element, update_root} from './utilities.js'
+import {create_element, update_root, local_storage_available} from './utilities.js'
 import {globals} from './globals.js'
 
 async function create_cookie_screen() {
