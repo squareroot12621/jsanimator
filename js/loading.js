@@ -50,6 +50,7 @@ async function finish_loading() {
           .replace(/(?<=^|\+)\+$/, 'plus')
           .split('+')
           .map((section) => section === 'ctrl' ? 'mod' : section)
+          .join('+')
       )
       Mousetrap.bind(keyboard_shortcut, () => {
         /* TODO: Make a handle_menu(command_name) function
