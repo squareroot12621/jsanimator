@@ -1,3 +1,5 @@
+import {handle_action} from './commands.js'
+
 import {create_element, update_root} from './utilities.js'
 import {globals} from './globals.js'
 
@@ -6,7 +8,7 @@ function create_loading_screen() {
     for (var dot = 1; dot <= 3; ++dot) {
       loading_dots.push(create_element(
         'span', '.',
-        {'class': 'loadingdot', 'id': `loadingdot${dot.toString()}`}
+        {'class': 'loadingdot', 'id': `loadingdot${dot}`}
       ))
     }
   var loading_paragraph = create_element(
@@ -41,6 +43,7 @@ async function load_generic(fn, message, new_progress) {
 }
 
 async function finish_loading() {
+  // Use let because of scoping issues
   for (let [command_name, command_obj] of Object.entries(globals.commands)) {
     var raw_keyboard_shortcuts = command_obj.keyboard_shortcuts
     for (var raw_keyboard_shortcut of raw_keyboard_shortcuts) {
@@ -52,11 +55,7 @@ async function finish_loading() {
           .map((section) => section === 'ctrl' ? 'mod' : section)
           .join('+')
       )
-      Mousetrap.bind(keyboard_shortcut, () => {
-        /* TODO: Make a handle_menu(command_name) function
-           in a new file, commands.js */
-        console.log(command_name)
-      })
+      Mousetrap.bind(keyboard_shortcut, () => handle_action(command_name))
     }
   }
 }
