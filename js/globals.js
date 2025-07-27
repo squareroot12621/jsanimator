@@ -57,7 +57,8 @@ var globals = {
   commands: {
     new_file: {
       menu_path: ['File', 'New'],
-      keyboard_shortcuts: ['Ctrl+N'],
+      // Can't override Ctrl+N
+      keyboard_shortcuts: ['Ctrl+Alt+N'],
     },
     open_file: {
       menu_path: ['File', 'Open'],
@@ -216,37 +217,66 @@ var globals = {
     go_to_menu_bar: {
       menu_path: ['Navigation', 'Go to Menu Bar'],
       keyboard_shortcuts: ['Alt+M'],
-      hidden: true,
     },
     go_to_toolbar: {
       menu_path: ['Navigation', 'Go to Toolbar'],
       keyboard_shortcuts: ['Alt+B'],
-      hidden: true,
     },
     go_to_canvas: {
       menu_path: ['Navigation', 'Go to Canvas'],
       keyboard_shortcuts: ['Alt+C'],
-      hidden: true,
     },
     go_to_timeline: {
       menu_path: ['Navigation', 'Go to Timeline'],
       keyboard_shortcuts: ['Alt+T'],
-      hidden: true,
     },
     go_to_properties: {
       menu_path: ['Navigation', 'Go to Properties'],
       keyboard_shortcuts: ['Alt+P'],
-      hidden: true,
     },
     go_to_asset_library: {
       menu_path: ['Navigation', 'Go to Asset Library'],
       keyboard_shortcuts: ['Alt+L'],
-      hidden: true,
+    },
+    go_to_tab_1: {
+      menu_path: ['Navigation', 'Go to Tab 1'],
+      keyboard_shortcuts: ['Alt+1'],
+    },
+    go_to_tab_2: {
+      menu_path: ['Navigation', 'Go to Tab 2'],
+      keyboard_shortcuts: ['Alt+2'],
+    },
+    go_to_tab_3: {
+      menu_path: ['Navigation', 'Go to Tab 3'],
+      keyboard_shortcuts: ['Alt+3'],
+    },
+    go_to_tab_4: {
+      menu_path: ['Navigation', 'Go to Tab 4'],
+      keyboard_shortcuts: ['Alt+4'],
+    },
+    go_to_tab_5: {
+      menu_path: ['Navigation', 'Go to Tab 5'],
+      keyboard_shortcuts: ['Alt+5'],
+    },
+    go_to_tab_6: {
+      menu_path: ['Navigation', 'Go to Tab 6'],
+      keyboard_shortcuts: ['Alt+6'],
+    },
+    go_to_tab_7: {
+      menu_path: ['Navigation', 'Go to Tab 7'],
+      keyboard_shortcuts: ['Alt+7'],
+    },
+    go_to_tab_8: {
+      menu_path: ['Navigation', 'Go to Tab 8'],
+      keyboard_shortcuts: ['Alt+8'],
+    },
+    go_to_tab_9: {
+      menu_path: ['Navigation', 'Go to Tab 9'],
+      keyboard_shortcuts: ['Alt+9'],
     },
     toggle_browser_controls: {
       menu_path: ['Navigation', 'Toggle Browser Controls'],
       keyboard_shortcuts: ['Alt+Esc'],
-      hidden: true,
     },
   },
 }
