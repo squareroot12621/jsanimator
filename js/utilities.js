@@ -1,3 +1,5 @@
+import {globals} from './globals.js'
+
 function create_element(tag, content=[], attributes={}) {
   var element = document.createElement(tag)
   if (content instanceof Array) {
@@ -68,6 +70,27 @@ function local_storage_available() {
   }
 }
 
+function get_cookie(name) {
+  if (!globals.cookies_allowed) {
+    return null
+  }
+  return localStorage.getItem(name)
+}
+
+function set_cookie(name, value) {
+  if (!globals.cookies_allowed) {
+    return undefined
+  }
+  localStorage.setItem(name, value)
+}
+
+function remove_cookie(name) {
+  if (!globals.cookies_allowed) {
+    return undefined
+  }
+  localStorage.removeItem(name)
+}
+
 function cross_platformify_shortcut(shortcut) {
   var apple_platform = /Mac|iPod|iPhone|iPad/.test(navigator.platform)
   if (apple_platform) {
@@ -104,5 +127,8 @@ export {
   resize_root_instant,
   once,
   local_storage_available,
+  get_cookie,
+  set_cookie,
+  remove_cookie,
   cross_platformify_shortcut
 }
