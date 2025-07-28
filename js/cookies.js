@@ -73,10 +73,13 @@ async function create_cookie_screen() {
     }
   })
   var cookies_allowed = cookie_decision === 'Allow'
+  console.log('Test 1')
   if (!cookies_allowed) {
     localStorage.clear()
   }
+  console.log('Test 2')
   localStorage.setItem('_cookies_allowed', cookies_allowed ? '1' : '0')
+  console.log('Test 3')
   console.log(localStorage.getItem('_cookies_allowed'))
 }
 
