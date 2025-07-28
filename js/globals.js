@@ -2,6 +2,7 @@ var globals = {
   modules: {},
   current_file: {},
   screen: 'loading',
+  cookies_allowed: null,
   
   menu_bar: new Map([
     ['File', [
