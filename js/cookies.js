@@ -54,7 +54,7 @@ async function create_cookie_screen() {
   }
 
   var button_container = create_element(
-    'div', buttons, {class: ''}
+    'div', buttons, {class: 'cookiebuttons'}
   )
   
   var cookie_container = create_element(
