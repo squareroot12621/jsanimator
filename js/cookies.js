@@ -17,7 +17,7 @@ async function cookie_decision_logic() {
   if (cookies_available && previously_decided) {
     var cookie_decision = cookie_item === '1' ? 'Allow' : 'Block'
   } else {
-    var buttons = create_cookie_screen()
+    var buttons = create_cookie_screen(cookies_available)
     var cookie_decision = await new Promise((resolve, reject) => {
       for (let button of buttons) {
         button.addEventListener('click', () => {
@@ -41,7 +41,7 @@ async function cookie_decision_logic() {
   console.log(globals.cookies_allowed) // DEBUG
 }
 
-function create_cookie_screen() {
+function create_cookie_screen(cookies_available) {
   globals.screen = 'cookies'
 
   var heading = create_element(
