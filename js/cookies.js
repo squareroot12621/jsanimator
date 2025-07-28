@@ -5,10 +5,44 @@ import {
 } from './utilities.js'
 import {globals} from './globals.js'
 
-async function create_cookie_screen() {
-  globals.screen = 'cookies'
-
+async function cookie_decision_logic() {
   var cookies_available = local_storage_available()
+  try {
+    var cookie_item = localStorage.getItem('_cookies_allowed')
+    var previously_decided = cookie_item === '1' || cookie_item === '0'
+  } catch {
+    var previously_decided = false
+  }
+  
+  if (cookies_available && previously_decided) {
+    var cookie_decision = cookie_item === '1' ? 'Allow' : 'Block'
+  } else {
+    var buttons = create_cookie_screen()
+    var cookie_decision = await new Promise((resolve, reject) => {
+      for (let button of buttons) {
+        button.addEventListener('click', () => {
+          resolve(button.innerText)
+        })
+      }
+    })
+  }
+
+  var cookies_allowed = cookie_decision === 'Allow'
+  try {
+    if (!cookies_allowed) {
+      localStorage.clear()
+    }
+    localStorage.setItem('_cookies_allowed', cookies_allowed ? '1' : '0')
+  } catch {
+    // If we can't set cookies, who cares if we get an error?
+  }
+  globals.cookies_allowed = cookies_allowed
+
+  console.log(globals.cookies_allowed) // DEBUG
+}
+
+function create_cookie_screen() {
+  globals.screen = 'cookies'
 
   var heading = create_element(
     'h2',
@@ -65,23 +99,7 @@ async function create_cookie_screen() {
   )
   update_root(cookie_container)
 
-  var cookie_decision = await new Promise((resolve, reject) => {
-    for (let button of buttons) {
-      button.addEventListener('click', () => {
-        resolve(button.innerText)
-      })
-    }
-  })
-  var cookies_allowed = cookie_decision === 'Allow'
-  try {
-    if (!cookies_allowed) {
-      localStorage.clear()
-    }
-    localStorage.setItem('_cookies_allowed', cookies_allowed ? '1' : '0')
-  } catch {
-    // If we can't set cookies, who cares if we get an error?
-  }
-  globals.cookies_allowed = cookies_allowed
+  return buttons
 }
 
-export {create_cookie_screen}
+export {cookie_decision_logic}
