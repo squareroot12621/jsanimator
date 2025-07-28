@@ -1,5 +1,5 @@
 import {create_loading_screen, load_modules} from './loading.js'
-import {create_cookie_screen} from './cookies.js'
+import {cookie_decision_logic} from './cookies.js'
 import {create_main_menu} from './main_menu.js'
 
 import {globals} from './globals.js'
@@ -10,7 +10,7 @@ async function initialize_js_animator() {
   resize_root_instant()
   create_loading_screen()
   globals.modules = await load_modules()
-  await create_cookie_screen()
+  await cookie_decision_logic()
   create_main_menu()
 }
 
