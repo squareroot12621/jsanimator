@@ -49,17 +49,16 @@ function create_cookie_screen(cookies_available) {
     cookies_available ? 'This site uses cookies' : 'Cookies are disabled'
   )
   if (cookies_available) {
-    var body_text = 'JS Animator uses cookies to store '
-                    + 'preferences locally on your device, '
-                    + "meaning they won't be sent to servers "
-                    + 'or advertising companies. '
+    var body_text = 'JS Animator uses cookies to store preferences '
+                    + "locally on your device, meaning they won't be sent "
+                    + 'to servers or advertising companies. '
                     + 'You can block these cookies, '
                     + 'but this will stop preferences '
                     + 'from being saved after leaving the website. '
                     + 'Your decision is stored '
                     + "so you don't have to do it again, "
-                    + 'and you can change your decision '
-                    + 'at any time.'
+                    + 'but you can change your decision at any time '
+                    + 'by going to Settings \u2192 Cookies.'
   } else {
     var body_text = 'Cookies are disabled in your browser, '
                     + 'so preferences you set in JS Animator '
