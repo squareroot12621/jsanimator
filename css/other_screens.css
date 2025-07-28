@@ -51,7 +51,7 @@
   }
 
   /* Cookie screen */
-  #cookiebuttons {
+  .centerbuttons {
     display: flex;
     justify-content: center;
     button:not(:first-child) {
