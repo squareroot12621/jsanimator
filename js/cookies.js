@@ -55,7 +55,7 @@ function create_cookie_screen(cookies_available) {
                     + 'or advertising companies. '
                     + 'You can block these cookies, '
                     + 'but this will stop preferences '
-                    + 'from being saved after leaving the app. '
+                    + 'from being saved after leaving the website. '
                     + 'Your decision is stored '
                     + "so you don't have to do it again, "
                     + 'and you can change your decision '
@@ -64,9 +64,10 @@ function create_cookie_screen(cookies_available) {
     var body_text = 'Cookies are disabled in your browser, '
                     + 'so preferences you set in JS Animator '
                     + 'will not save if you leave. '
-                    + 'You can reenable cookies in your browser '
-                    + 'to keep your preferences, '
-                    + "but you don't have to."
+                    + 'If you want to keep your preferences, '
+                    + 'reenable cookies in your browser. '
+                    + 'You may also have to go to Settings \u2192 Cookies '
+                    + 'and turn them on manually.'
   }
   var body = create_element('p', body_text)
 
