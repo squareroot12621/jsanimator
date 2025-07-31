@@ -90,7 +90,7 @@
   overflow: hidden;
 
   /* General styling of elements */
-  &, * {
+  &, button, input, textarea {
     font-family: var(--body-font);
     font-optical-sizing: auto;
     font-weight: 400;
