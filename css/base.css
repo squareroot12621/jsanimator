@@ -90,13 +90,17 @@
   overflow: hidden;
 
   /* General styling of elements */
-  &, button, input, textarea {
+  &, button, input, kbd, textarea {
     font-family: var(--body-font);
     font-optical-sizing: auto;
     font-weight: 400;
     font-size: var(--text-size);
     line-height: 1.25;
     color: var(--text-color);
+  }
+  
+  kbd, .kbd {
+    color: var(--text-color-note);
   }
   
   .accessiblyhidden {
@@ -263,10 +267,6 @@
     border: none;
     padding: 0;
     background-color: #00000000;
-  }
-
-  kbd, .kbd {
-    color: var(--text-color-note);
   }
 
   hr {
