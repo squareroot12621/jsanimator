@@ -12,28 +12,32 @@ function handle_action(command_name) {
       open_button.click()
     } else if (command_name === 'settings') {
       var settings_button = document.getElementById('menubuttongroup')
-                               .children[2]
-                               .children[0]
+                                    .children[2]
+                                    .children[0]
       settings_button.click()
     }
   } else if (globals.screen === 'editing') {
-    console.log(command_name) // TODO: Do something else
+    if (command_name === 'save_file') {
+      console.log(globals) // DEBUG
+      /*
+      zip.generateAsync({
+        type: "base64"
+      }).then(function(content) {
+        var link = document.createElement('a');
+        link.href = "data:application/zip;base64," + content;
+        link.download = "your-file-name.zip";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+      */
+    } else if (command_name === 'save_as') {
+      console.log(command_name) // TODO: Do something else
+    } else {
+      console.log(command_name) // TODO: Do something else
+    }
   }
   return false
-
-  /* Export zip file with name
-  
-  zip.generateAsync({
-    type: "base64"
-  }).then(function(content) {
-    var link = document.createElement('a');
-    link.href = "data:application/zip;base64," + content;
-    link.download = "your-file-name.zip";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  });
-  */
 }
 
 export {handle_action}
