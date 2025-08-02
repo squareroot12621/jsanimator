@@ -37,8 +37,6 @@ async function cookie_decision_logic() {
     // If we can't set cookies, who cares if we get an error?
   }
   globals.cookies_allowed = cookies_allowed
-
-  console.log(globals.cookies_allowed) // DEBUG
 }
 
 function create_cookie_screen(cookies_available) {
