@@ -1,5 +1,6 @@
 var globals = {
   modules: {},
+  current_filename: null,
   current_file: {},
   screen: 'loading',
   cookies_allowed: null,
