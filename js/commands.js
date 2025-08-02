@@ -21,7 +21,7 @@ function handle_action(command_name) {
       /* Put all the files back into a JSZip().
          JSZip automatically handles making files inside of folders. */
       var zip = new JSZip()
-      for (var [filename, contents] in Object.entries(globals.current_file)) {
+      for (var [filename, contents] of Object.entries(globals.current_file)) {
         zip.file(filename, contents)
       }
       // Then save the .zip file!
