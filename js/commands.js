@@ -18,6 +18,10 @@ function save(name=null) {
   })
 }
 
+function show_save_dialog() {
+  return 'User Defined Name.anj' // TODO: Do something else
+}
+
 function handle_action(command_name) {
   if (globals.screen === 'main') {
     if (command_name === 'new_file') {
@@ -36,9 +40,16 @@ function handle_action(command_name) {
     }
   } else if (globals.screen === 'editing') {
     if (command_name === 'save_file') {
-      save('Output Test.anj')
+      if (globals.current_filename === null) {
+        globals.current_filename = show_save_dialog()
+      }
+      save(globals.current_filename)
     } else if (command_name === 'save_as') {
-      console.log(globals.current_file) // TODO: Do something else
+      globals.current_filename = show_save_dialog()
+      save(globals.current_filename)
+    } else if (command_name === 'save_copy') {
+      var copy_filename = show_save_dialog()
+      save(copy_filename)
     } else {
       console.log(command_name) // TODO: Do something else
     }
