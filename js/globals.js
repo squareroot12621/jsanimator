@@ -74,11 +74,12 @@ var globals = {
     },
     save_as: {
       menu_path: ['File', 'Save As'],
-      keyboard_shortcuts: ['Ctrl+Shift+S'],
+      // Can't override Ctrl+Shift+S on Windows
+      keyboard_shortcuts: ['Ctrl+Alt+S'],
     },
     save_copy: {
       menu_path: ['File', 'Save Copy'],
-      keyboard_shortcuts: ['Ctrl+Alt+S'],
+      keyboard_shortcuts: ['Ctrl+Shift+Alt+S'],
     },
     
     undo: {
