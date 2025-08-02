@@ -29,7 +29,7 @@ function handle_action(command_name) {
         saveAs(content, 'Output Test.anj')
       })
     } else if (command_name === 'save_as') {
-      console.log(command_name) // TODO: Do something else
+      console.log(globals.current_file) // TODO: Do something else
     } else {
       console.log(command_name) // TODO: Do something else
     }
