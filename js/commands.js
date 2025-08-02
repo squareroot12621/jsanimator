@@ -18,19 +18,16 @@ function handle_action(command_name) {
     }
   } else if (globals.screen === 'editing') {
     if (command_name === 'save_file') {
-      console.log(globals) // DEBUG
-      /*
-      zip.generateAsync({
-        type: "base64"
-      }).then(function(content) {
-        var link = document.createElement('a');
-        link.href = "data:application/zip;base64," + content;
-        link.download = "your-file-name.zip";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      });
-      */
+      /* Put all the files back into a JSZip().
+         JSZip automatically handles making files inside of folders. */
+      var zip = new JSZip()
+      for (var [filename, contents] in Object.entries(globals.current_file)) {
+        zip.file(filename, contents)
+      }
+      // Then save the .zip file!
+      zip.generateAsync({type: 'blob'}).then(function(content) {
+        saveAs(content, 'Output Test.anj')
+      })
     } else if (command_name === 'save_as') {
       console.log(command_name) // TODO: Do something else
     } else {
