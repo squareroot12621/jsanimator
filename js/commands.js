@@ -22,7 +22,9 @@ function handle_action(command_name) {
          JSZip automatically handles making files inside of folders. */
       var zip = new JSZip()
       for (var [filename, contents] of Object.entries(globals.current_file)) {
-        zip.file(filename, contents)
+        // Remove the topmost directory because it's the name of the file
+        var new_filename = filename.replace(/.*?\//, '')
+        zip.file(new_filename, contents)
       }
       // Then save the .zip file!
       zip.generateAsync({type: 'blob'}).then(function(content) {
