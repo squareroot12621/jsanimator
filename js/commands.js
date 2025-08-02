@@ -1,7 +1,24 @@
 import {globals} from './globals.js'
 
 function handle_action(command_name) {
-  console.log(globals.screen, command_name) // TODO: Do something else
+  if (globals.screen === 'main') {
+    if (command_name === 'new_file') {
+      var new_button = document.getElementById('menubuttongroup')
+                               .children[0]
+                               .children[0]
+      new_button.click()
+    } else if (command_name === 'open_file') {
+      var open_button = document.getElementById('openbutton')
+      open_button.click()
+    } else if (command_name === 'settings') {
+      var settings_button = document.getElementById('menubuttongroup')
+                               .children[2]
+                               .children[0]
+      settings_button.click()
+    }
+  } else if (globals.screen === 'editing') {
+    console.log(command_name) // TODO: Do something else
+  }
   return false
 
   /* Export zip file with name
