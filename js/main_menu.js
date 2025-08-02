@@ -72,6 +72,7 @@ function create_main_menu() {
       var zip_error = await unzip(file)
       if (!zip_error) {
         open_input.onchange = () => {}
+        globals.current_filename = file.name
         create_editing_screen()
       } else {
         show_load_error(zip_error)
