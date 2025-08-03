@@ -63,7 +63,7 @@ async function show_load_error(error) {
     var error_description = 'Sorry, your file needs to have '
                             + 'a .anj file extension. '
                             + 'Please choose a different file and try again.'
-  else if (error === 'Malformed .anj file') {
+  } else if (error === 'Malformed .anj file') {
     var error_description = "Sorry, we couldn't read your file "
                             + "because it wasn't formed correctly. "
                             + 'Please choose a different file and try again.'
