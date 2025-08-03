@@ -301,6 +301,6 @@
     bottom: 0;
     border: 0.1875rem solid var(--text-color-disabled);
     border-radius: 0.75rem;
-    background-color: color-mix(in srgb, var(--bottom-bg-color), var(--bg-color) calc(100% / 3));
+    background-color: color-mix(in srgb, var(--bottom-bg-color), var(--bg-color-solid) calc(100% / 3));
   }
 }
