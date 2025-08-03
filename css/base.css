@@ -301,4 +301,13 @@
     border-radius: 0.75rem;
     background-color: color-mix(in srgb, var(--bottom-bg-color), var(--bg-color-solid) calc(100% / 3));
   }
+  .dialogheader {
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .dialogbuttons {
+    margin-top: 0.5rem;
+    margin-bottom: -0.5rem; /* Cancel out the margin-bottom of the buttons */
+  }
 }
