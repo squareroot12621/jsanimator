@@ -57,7 +57,7 @@ async function show_save_dialog() {
 
   var filename = await new Promise((resolve, reject) => {
     save_button.addEventListener('click', () => {
-      resolve(filename_input.value + '.anj')
+      resolve((filename_input.value || 'Untitled') + '.anj')
       dialog.close()
     })
     cancel_button.addEventListener('click', () => {
