@@ -1,4 +1,5 @@
 import {globals} from './globals.js'
+import {create_element, create_dialog} from './utilities.js'
 
 function save(name=null) {
   /* Put all the files back into a JSZip().
@@ -19,6 +20,37 @@ function save(name=null) {
 }
 
 function show_save_dialog() {
+  var name_your_file = create_element(
+    'p', 'Name your file:', {class: 'dialogheader'}
+  )
+  
+  var filename_input = create_element(
+    'input', [], {
+      type: 'text',
+      id: 'newfilename',
+      autofocus: '',
+      size: '15',
+      placeholder: 'Untitled',
+    }
+  )
+  var filename_extension = create_element('div', '.anj')
+  var filename_wrapper = create_element(
+    'div', [filename_input, filename_extension], {class: 'filenamewrapper'}
+  )
+
+  var save_button = create_element(
+    'button', 'Save', {class: 'narrowbutton primarybutton'}
+  )
+  var cancel_button = create_element(
+    'button', 'Cancel', {class: 'narrowbutton warningbutton'}
+  )
+  var button_wrapper = create_element(
+    'div', [save_button, cancel_button], {class: 'centerbuttons dialogbuttons'}
+  )
+
+  var dialog = create_dialog(
+    [name_your_file, filename_wrapper, button_wrapper]
+  )
   return 'User Defined Name.anj' // TODO: Do something else
 }
 
