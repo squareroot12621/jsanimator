@@ -18,6 +18,21 @@ function update_root(...elements) {
   document.getElementById('jsanimator').replaceChildren(...elements)
 }
 
+function create_dialog(content, required=false) {
+  var dialog = create_element(
+    'dialog', content, {
+      open: '',
+      closedby: required ? 'none' : 'any',
+      'aria-modal': true,
+    }
+  )
+  var dialog_container = create_element('div', dialog, {class: 'dialog'})
+  dialog.addEventListener('close', () => {
+    dialog_container.remove()
+  })
+  document.getElementById('jsanimator').append(dialog_container)
+}
+
 function resize_root() {
   var js_animator = document.getElementById('jsanimator')
   var timeout = js_animator.getAttribute('data-resize-timeout')
@@ -123,6 +138,7 @@ function cross_platformify_shortcut(shortcut) {
 export {
   create_element,
   update_root,
+  create_dialog,
   resize_root,
   resize_root_instant,
   once,
