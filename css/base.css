@@ -93,7 +93,7 @@
   position: relative; /* Stop dialogs from overflowing #jsanimator */
 
   /* General styling of elements */
-  &, button, input, kbd, textarea {
+  &, button, dialog, input, kbd, textarea {
     font-family: var(--body-font);
     font-optical-sizing: auto;
     font-weight: 400;
