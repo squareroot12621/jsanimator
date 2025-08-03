@@ -66,12 +66,12 @@ function create_editing_screen() {
         /* If the element gets clicked,
            hide the menu it's part of
            and then do the specified action. */
-        element.addEventListener('click', (event) => {
+        element.addEventListener('click', async (event) => {
           event.stopPropagation()
           var target = event.target.closest('.navbarbutton')
           target.setAttribute('data-hovered', 'false')
           target.setAttribute('data-clicked', 'false')
-          handle_action(option.codename)
+          await handle_action(option.codename)
         })
         // Add a horizontal bar at the end of a section.
         return option.end_of_section
