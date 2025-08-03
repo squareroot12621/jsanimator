@@ -62,24 +62,29 @@ function create_main_menu() {
   
   update_root(title, button_group)
 
-  open_input.onchange = async function () {
-    // If the user cancelled, don't do anything
-    if (open_input.files.length === 0) {
-      return undefined;
-    }
-    var file = open_input.files[0]
-    if (file.name.endsWith('.anj')) {
-      var zip_error = await unzip(file)
-      if (!zip_error) {
-        open_input.onchange = () => {}
-        globals.current_filename = file.name
-        create_editing_screen()
-      } else {
-        show_load_error(zip_error)
-      }
+  open_input.addEventListener(
+    'change',
+    async () => {await open_file_handler(show_load_error)},
+    {once: true}
+  )
+}
+
+async function open_file_handler(error_handler) {
+  // If the user cancelled, don't do anything
+  if (!open_input.files.length) {
+    return undefined;
+  }
+  var file = open_input.files[0]
+  if (file.name.endsWith('.anj')) {
+    var zip_error = await unzip(file)
+    if (!zip_error) {
+      globals.current_filename = file.name
+      create_editing_screen()
     } else {
-      show_load_error('Wrong filetype')
+      error_handler(zip_error)
     }
+  } else {
+    error_handler('Wrong filetype')
   }
 }
 
@@ -126,4 +131,4 @@ function show_load_error(error) {
   }
 }
 
-export {create_main_menu}
+export {create_main_menu, open_file_handler}
