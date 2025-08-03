@@ -1,0 +1,8 @@
+#jsanimator {
+  .filenamewrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    flex-wrap: nowrap;
+  }
+}
