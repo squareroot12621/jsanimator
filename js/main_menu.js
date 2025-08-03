@@ -64,17 +64,18 @@ function create_main_menu() {
 
   open_input.addEventListener(
     'change',
-    async () => {await open_file_handler(show_load_error)},
+    async (event) => {await open_file_handler(event, show_load_error)},
     {once: true}
   )
 }
 
-async function open_file_handler(error_handler) {
+async function open_file_handler(event, error_handler) {
+  var target_files = event.target.files
   // If the user cancelled, don't do anything
-  if (!open_input.files.length) {
+  if (!target_files.length) {
     return undefined;
   }
-  var file = open_input.files[0]
+  var file = target_files[0]
   if (file.name.endsWith('.anj')) {
     var zip_error = await unzip(file)
     if (!zip_error) {
