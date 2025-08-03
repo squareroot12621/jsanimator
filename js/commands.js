@@ -82,7 +82,7 @@ async function show_load_error(error) {
   ok_button.setAttribute('class', 'narrowbutton primarybutton')
   // Wait for the OK button to be clicked
   await new Promise((resolve, reject) => {
-    ok_button.addEventListener('click', () => {
+    ok_button.addEventListener('mousedown', () => {
       resolve(null)
     })
   })
