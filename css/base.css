@@ -55,6 +55,7 @@
   --shadow-color-solid: #404040;
   --shadow-color: #40404080;
   --shadow-color-far: #40404040;
+  --dialog-bg-color: #00000050;
   @media (prefers-color-scheme: dark) {
     --bottom-bg-color: #191D23;
     --bg-color: #00000055;
@@ -75,6 +76,7 @@
     --shadow-color-solid: #B7B7B7;
     --shadow-color: #B7B7B780;
     --shadow-color-far: #B7B7B740;
+    --dialog-bg-color: #000000A0;
   }
   
   box-sizing: border-box;
@@ -278,20 +280,16 @@
     background-color: var(--shadow-color);
   }
 
-  .dialog:has(dialog[open]) {
-    background-color: var(--shadow-color);
-    /* TODO: Fix 100% being of the viewport instead of the container
-       TODO: Add create_dialog() in utilities.js
-         Structure:
-         <div class="dialog">
-           <dialog>
-             ...
-           </dialog>
-         </div>
-    */
+  .dialog {
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
+    margin-left: -1rem;
+    margin-top: -1rem;
+    background-color: #00000000;
+  }
+  .dialog:has(dialog[open]) {
+    background-color: var(--dialog-bg-color);
   }
   dialog {
     max-width: calc(100% - 2rem);
