@@ -178,7 +178,7 @@ async function handle_action(command_name) {
     }
   } else if (globals.screen === 'editing') {
     if (command_name === 'open_file') {
-      show_discard_dialog(is_new_file=false)
+      show_discard_dialog(false)
     } else if (command_name === 'save_file') {
       if (globals.current_filename === null) {
         globals.current_filename = await show_save_dialog()
