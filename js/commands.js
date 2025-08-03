@@ -72,7 +72,7 @@ async function show_load_error(error) {
                             + 'when reading your file. '
                             + 'Please choose a different file and try again.'
   }
-  var dialog = document.getElementsByClassName('dialog')[0]
+  var dialog = document.getElementsByTagName('dialog')[0]
   var dialog_header = dialog.children[0]
   dialog_header.replaceChildren(error_description)
   var dialog_buttons = document.getElementsByClassName('dialogbuttons')[0]
