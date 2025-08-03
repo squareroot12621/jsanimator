@@ -31,6 +31,8 @@ function create_dialog(content, required=false) {
     dialog_container.remove()
   })
   document.getElementById('jsanimator').append(dialog_container)
+
+  return dialog
 }
 
 function resize_root() {
