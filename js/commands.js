@@ -86,6 +86,8 @@ async function show_load_error(error) {
       resolve(null)
     })
   })
+  console.log('test for code coverage')
+  return null
 }
 
 // Saving
