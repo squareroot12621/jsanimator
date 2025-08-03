@@ -62,11 +62,9 @@ function create_main_menu() {
   
   update_root(title, button_group)
 
-  open_input.addEventListener(
-    'change',
-    async (event) => {await open_file_handler(event, show_load_error)},
-    {once: true}
-  )
+  open_input.addEventListener('change', async (event) => {
+    await open_file_handler(event, show_load_error)
+  })
 }
 
 async function open_file_handler(event, error_handler) {
