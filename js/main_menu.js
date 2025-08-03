@@ -82,10 +82,10 @@ async function open_file_handler(event, error_handler) {
       globals.current_filename = file.name
       create_editing_screen()
     } else {
-      error_handler(zip_error)
+      await error_handler(zip_error) // Use await just to be safe
     }
   } else {
-    error_handler('Wrong filetype')
+    await error_handler('Wrong filetype') // Use await just to be safe
   }
 }
 
