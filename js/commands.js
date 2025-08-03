@@ -43,8 +43,7 @@ async function show_discard_dialog(is_new_file) {
           await open_file_handler(event, show_load_error)
           resolve(null)
           dialog.close()
-        },
-        {once: true}
+        }
       )
       discard_input.click()
     })
