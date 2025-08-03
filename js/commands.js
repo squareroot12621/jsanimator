@@ -94,8 +94,11 @@ async function handle_action(command_name) {
       }
       save(globals.current_filename)
     } else if (command_name === 'save_as') {
-      globals.current_filename = await show_save_dialog()
-      save(globals.current_filename)
+      var new_filename = await show_save_dialog()
+      if (new_filename !== null) {
+        globals.current_filename = new_filename
+        save(globals.current_filename)
+      }
     } else if (command_name === 'save_copy') {
       var copy_filename = await show_save_dialog()
       save(copy_filename)
