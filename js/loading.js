@@ -55,7 +55,9 @@ async function finish_loading() {
           .map((section) => section === 'ctrl' ? 'mod' : section)
           .join('+')
       )
-      Mousetrap.bind(keyboard_shortcut, () => handle_action(command_name))
+      Mousetrap.bind(
+        keyboard_shortcut, async () => await handle_action(command_name)
+      )
     }
   }
 }
