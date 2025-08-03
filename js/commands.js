@@ -31,7 +31,6 @@ async function show_save_dialog() {
     'input', [], {
       type: 'text',
       id: 'newfilename',
-      autofocus: '',
       size: '15',
       placeholder: 'Untitled',
     }
@@ -54,6 +53,7 @@ async function show_save_dialog() {
   var dialog = create_dialog(
     [name_your_file, filename_wrapper, button_wrapper]
   )
+  filename_input.focus()
 
   var filename = await new Promise((resolve, reject) => {
     save_button.addEventListener('click', () => {
