@@ -75,10 +75,9 @@ async function show_load_error(error) {
   var dialog_header = dialog.children[0]
   dialog_header.replaceChildren(error_description)
   var dialog_buttons = document.getElementsByClassName('dialogbuttons')[0]
-  dialog_buttons.children[1].remove()
-  var ok_button = dialog_buttons.children[0]
+  var [discard_button, ok_button] = dialog_buttons.children
+  discard_button.remove()
   ok_button.replaceChildren('OK')
-  ok_button.setAttribute('class', 'narrowbutton primarybutton')
   // Wait for the OK button to be clicked
   await new Promise((resolve, reject) => {
     ok_button.addEventListener('dblclick', () => {
