@@ -2,6 +2,9 @@ import {globals} from './globals.js'
 import {create_element, create_dialog} from './utilities.js'
 
 function save(name=null) {
+  if (name === null) { // User canceled
+    return undefined
+  }
   /* Put all the files back into a JSZip().
      JSZip automatically handles making files inside of folders. */
   var zip = new JSZip()
@@ -19,7 +22,7 @@ function save(name=null) {
   })
 }
 
-function show_save_dialog() {
+async function show_save_dialog() {
   var name_your_file = create_element(
     'p', 'Name your file:', {class: 'dialogheader'}
   )
@@ -51,10 +54,24 @@ function show_save_dialog() {
   var dialog = create_dialog(
     [name_your_file, filename_wrapper, button_wrapper]
   )
-  return 'User Defined Name.anj' // TODO: Do something else
+
+  var filename = await new Promise((resolve, reject) => {
+    save_button.addEventListener('click', () => {
+      resolve(filename_input.value + '.anj')
+      dialog.close()
+    })
+    cancel_button.addEventListener('click', () => {
+      resolve(null)
+      dialog.close()
+    })
+    dialog.addEventListener('close', () => {
+      resolve(null)
+    })
+  })
+  return filename
 }
 
-function handle_action(command_name) {
+async function handle_action(command_name) {
   if (globals.screen === 'main') {
     if (command_name === 'new_file') {
       var new_button = document.getElementById('menubuttongroup')
@@ -73,14 +90,14 @@ function handle_action(command_name) {
   } else if (globals.screen === 'editing') {
     if (command_name === 'save_file') {
       if (globals.current_filename === null) {
-        globals.current_filename = show_save_dialog()
+        globals.current_filename = await show_save_dialog()
       }
       save(globals.current_filename)
     } else if (command_name === 'save_as') {
-      globals.current_filename = show_save_dialog()
+      globals.current_filename = await show_save_dialog()
       save(globals.current_filename)
     } else if (command_name === 'save_copy') {
-      var copy_filename = show_save_dialog()
+      var copy_filename = await show_save_dialog()
       save(copy_filename)
     } else {
       console.log(command_name) // TODO: Do something else
