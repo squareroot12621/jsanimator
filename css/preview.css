@@ -1,0 +1,59 @@
+#jsanimator {
+  .previewwrapper {
+    margin: -1rem;
+    background-color: black;
+  }
+
+  .previewbutton {
+    transition: font-weight 0.15s;
+    color: white;
+    top: 0;
+    cursor: pointer;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+
+  .previewheader {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    .previewbutton { /* Back button */
+      padding: 0.25rem;
+    }
+    h2 {
+      margin: 0.25rem;
+      margin-left: 0.5rem;
+      color: white;
+      font-size: calc(1.4 * var(--text-size));
+      font-weight: 500;
+    }
+  }
+  
+  .canvaswrapper {
+    flex: 1;
+    display: flex;
+  }
+  .previewcanvas {
+    margin: auto;
+    /* Filling up the container without overflowing
+       or changing the aspect ratio might be possible,
+       but I don't know how to implement that in CSS alone.
+       Plus, JS Animator runs on JavaScript anyway. */
+  }
+  
+  .previewplayback {
+    display: flex;
+    color: white;
+    padding: 0.5rem;
+    font-size: calc(1.1 * var(--text-size));
+    gap: 0.75rem;
+    .previewbutton { /* Play/pause */
+      font-variation-settings: 'FILL' 1;
+      padding-inline: 0.125rem;
+    }
+  }
+  .previewduration {
+    font-variant: tabular-nums;
+  }
+}
