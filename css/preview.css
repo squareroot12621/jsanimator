@@ -4,6 +4,7 @@
     background-color: black;
     display: flex;
     flex-direction: column;
+    height: calc(100% + 2rem);
   }
 
   .previewbutton {
