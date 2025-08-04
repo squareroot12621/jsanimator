@@ -1,4 +1,5 @@
 import {open_file_handler} from './main_menu.js'
+import {create_preview_screen} from './preview.js'
 
 import {globals} from './globals.js'
 import {create_element, create_dialog} from './utilities.js'
@@ -193,6 +194,8 @@ async function handle_action(command_name) {
     } else if (command_name === 'save_copy') {
       var copy_filename = await show_save_dialog()
       save(copy_filename)
+    } else if (command_name === 'preview_animation') {
+      create_preview_screen()
     } else {
       console.log(command_name) // TODO: Do something else
     }
