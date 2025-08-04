@@ -10,8 +10,10 @@
   .previewbutton {
     transition: font-weight 0.15s;
     color: white;
-    top: 0;
     cursor: pointer;
+    &.previewbutton { /* Needs more specificity than .icon */
+      top: 0.0625rem;
+    }
     &:hover {
       font-weight: 600;
     }
