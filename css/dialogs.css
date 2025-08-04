@@ -37,6 +37,7 @@
   .filenamewrapper {
     display: flex;
     align-items: center;
+    justify-items: center;
     gap: 0.125rem;
     flex-wrap: nowrap;
   }
