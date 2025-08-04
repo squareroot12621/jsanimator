@@ -12,7 +12,10 @@
     background-color: var(--dialog-bg-color);
   }
   dialog {
-    max-width: calc(100% - 2rem);
+    max-width: 56%; /* Most dialogs don't need to be long rectangles */
+    .bigdialog {
+      max-width: calc(100% - 2rem);
+    }
     max-height: calc(100% - 2rem);
     box-sizing: border-box;
     top: 0;
