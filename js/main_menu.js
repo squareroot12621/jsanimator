@@ -125,6 +125,9 @@ function show_load_error(error) {
   
   open_button.onclick = () => {
     open_button.onclick = () => {}
+    /* Trick the element into firing a change event
+       even if the file is the same as last time */
+    open_button.lastElementChild.value = ''
     open_description.className = open_description_class
     open_description.textContent = open_description_text
   }
