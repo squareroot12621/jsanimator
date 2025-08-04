@@ -280,35 +280,4 @@
     height: 0.0625rem;
     background-color: var(--shadow-color);
   }
-
-  .dialog {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin-left: -1rem;
-    margin-top: -1rem;
-    background-color: #00000000;
-  }
-  .dialog:has(dialog[open]) {
-    background-color: var(--dialog-bg-color);
-  }
-  dialog {
-    max-width: calc(100% - 2rem);
-    max-height: calc(100% - 2rem);
-    box-sizing: border-box;
-    top: 0;
-    bottom: 0;
-    border: 0.1875rem solid var(--text-color-disabled);
-    border-radius: 0.75rem;
-    background-color: color-mix(in srgb, var(--bottom-bg-color), var(--bg-color-solid) calc(100% / 3));
-  }
-  .dialogheader {
-    font-weight: 500;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  .dialogbuttons {
-    margin-top: 0.5rem;
-    margin-bottom: -0.5rem; /* Cancel out the margin-bottom of the buttons */
-  }
 }
