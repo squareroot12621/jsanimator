@@ -143,10 +143,11 @@ function create_editing_screen() {
 
   var toolbar = create_element('div', 'Toolbar', {id: 'toolbar'})
 
+  var zoom_bar = create_element('div', 'Zoom Bar', {id: 'canvaszoom'})
   var canvas = create_element('canvas', 'Canvas', {id: 'canvas'})
   var timeline = create_element('div', 'Timeline', {id: 'timeline'})
   var middle_section = create_element(
-    'div', [canvas, timeline], {id: 'middlesection'}
+    'div', [zoom_bar, canvas, timeline], {id: 'middlesection'}
   )
   
   var properties = create_element('div', 'Properties', {id: 'properties'})
