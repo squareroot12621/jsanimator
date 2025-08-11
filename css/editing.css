@@ -127,6 +127,16 @@
     height: 100%;
   }
 
+  #canvaszoom {
+    width: 100%;
+    height: calc(2 * var(--text-size));
+    min-height: calc(2 * var(--text-size));
+    background-color: var(--bg-color);
+    border-bottom: 0.125rem solid var(--shadow-color);
+    padding: 0.25rem;
+    box-sizing: border-box;
+  }
+
   #canvas {
     height: 70%;
   }
